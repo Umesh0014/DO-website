@@ -94,7 +94,7 @@ export default function Home() {
 
         <img
           className="grass"
-          src="/grass-foreground.png"
+          src="/grass-foreground-v2.png"
           alt=""
           aria-hidden="true"
         />

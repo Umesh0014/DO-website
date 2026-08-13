@@ -428,6 +428,19 @@ a {
   margin-left: 0;
 }
 
+.resolve-top {
+  grid-template-columns: minmax(0, 595px) minmax(360px, 520px);
+}
+
+.resolve-copy {
+  max-width: 520px;
+}
+
+.resolve-visual img {
+  width: min(659px, 110.75%);
+  margin-left: -2%;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -477,6 +490,10 @@ a {
   }
 
   .diagnose-top {
+    grid-template-columns: 1fr;
+  }
+
+  .resolve-top {
     grid-template-columns: 1fr;
   }
 

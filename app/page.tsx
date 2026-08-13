@@ -270,6 +270,66 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section
+        className="standard-section resolve-section"
+        aria-labelledby="resolve-heading"
+      >
+        <div className="standard-inner">
+          <div className="standard-top resolve-top">
+            <div className="standard-visual resolve-visual">
+              <img
+                src="/resolve-graphic.svg"
+                alt="Recommended intervention and repeat-contact prevention cards"
+              />
+            </div>
+
+            <div className="standard-copy resolve-copy">
+              <span className="standard-eyebrow">Resolve</span>
+              <h2 id="resolve-heading">Resolve more, repeat less.</h2>
+              <p>
+                Measures what was actually resolved, issue by issue, and what
+                still blocks resolution.
+              </p>
+            </div>
+          </div>
+
+          <div className="standard-features">
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>True resolution, per issue</h3>
+                <p>
+                  Tracks each issue to its true outcome, separate from what the
+                  advisor declared.
+                </p>
+              </div>
+            </article>
+
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Repeat contact risk</h3>
+                <p>
+                  Flags unfinished issues early to predict and prevent repeat
+                  contacts.
+                </p>
+              </div>
+            </article>
+
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Next best intervention</h3>
+                <p>
+                  Recommends the next best follow-up for unresolved issues, with
+                  a person confirming the action.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

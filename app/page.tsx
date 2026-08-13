@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const heroBackground =
   "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260611_133301_d5f2a94a-b22e-4e4a-a6b6-eacdddf1f5b0.png&w=1280&q=85";
@@ -114,6 +114,7 @@ function Header() {
 export default function Home() {
   const heroRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -437,8 +438,14 @@ export default function Home() {
           </h2>
 
           <div className="faq-list">
-            <details className="faq-item" open>
-              <summary>
+            <details className="faq-item" open={openFaqIndex === 0}>
+              <summary
+                aria-expanded={openFaqIndex === 0}
+                onClick={(event) => {
+                  event.preventDefault();
+                  setOpenFaqIndex((current) => (current === 0 ? null : 0));
+                }}
+              >
                 <span>How is this different from speech analytics?</span>
                 <span className="faq-toggle" aria-hidden="true" />
               </summary>
@@ -453,8 +460,14 @@ export default function Home() {
               </div>
             </details>
 
-            <details className="faq-item">
-              <summary>
+            <details className="faq-item" open={openFaqIndex === 1}>
+              <summary
+                aria-expanded={openFaqIndex === 1}
+                onClick={(event) => {
+                  event.preventDefault();
+                  setOpenFaqIndex((current) => (current === 1 ? null : 1));
+                }}
+              >
                 <span>How do we know the scores are right?</span>
                 <span className="faq-toggle" aria-hidden="true" />
               </summary>
@@ -468,8 +481,14 @@ export default function Home() {
               </div>
             </details>
 
-            <details className="faq-item">
-              <summary>
+            <details className="faq-item" open={openFaqIndex === 2}>
+              <summary
+                aria-expanded={openFaqIndex === 2}
+                onClick={(event) => {
+                  event.preventDefault();
+                  setOpenFaqIndex((current) => (current === 2 ? null : 2));
+                }}
+              >
                 <span>Does this replace our CSAT survey?</span>
                 <span className="faq-toggle" aria-hidden="true" />
               </summary>
@@ -483,8 +502,14 @@ export default function Home() {
               </div>
             </details>
 
-            <details className="faq-item">
-              <summary>
+            <details className="faq-item" open={openFaqIndex === 3}>
+              <summary
+                aria-expanded={openFaqIndex === 3}
+                onClick={(event) => {
+                  event.preventDefault();
+                  setOpenFaqIndex((current) => (current === 3 ? null : 3));
+                }}
+              >
                 <span>Does this work for AI teammates, or only for advisors?</span>
                 <span className="faq-toggle" aria-hidden="true" />
               </summary>

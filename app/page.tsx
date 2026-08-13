@@ -5,6 +5,48 @@ import { useEffect, useRef } from "react";
 const heroBackground =
   "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260611_133301_d5f2a94a-b22e-4e4a-a6b6-eacdddf1f5b0.png&w=1280&q=85";
 
+const footerGroups = [
+  {
+    title: "Platform",
+    links: [
+      "Service Intelligence",
+      "Revenue Intelligence",
+      "Collection Intelligence",
+      "Quality and Coaching",
+      "Training and Learning",
+      "Agentic BI",
+      "Context Engine",
+    ],
+  },
+  {
+    title: "Trust",
+    links: ["Security", "Responsible AI", "AAPES", "Privacy", "Sub-processors"],
+  },
+  {
+    title: "Resources",
+    links: ["Customer stories", "Features", "DataOrb Ecosystem", "Blog"],
+  },
+  {
+    title: "Solutions",
+    links: [
+      "Chief Customer Office",
+      "AI and Transformation",
+      "Service Ops",
+      "Retention Ops",
+      "Sales Teams",
+      "Enablement",
+    ],
+  },
+  {
+    title: "Company",
+    links: ["About", "Careers", "Contact"],
+  },
+  {
+    title: "Legal",
+    links: ["Terms", "Cookie policy", "© DataOrb"],
+  },
+];
+
 function BrandMark() {
   return (
     <svg
@@ -402,6 +444,51 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <div className="footer-cta-block">
+            <div className="footer-message">
+              <h2>See what your last 1,000 conversations are telling you.</h2>
+              <p>
+                Bring your interactions. We&apos;ll reveal resolution rates,
+                effort hotspots, and repeat-contact drivers.
+              </p>
+            </div>
+
+            <a className="footer-cta" href="mailto:hello@questly.ai">
+              <span>Book a demo</span>
+              <ArrowIcon />
+            </a>
+          </div>
+
+          <nav className="footer-nav" aria-label="Footer navigation">
+            {footerGroups.map((group) => (
+              <div className="footer-group" key={group.title}>
+                <h3>{group.title}</h3>
+                <ul>
+                  {group.links.map((link) => (
+                    <li key={link}>
+                      {link === "© DataOrb" ? (
+                        <span>{link}</span>
+                      ) : (
+                        <a href="#top">{link}</a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
+        </div>
+
+        <img
+          className="footer-landscape"
+          src="/footer-landscape.svg"
+          alt=""
+          aria-hidden="true"
+        />
+      </footer>
     </main>
   );
 }

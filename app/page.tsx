@@ -95,9 +95,9 @@ function TrendIcon() {
   );
 }
 
-function Header() {
+function Header({ visible }: { visible: boolean }) {
   return (
-    <header className="site-header">
+    <header className={`site-header${visible ? "" : " site-header-hidden"}`}>
       <nav className="header-inner" aria-label="Primary navigation">
         <a className="logo-link" href="#top" aria-label="Questly home">
           <BrandMark />
@@ -115,6 +115,7 @@ export default function Home() {
   const heroRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [headerVisible, setHeaderVisible] = useState(true);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -143,6 +144,43 @@ export default function Home() {
     };
 
     updateParallax();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let directionDistance = 0;
+    let frame = 0;
+
+    const updateHeader = () => {
+      const currentScrollY = Math.max(window.scrollY, 0);
+      const delta = currentScrollY - lastScrollY;
+      const heroHeight = heroRef.current?.offsetHeight ?? window.innerHeight;
+
+      if (currentScrollY < heroHeight - 84) {
+        setHeaderVisible(true);
+        directionDistance = 0;
+      } else if (delta > 0) {
+        directionDistance = directionDistance < 0 ? delta : directionDistance + delta;
+        if (directionDistance >= 10) setHeaderVisible(false);
+      } else if (delta < 0) {
+        directionDistance = directionDistance > 0 ? delta : directionDistance + delta;
+        if (directionDistance <= -6) setHeaderVisible(true);
+      }
+
+      lastScrollY = currentScrollY;
+      frame = 0;
+    };
+
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateHeader);
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
@@ -214,7 +252,7 @@ export default function Home() {
         style={{ backgroundImage: `url("${heroBackground}")` }}
       >
         <div className="hero-wash" aria-hidden="true" />
-        <Header />
+        <Header visible={headerVisible} />
 
         <div className="hero-copy">
           <h1 id="hero-heading">Stop guessing what happened</h1>

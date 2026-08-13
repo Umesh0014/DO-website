@@ -444,6 +444,7 @@ a {
 .faq-section {
   --faq-inset-x: clamp(20px, 6.67vw, 96px);
   --faq-inset-y: 100px;
+  --faq-panel-width: 1250px;
   --faq-radius: 40px;
   display: flex;
   min-height: 100svh;
@@ -454,7 +455,7 @@ a {
 
 .faq-panel {
   display: grid;
-  width: min(1250px, 100%);
+  width: min(var(--faq-panel-width), 100%);
   min-height: calc(100svh - (var(--faq-inset-y) * 2));
   grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
   gap: clamp(48px, 7vw, 104px);
@@ -802,7 +803,7 @@ a {
   }
 
   .faq-panel {
-    min-height: 0;
+    min-height: calc(100svh - (var(--faq-inset-y) * 2));
     grid-template-columns: 1fr;
     gap: 48px;
     padding: 64px 48px;

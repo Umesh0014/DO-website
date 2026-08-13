@@ -177,10 +177,13 @@ export default function Home() {
       const maxInsetX = Math.min(96, Math.max(20, window.innerWidth * 0.0667));
       const maxInsetY = window.innerWidth <= 640 ? 64 : window.innerWidth <= 900 ? 80 : 100;
       const maxRadius = window.innerWidth <= 640 ? 28 : 40;
+      const cardWidth = Math.min(1250, window.innerWidth - maxInsetX * 2);
+      const panelWidth = cardWidth + (window.innerWidth - cardWidth) * progress;
 
       faq.style.setProperty("--faq-inset-x", `${maxInsetX * (1 - progress)}px`);
       faq.style.setProperty("--faq-inset-y", `${maxInsetY * (1 - progress)}px`);
       faq.style.setProperty("--faq-radius", `${maxRadius * (1 - progress)}px`);
+      faq.style.setProperty("--faq-panel-width", `${panelWidth}px`);
       frame = 0;
     };
 

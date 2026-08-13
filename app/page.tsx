@@ -330,6 +330,78 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="faq-section" aria-labelledby="faq-heading">
+        <div className="faq-panel">
+          <h2 id="faq-heading">
+            Questions we
+            <br />
+            get asked.
+          </h2>
+
+          <div className="faq-list">
+            <details className="faq-item" open>
+              <summary>
+                <span>How is this different from speech analytics?</span>
+                <span className="faq-toggle" aria-hidden="true" />
+              </summary>
+              <div className="faq-answer">
+                <p>
+                  Speech analytics tells you which words appeared and how often.
+                  Service Intelligence tells you what happened: whether the
+                  issue was resolved, what it cost the customer in effort, where
+                  the conversation turned, and who owns the failure. Topics are
+                  an index. This is a record.
+                </p>
+              </div>
+            </details>
+
+            <details className="faq-item">
+              <summary>
+                <span>How do we know the scores are right?</span>
+                <span className="faq-toggle" aria-hidden="true" />
+              </summary>
+              <div className="faq-answer">
+                <p>
+                  Every score links back to the interaction evidence that
+                  produced it. Teams can review the source, calibrate the model
+                  against human-reviewed examples, and track consistency over
+                  time.
+                </p>
+              </div>
+            </details>
+
+            <details className="faq-item">
+              <summary>
+                <span>Does this replace our CSAT survey?</span>
+                <span className="faq-toggle" aria-hidden="true" />
+              </summary>
+              <div className="faq-answer">
+                <p>
+                  No. CSAT remains a useful signal from customers who respond.
+                  Service Intelligence complements it with evidence from every
+                  interaction, including the customers who never complete a
+                  survey.
+                </p>
+              </div>
+            </details>
+
+            <details className="faq-item">
+              <summary>
+                <span>Does this work for AI teammates, or only for advisors?</span>
+                <span className="faq-toggle" aria-hidden="true" />
+              </summary>
+              <div className="faq-answer">
+                <p>
+                  Both. The same evidence standard can evaluate human advisors,
+                  AI teammates, and journeys that move between them, so every
+                  outcome can be compared in one view.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

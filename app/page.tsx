@@ -469,13 +469,14 @@ export default function Home() {
 
       <section ref={faqRef} className="faq-section" aria-labelledby="faq-heading">
         <div className="faq-panel">
-          <h2 id="faq-heading">
-            Questions we
-            <br />
-            get asked.
-          </h2>
+          <div className="faq-content">
+            <h2 id="faq-heading">
+              Questions we
+              <br />
+              get asked.
+            </h2>
 
-          <div className="faq-list">
+            <div className="faq-list">
             <details className="faq-item" open={openFaqIndex === 0}>
               <summary
                 aria-expanded={openFaqIndex === 0}
@@ -559,6 +560,7 @@ export default function Home() {
                 </p>
               </div>
             </details>
+            </div>
           </div>
         </div>
       </section>

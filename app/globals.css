@@ -252,12 +252,13 @@ a {
 
 .grass {
   position: absolute;
-  bottom: -1px;
+  bottom: clamp(-130px, -7vw, -70px);
   left: 0;
-  z-index: 30;
+  z-index: 100;
   width: 100%;
   min-width: 900px;
   height: auto;
+  filter: saturate(0.82) brightness(0.93);
   pointer-events: none;
   user-select: none;
 }
@@ -347,6 +348,7 @@ a {
   }
 
   .grass {
+    bottom: -35px;
     min-width: 720px;
     transform: translateX(calc((100vw - 720px) / 2));
   }

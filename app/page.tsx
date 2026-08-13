@@ -53,14 +53,13 @@ function Header() {
 export default function Home() {
   return (
     <main id="top">
-      <Header />
-
       <section
         className="hero"
         aria-labelledby="hero-heading"
         style={{ backgroundImage: `url("${heroBackground}")` }}
       >
         <div className="hero-wash" aria-hidden="true" />
+        <Header />
 
         <div className="hero-copy">
           <h1 id="hero-heading">Stop guessing what happened</h1>

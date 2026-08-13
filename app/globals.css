@@ -122,8 +122,11 @@ a {
 
 .hero {
   --hero-bg-y: 0px;
+  --hero-wash-y: 0px;
   --hero-copy-y: 0px;
+  --hero-copy-opacity: 1;
   --hero-product-y: 0px;
+  --hero-product-scale: 1;
   --hero-grass-y: 0px;
   position: relative;
   display: flex;
@@ -158,6 +161,9 @@ a {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.28) 48%, rgba(242, 244, 240, 0.08) 100%),
     radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.9), transparent 48%);
+  translate: 0 var(--hero-wash-y);
+  scale: 1.08;
+  will-change: translate;
 }
 
 .hero-copy {
@@ -169,8 +175,9 @@ a {
   align-items: center;
   margin-top: clamp(50px, 7vh, 80px);
   text-align: center;
+  opacity: var(--hero-copy-opacity);
   translate: 0 var(--hero-copy-y);
-  will-change: translate;
+  will-change: translate, opacity;
 }
 
 .hero-copy h1 {
@@ -255,8 +262,10 @@ a {
   margin-top: clamp(54px, 7vh, 78px);
   padding: 0;
   animation: hero-rise 1100ms 430ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  scale: var(--hero-product-scale);
   translate: 0 var(--hero-product-y);
-  will-change: translate;
+  transform-origin: 50% 0;
+  will-change: translate, scale;
 }
 
 .product-glow {
@@ -1021,6 +1030,15 @@ a {
   .product-stage,
   .grass {
     translate: none;
+  }
+
+  .hero-copy {
+    opacity: 1;
+  }
+
+  .hero-wash,
+  .product-stage {
+    scale: 1;
   }
 
   .site-header {

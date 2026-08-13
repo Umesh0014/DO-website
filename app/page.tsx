@@ -210,6 +210,66 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section
+        className="standard-section diagnose-section"
+        aria-labelledby="diagnose-heading"
+      >
+        <div className="standard-inner">
+          <div className="standard-top diagnose-top">
+            <div className="standard-copy diagnose-copy">
+              <span className="standard-eyebrow">Diagnose</span>
+              <h2 id="diagnose-heading">Diagnose the pain, fix the cause.</h2>
+              <p>
+                Separates why customers contact you from the friction they face,
+                identifying the driver, severity, and exact evidence.
+              </p>
+            </div>
+
+            <div className="standard-visual diagnose-visual">
+              <img
+                src="/diagnose-graphic.svg"
+                alt="Trajectory deterioration and defect ticket analytics cards"
+              />
+            </div>
+          </div>
+
+          <div className="standard-features">
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Know which failures you own</h3>
+                <p>
+                  Separates advisor-fixable issues from business defects turning
+                  one into coaching &amp; the other into action.
+                </p>
+              </div>
+            </article>
+
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Watch the moment it turns</h3>
+                <p>
+                  Tracks sentiment from entry to exit, pinpointing where the
+                  customer&apos;s mood changed.
+                </p>
+              </div>
+            </article>
+
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>From anecdote to business case</h3>
+                <p>
+                  Turns frustration into evidence: volume, severity, and
+                  relationship impact that can drive action.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

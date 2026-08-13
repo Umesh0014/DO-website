@@ -410,6 +410,24 @@ a {
   line-height: 1.5;
 }
 
+.diagnose-section {
+  min-height: 641px;
+}
+
+.diagnose-top {
+  min-height: 277px;
+  grid-template-columns: minmax(360px, 520px) minmax(0, 615px);
+}
+
+.diagnose-copy {
+  max-width: 520px;
+}
+
+.diagnose-visual img {
+  width: min(635px, 103.25%);
+  margin-left: 0;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -458,6 +476,10 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .diagnose-top {
+    grid-template-columns: 1fr;
+  }
+
   .standard-visual {
     width: min(667px, 100%);
     margin-inline: auto;
@@ -466,6 +488,14 @@ a {
   .standard-visual img {
     width: 100%;
     margin-left: 0;
+  }
+
+  .diagnose-visual {
+    grid-row: 1;
+  }
+
+  .diagnose-copy {
+    grid-row: 2;
   }
 
   .standard-copy {
@@ -543,6 +573,10 @@ a {
   .standard-section {
     min-height: auto;
     padding: 64px 20px;
+  }
+
+  .diagnose-section {
+    min-height: auto;
   }
 
   .standard-inner {

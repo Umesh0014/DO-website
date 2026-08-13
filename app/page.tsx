@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
 const heroBackground =
   "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260611_133301_d5f2a94a-b22e-4e4a-a6b6-eacdddf1f5b0.png&w=1280&q=85";
 
@@ -34,6 +38,21 @@ function ArrowIcon() {
   );
 }
 
+function TrendIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="trend-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M3 17.5 9 11l4 4 7-8" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M15.5 7H20v4.5" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 function Header() {
   return (
     <header className="site-header">
@@ -51,9 +70,47 @@ function Header() {
 }
 
 export default function Home() {
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (!hero || reduceMotion.matches) {
+      return;
+    }
+
+    let frame = 0;
+
+    const updateParallax = () => {
+      const progress = Math.min(Math.max(window.scrollY / hero.offsetHeight, 0), 1);
+
+      hero.style.setProperty("--hero-bg-y", `${progress * 44}px`);
+      hero.style.setProperty("--hero-copy-y", `${progress * -34}px`);
+      hero.style.setProperty("--hero-product-y", `${progress * 66}px`);
+      hero.style.setProperty("--hero-grass-y", `${progress * 18}px`);
+      frame = 0;
+    };
+
+    const onScroll = () => {
+      if (!frame) {
+        frame = window.requestAnimationFrame(updateParallax);
+      }
+    };
+
+    updateParallax();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
     <main id="top">
       <section
+        ref={heroRef}
         className="hero"
         aria-labelledby="hero-heading"
         style={{ backgroundImage: `url("${heroBackground}")` }}
@@ -97,6 +154,61 @@ export default function Home() {
           alt=""
           aria-hidden="true"
         />
+      </section>
+
+      <section className="standard-section" aria-labelledby="standard-heading">
+        <div className="standard-inner">
+          <div className="standard-top">
+            <div className="standard-visual">
+              <img
+                src="/standard-channel-graphic.svg"
+                alt="Customer effort and drift detection analytics cards"
+              />
+            </div>
+
+            <div className="standard-copy">
+              <span className="standard-eyebrow">See</span>
+              <h2 id="standard-heading">One standard. Every channel.</h2>
+              <p>
+                DataOrb unifies every channel into one structured view,
+                revealing demand, repeat contacts, risk, and customer effort.
+              </p>
+            </div>
+          </div>
+
+          <div className="standard-features">
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Service demand, at the root</h3>
+                <p>
+                  Reveals what drives contacts, repeats, and customer effort.
+                </p>
+              </div>
+            </article>
+
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Nothing hides in the average</h3>
+                <p>
+                  Spots small drift early across queues, markets, and channels.
+                </p>
+              </div>
+            </article>
+
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Every language, one standard</h3>
+                <p>
+                  Unifies 80+ languages into one standard while preserving every
+                  customer&apos;s original voice.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
     </main>
   );

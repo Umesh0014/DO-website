@@ -116,6 +116,7 @@ a {
 .hero {
   position: relative;
   display: flex;
+  height: calc(100svh - 84px);
   min-height: calc(100svh - 84px);
   flex-direction: column;
   align-items: center;
@@ -253,12 +254,10 @@ a {
   position: absolute;
   bottom: -1px;
   left: 0;
-  z-index: 12;
+  z-index: 30;
   width: 100%;
   min-width: 900px;
-  max-height: 19vh;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
   pointer-events: none;
   user-select: none;
 }
@@ -314,6 +313,7 @@ a {
   }
 
   .hero {
+    height: calc(100svh - 72px);
     min-height: calc(100svh - 72px);
     padding-top: clamp(44px, 7vh, 64px);
   }
@@ -348,7 +348,6 @@ a {
 
   .grass {
     min-width: 720px;
-    max-height: 15vh;
     transform: translateX(calc((100vw - 720px) / 2));
   }
 }

@@ -113,6 +113,7 @@ function Header() {
 
 export default function Home() {
   const heroRef = useRef<HTMLElement>(null);
+  const faqRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -145,6 +146,57 @@ export default function Home() {
 
     return () => {
       window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  useEffect(() => {
+    const faq = faqRef.current;
+
+    if (!faq) {
+      return;
+    }
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let frame = 0;
+
+    const updateFaqTransition = () => {
+      const rect = faq.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const start = viewportHeight * 0.85;
+      const end = viewportHeight * 0.08;
+      const rawProgress = Math.min(
+        Math.max((start - rect.top) / (start - end), 0),
+        1,
+      );
+      const progress = reduceMotion.matches
+        ? rect.top <= viewportHeight * 0.45
+          ? 1
+          : 0
+        : rawProgress;
+      const maxInsetX = Math.min(96, Math.max(20, window.innerWidth * 0.0667));
+      const maxInsetY = window.innerWidth <= 640 ? 64 : window.innerWidth <= 900 ? 80 : 100;
+      const maxRadius = window.innerWidth <= 640 ? 28 : 40;
+
+      faq.style.setProperty("--faq-inset-x", `${maxInsetX * (1 - progress)}px`);
+      faq.style.setProperty("--faq-inset-y", `${maxInsetY * (1 - progress)}px`);
+      faq.style.setProperty("--faq-radius", `${maxRadius * (1 - progress)}px`);
+      frame = 0;
+    };
+
+    const queueUpdate = () => {
+      if (!frame) {
+        frame = window.requestAnimationFrame(updateFaqTransition);
+      }
+    };
+
+    updateFaqTransition();
+    window.addEventListener("scroll", queueUpdate, { passive: true });
+    window.addEventListener("resize", queueUpdate);
+
+    return () => {
+      window.removeEventListener("scroll", queueUpdate);
+      window.removeEventListener("resize", queueUpdate);
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);
@@ -373,7 +425,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="faq-section" aria-labelledby="faq-heading">
+      <section ref={faqRef} className="faq-section" aria-labelledby="faq-heading">
         <div className="faq-panel">
           <h2 id="faq-heading">
             Questions we

@@ -442,22 +442,25 @@ a {
 }
 
 .faq-section {
+  --faq-inset-x: clamp(20px, 6.67vw, 96px);
+  --faq-inset-y: 100px;
+  --faq-radius: 40px;
   display: flex;
   min-height: 100svh;
   align-items: center;
-  padding: 100px clamp(32px, 6.67vw, 96px);
-  background: #001428;
+  padding: var(--faq-inset-y) var(--faq-inset-x);
+  background: #fff;
 }
 
 .faq-panel {
   display: grid;
   width: min(1250px, 100%);
-  min-height: 730px;
+  min-height: calc(100svh - (var(--faq-inset-y) * 2));
   grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
   gap: clamp(48px, 7vw, 104px);
   margin-inline: auto;
   padding: clamp(86px, 8.5vw, 122px) clamp(48px, 7.5vw, 108px);
-  border-radius: 0;
+  border-radius: var(--faq-radius);
   background: #001428;
   color: #fff;
 }
@@ -795,7 +798,7 @@ a {
   }
 
   .faq-section {
-    padding-block: 80px;
+    --faq-inset-y: 80px;
   }
 
   .faq-panel {
@@ -907,13 +910,14 @@ a {
   }
 
   .faq-section {
-    padding: 64px 20px;
+    --faq-inset-x: 20px;
+    --faq-inset-y: 64px;
+    --faq-radius: 28px;
   }
 
   .faq-panel {
     gap: 32px;
     padding: 48px 24px;
-    border-radius: 28px;
   }
 
   .faq-panel h2 {

@@ -442,8 +442,11 @@ a {
 }
 
 .faq-section {
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
   padding: 100px clamp(32px, 6.67vw, 96px);
-  background: #fff;
+  background: #001428;
 }
 
 .faq-panel {
@@ -454,7 +457,7 @@ a {
   gap: clamp(48px, 7vw, 104px);
   margin-inline: auto;
   padding: clamp(86px, 8.5vw, 122px) clamp(48px, 7.5vw, 108px);
-  border-radius: 40px;
+  border-radius: 0;
   background: #001428;
   color: #fff;
 }
@@ -474,6 +477,10 @@ a {
 
 .faq-item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.faq-item:last-child {
+  border-bottom: 0;
 }
 
 .faq-item summary {

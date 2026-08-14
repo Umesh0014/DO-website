@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ParallaxComponent } from "@/components/ui/parallax-scrolling";
 
 const heroBackground =
   "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260611_133301_d5f2a94a-b22e-4e4a-a6b6-eacdddf1f5b0.png&w=1280&q=85";
@@ -113,8 +112,44 @@ function Header() {
 }
 
 export default function Home() {
+  const heroRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (!hero || reduceMotion.matches) {
+      return;
+    }
+
+    let frame = 0;
+
+    const updateParallax = () => {
+      const progress = Math.min(Math.max(window.scrollY / hero.offsetHeight, 0), 1);
+
+      hero.style.setProperty("--hero-bg-y", `${progress * 44}px`);
+      hero.style.setProperty("--hero-copy-y", `${progress * -34}px`);
+      hero.style.setProperty("--hero-product-y", `${progress * 66}px`);
+      hero.style.setProperty("--hero-grass-y", `${progress * 18}px`);
+      frame = 0;
+    };
+
+    const onScroll = () => {
+      if (!frame) {
+        frame = window.requestAnimationFrame(updateParallax);
+      }
+    };
+
+    updateParallax();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
 
   useEffect(() => {
     const faq = faqRef.current;
@@ -172,19 +207,16 @@ export default function Home() {
 
   return (
     <main id="top">
-      <ParallaxComponent
+      <section
+        ref={heroRef}
         className="hero"
         aria-labelledby="hero-heading"
-        backgroundImage={heroBackground}
+        style={{ backgroundImage: `url("${heroBackground}")` }}
       >
-        <div
-          className="hero-wash"
-          data-parallax-layer="background"
-          aria-hidden="true"
-        />
+        <div className="hero-wash" aria-hidden="true" />
         <Header />
 
-        <div className="hero-copy" data-parallax-layer="copy">
+        <div className="hero-copy">
           <h1 id="hero-heading">Stop guessing what happened</h1>
           <p>
             Every interaction, evidence-linked: what happened, customer impact,
@@ -205,11 +237,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div
-          className="product-stage"
-          data-parallax-layer="product"
-          id="product"
-        >
+        <div className="product-stage" id="product">
           <div className="product-glow" aria-hidden="true" />
           <img
             className="product-image"
@@ -221,11 +249,10 @@ export default function Home() {
         <img
           className="grass"
           src="/grass-foreground-v2.png"
-          data-parallax-layer="grass"
           alt=""
           aria-hidden="true"
         />
-      </ParallaxComponent>
+      </section>
 
       <section className="standard-section" aria-labelledby="standard-heading">
         <div className="standard-inner">

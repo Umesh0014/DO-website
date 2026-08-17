@@ -4,6 +4,7 @@
   --ink: #111214;
   --muted: #545861;
   --line: rgba(206, 206, 206, 0.28);
+  --page-bg: #eae9e8;
   --font-nimbus: "Nimbus Sans TW01", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
 }
@@ -20,7 +21,7 @@ html {
 
 body {
   margin: 0;
-  background: #fff;
+  background: var(--page-bg);
   color: var(--ink);
   font-family: var(--font-nimbus);
 }
@@ -285,7 +286,7 @@ a {
   position: relative;
   z-index: 110;
   padding: clamp(96px, 9vw, 136px) clamp(32px, 6.67vw, 96px);
-  background: #fff;
+  background: var(--page-bg);
 }
 
 .features-seven-inner {
@@ -416,7 +417,7 @@ a {
   min-height: 667px;
   justify-content: center;
   padding: 100px clamp(32px, 6.67vw, 96px);
-  background: #fff;
+  background: var(--page-bg);
 }
 
 .standard-inner {
@@ -566,7 +567,7 @@ a {
   min-height: 100svh;
   align-items: center;
   padding: var(--faq-inset-y) var(--faq-inset-x);
-  background: #fff;
+  background: var(--page-bg);
 }
 
 .faq-panel {
@@ -694,7 +695,7 @@ a {
   min-height: 920px;
   overflow: hidden;
   padding: 96px clamp(32px, 6.95vw, 100px) 390px;
-  background: #efefeb;
+  background: var(--page-bg);
   color: #171813;
 }
 

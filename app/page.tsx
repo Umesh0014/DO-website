@@ -256,14 +256,9 @@ export default function Home() {
 
       <section
         className="features-seven-section"
-        aria-labelledby="features-seven-heading"
+        aria-label="Service intelligence features"
       >
         <div className="features-seven-inner">
-          <header className="features-seven-header">
-            <span className="standard-eyebrow">Service Intelligence</span>
-            <h2 id="features-seven-heading">See. Diagnose. Resolve.</h2>
-          </header>
-
           <div className="features-seven-list">
             <article className="features-seven-row">
               <div className="features-seven-copy">

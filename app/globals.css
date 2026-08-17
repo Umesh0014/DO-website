@@ -293,29 +293,6 @@ a {
   margin-inline: auto;
 }
 
-.features-seven-header {
-  max-width: 790px;
-  margin-bottom: clamp(72px, 8vw, 112px);
-}
-
-.features-seven-header h2 {
-  margin: 20px 0 24px;
-  color: #111;
-  font-size: clamp(46px, 5.2vw, 74px);
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  line-height: 1.02;
-  text-wrap: balance;
-}
-
-.features-seven-header p {
-  max-width: 680px;
-  margin: 0;
-  color: #555;
-  font-size: clamp(17px, 1.45vw, 21px);
-  line-height: 1.5;
-}
-
 .features-seven-list {
   display: flex;
   flex-direction: column;
@@ -1081,19 +1058,6 @@ a {
 
   .features-seven-section {
     padding: 72px 20px;
-  }
-
-  .features-seven-header {
-    margin-bottom: 56px;
-  }
-
-  .features-seven-header h2 {
-    margin-top: 16px;
-    font-size: 44px;
-  }
-
-  .features-seven-header p {
-    font-size: 16px;
   }
 
   .features-seven-row,

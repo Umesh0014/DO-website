@@ -254,56 +254,53 @@ export default function Home() {
         />
       </section>
 
-      <section className="standard-section" aria-labelledby="standard-heading">
-        <div className="standard-inner">
-          <div className="standard-top">
-            <div className="standard-visual">
-              <img
-                src="/standard-channel-graphic.svg"
-                alt="Customer effort and drift detection analytics cards"
-              />
-            </div>
+      <section
+        className="features-seven-section"
+        aria-labelledby="standard-heading"
+      >
+        <div className="features-seven-inner">
+          <header className="features-seven-header">
+            <span className="standard-eyebrow">See</span>
+            <h2 id="standard-heading">One standard. Every channel.</h2>
+            <p>
+              DataOrb unifies every channel into one structured view, revealing
+              demand, repeat contacts, risk, and customer effort.
+            </p>
+          </header>
 
-            <div className="standard-copy">
-              <span className="standard-eyebrow">See</span>
-              <h2 id="standard-heading">One standard. Every channel.</h2>
-              <p>
-                DataOrb unifies every channel into one structured view,
-                revealing demand, repeat contacts, risk, and customer effort.
-              </p>
-            </div>
-          </div>
-
-          <div className="standard-features">
-            <article className="standard-feature">
-              <TrendIcon />
-              <div>
+          <div className="features-seven-list">
+            <article className="features-seven-row">
+              <div className="features-seven-copy">
+                <span className="features-seven-index">01</span>
                 <h3>Service demand, at the root</h3>
                 <p>
                   Reveals what drives contacts, repeats, and customer effort.
                 </p>
               </div>
+              <div className="features-seven-media" aria-hidden="true" />
             </article>
 
-            <article className="standard-feature">
-              <TrendIcon />
-              <div>
+            <article className="features-seven-row features-seven-row-reverse">
+              <div className="features-seven-copy">
+                <span className="features-seven-index">02</span>
                 <h3>Nothing hides in the average</h3>
                 <p>
                   Spots small drift early across queues, markets, and channels.
                 </p>
               </div>
+              <div className="features-seven-media" aria-hidden="true" />
             </article>
 
-            <article className="standard-feature">
-              <TrendIcon />
-              <div>
+            <article className="features-seven-row">
+              <div className="features-seven-copy">
+                <span className="features-seven-index">03</span>
                 <h3>Every language, one standard</h3>
                 <p>
                   Unifies 80+ languages into one standard while preserving every
                   customer&apos;s original voice.
                 </p>
               </div>
+              <div className="features-seven-media" aria-hidden="true" />
             </article>
           </div>
         </div>

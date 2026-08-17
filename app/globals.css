@@ -876,13 +876,13 @@ a {
 
 .footer-landscape {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 1;
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
   pointer-events: none;
   user-select: none;
 }
@@ -1048,10 +1048,9 @@ a {
   }
 
   .footer-landscape {
-    width: 1200px;
+    width: 100%;
     max-width: none;
-    left: 50%;
-    translate: -50% 0;
+    object-position: center bottom;
   }
 }
 
@@ -1219,9 +1218,6 @@ a {
     font-size: 13px;
   }
 
-  .footer-landscape {
-    width: 980px;
-  }
 }
 
 @media (max-width: 360px) {

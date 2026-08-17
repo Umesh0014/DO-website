@@ -278,20 +278,20 @@ export default function Home() {
                 </p>
 
                 <div className="features-seven-benefits">
-                  <div className="features-seven-benefit">
+                  <div className="features-seven-benefit" data-icon="↗">
                     <h4>Service demand, at the root</h4>
                     <p>
                       Reveals what drives contacts, repeats, and customer effort.
                     </p>
                   </div>
-                  <div className="features-seven-benefit">
+                  <div className="features-seven-benefit" data-icon="≋">
                     <h4>Nothing hides in the average</h4>
                     <p>
                       Spots small drift early across queues, markets, and
                       channels.
                     </p>
                   </div>
-                  <div className="features-seven-benefit">
+                  <div className="features-seven-benefit" data-icon="A">
                     <h4>Every language, one standard</h4>
                     <p>
                       Unifies 80+ languages into one standard while preserving
@@ -320,21 +320,21 @@ export default function Home() {
                 </p>
 
                 <div className="features-seven-benefits">
-                  <div className="features-seven-benefit">
+                  <div className="features-seven-benefit" data-icon="!">
                     <h4>Know which failures you own</h4>
                     <p>
                       Separates advisor-fixable issues from business defects,
                       turning one into coaching and the other into action.
                     </p>
                   </div>
-                  <div className="features-seven-benefit">
+                  <div className="features-seven-benefit" data-icon="⌁">
                     <h4>Watch the moment it turns</h4>
                     <p>
                       Tracks sentiment from entry to exit, pinpointing where the
                       customer&apos;s mood changed.
                     </p>
                   </div>
-                  <div className="features-seven-benefit">
+                  <div className="features-seven-benefit" data-icon="◫">
                     <h4>From anecdote to business case</h4>
                     <p>
                       Turns frustration into evidence: volume, severity, and
@@ -363,21 +363,21 @@ export default function Home() {
                 </p>
 
                 <div className="features-seven-benefits">
-                  <div className="features-seven-benefit">
+                  <div className="features-seven-benefit" data-icon="✓">
                     <h4>True resolution, per issue</h4>
                     <p>
                       Tracks each issue to its true outcome, separate from what
                       the advisor declared.
                     </p>
                   </div>
-                  <div className="features-seven-benefit">
+                  <div className="features-seven-benefit" data-icon="↻">
                     <h4>Repeat contact risk</h4>
                     <p>
                       Flags unfinished issues early to predict and prevent
                       repeat contacts.
                     </p>
                   </div>
-                  <div className="features-seven-benefit">
+                  <div className="features-seven-benefit" data-icon="→">
                     <h4>Next best intervention</h4>
                     <p>
                       Recommends the next best follow-up for unresolved issues,

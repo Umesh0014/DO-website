@@ -139,18 +139,6 @@ a {
   padding-top: 84px;
 }
 
-.hero::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 90;
-  height: clamp(64px, 9vw, 128px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0), #fff 100%);
-  content: "";
-  pointer-events: none;
-}
-
 .hero-wash {
   position: absolute;
   inset: 0;

@@ -367,33 +367,20 @@ a {
   align-items: start;
   column-gap: 14px;
   row-gap: 0;
-  grid-template-columns: 40px minmax(0, 1fr);
+  grid-template-columns: 24px minmax(0, 1fr);
   padding: 10px 0;
 }
 
 .features-seven-benefit::before {
-  display: grid;
-  width: 40px;
-  height: 40px;
-  place-items: center;
+  display: block;
   grid-row: 1 / span 2;
-  border-radius: 11px;
-  background: #e8f0ff;
-  color: #0e57de;
+  padding-top: 1px;
+  color: #666;
   content: attr(data-icon);
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
-}
-
-.features-seven-row:nth-child(2) .features-seven-benefit::before {
-  background: #fff0ed;
-  color: #d34d3e;
-}
-
-.features-seven-row:nth-child(3) .features-seven-benefit::before {
-  background: #e8f7f1;
-  color: #13815b;
+  text-align: center;
 }
 
 .features-seven-benefit h4 {

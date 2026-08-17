@@ -241,8 +241,8 @@ export default function Home() {
           <div className="product-glow" aria-hidden="true" />
           <img
             className="product-image"
-            src="/questly-product-light.png"
-            alt="Questly Collection Insights dashboard in a light theme"
+            src="/questly-product-dark.png"
+            alt="Questly Collection Insights dashboard in a dark theme"
           />
         </div>
 

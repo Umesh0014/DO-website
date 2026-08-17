@@ -579,7 +579,7 @@ a {
   overflow: hidden;
   margin-inline: auto;
   border-radius: var(--faq-radius);
-  background: #001428;
+  background: #1b1b1b;
   color: #fff;
 }
 
@@ -643,7 +643,7 @@ a {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: #0d345b;
+  background: #353535;
   transition:
     background-color 180ms ease,
     transform 180ms ease;

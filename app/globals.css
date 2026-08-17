@@ -404,9 +404,9 @@ a {
   position: relative;
   min-height: 540px;
   overflow: hidden;
-  border: 1px solid #e1e1dd;
+  border: 1px solid #3a3a3a;
   border-radius: 28px;
-  background: #f4f4f1;
+  background: #242424;
 }
 
 .standard-section {

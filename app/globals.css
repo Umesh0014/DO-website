@@ -694,8 +694,8 @@ a {
   min-height: 920px;
   overflow: hidden;
   padding: 96px clamp(32px, 6.95vw, 100px) 390px;
-  background: #f5f5f1;
-  color: #202020;
+  background: #efefeb;
+  color: #171813;
 }
 
 .footer-inner {
@@ -721,7 +721,7 @@ a {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #111;
+  color: #11120e;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.025em;
@@ -753,7 +753,7 @@ a {
 
 .footer-message h2 {
   margin: 0;
-  color: #202020;
+  color: #171813;
   font-size: clamp(27px, 2.3vw, 34px);
   font-weight: 600;
   letter-spacing: -0.04em;
@@ -763,7 +763,7 @@ a {
 
 .footer-message p {
   margin: 0;
-  color: #62625f;
+  color: #66675e;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
@@ -815,7 +815,7 @@ a {
 
 .footer-group h3 {
   margin: 0 0 18px;
-  color: #171717;
+  color: #171813;
   font-size: 15px;
   font-weight: 600;
   line-height: 1.3;
@@ -832,7 +832,7 @@ a {
 
 .footer-group li,
 .footer-group a {
-  color: #202020;
+  color: #272820;
   font-size: 13px;
   font-weight: 400;
   line-height: 1.4;
@@ -843,7 +843,7 @@ a {
 }
 
 .footer-group a:hover {
-  color: #0e57de;
+  color: #68704e;
 }
 
 .footer-group a:focus-visible {
@@ -854,7 +854,7 @@ a {
 
 .footer-copyright {
   margin: 4px 0 0;
-  color: #777772;
+  color: #77786e;
   font-size: 13px;
   line-height: 1.4;
 }
@@ -862,11 +862,11 @@ a {
 .footer-wordmark {
   position: absolute;
   right: 0;
-  bottom: -0.13em;
+  bottom: -0.12em;
   left: 0;
   z-index: 2;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(154px, 21vw, 320px);
+  color: rgba(248, 248, 242, 0.94);
+  font-size: clamp(220px, 28vw, 430px);
   font-weight: 500;
   letter-spacing: -0.085em;
   line-height: 0.8;

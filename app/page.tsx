@@ -549,7 +549,7 @@ export default function Home() {
 
         <img
           className="footer-landscape"
-          src="/footer-landscape.svg"
+          src="/footer-landscape-warm.png"
           alt=""
           aria-hidden="true"
         />

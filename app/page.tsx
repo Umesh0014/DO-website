@@ -491,7 +491,14 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="footer-inner">
-          <div className="footer-cta-block">
+          <div className="footer-brand-column">
+            <div className="footer-brand-lockup">
+              <span className="footer-brand-icon" aria-hidden="true">
+                <BrandMark />
+              </span>
+              <span>dataOrb</span>
+            </div>
+
             <div className="footer-message">
               <h2>See what your last 1,000 conversations are telling you.</h2>
               <p>
@@ -504,26 +511,40 @@ export default function Home() {
               <span>Book a demo</span>
               <ArrowIcon />
             </a>
+
+            <p className="footer-copyright">
+              © 2026 dataOrb. All rights reserved.
+            </p>
           </div>
 
           <nav className="footer-nav" aria-label="Footer navigation">
-            {footerGroups.map((group) => (
-              <div className="footer-group" key={group.title}>
-                <h3>{group.title}</h3>
-                <ul>
-                  {group.links.map((link) => (
-                    <li key={link}>
-                      {link === "© DataOrb" ? (
-                        <span>{link}</span>
-                      ) : (
-                        <a href="#top">{link}</a>
-                      )}
-                    </li>
+            {[footerGroups.slice(0, 2), footerGroups.slice(2, 4), footerGroups.slice(4)].map(
+              (column, columnIndex) => (
+                <div className="footer-nav-column" key={columnIndex}>
+                  {column.map((group) => (
+                    <div className="footer-group" key={group.title}>
+                      <h3>{group.title}</h3>
+                      <ul>
+                        {group.links.map((link) => (
+                          <li key={link}>
+                            {link === "© DataOrb" ? (
+                              <span>{link}</span>
+                            ) : (
+                              <a href="#top">{link}</a>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
-              </div>
-            ))}
+                </div>
+              )
+            )}
           </nav>
+        </div>
+
+        <div className="footer-wordmark" aria-hidden="true">
+          dataOrb
         </div>
 
         <img

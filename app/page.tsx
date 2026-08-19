@@ -254,138 +254,176 @@ export default function Home() {
         />
       </section>
 
+      <section className="standard-section" aria-labelledby="standard-heading">
+        <div className="standard-inner">
+          <div className="standard-top">
+            <div className="standard-visual">
+              <img
+                src="/standard-channel-graphic.svg"
+                alt="Customer effort and drift detection analytics cards"
+              />
+            </div>
+
+            <div className="standard-copy">
+              <span className="standard-eyebrow">See</span>
+              <h2 id="standard-heading">One standard. Every channel.</h2>
+              <p>
+                DataOrb unifies every channel into one structured view,
+                revealing demand, repeat contacts, risk, and customer effort.
+              </p>
+            </div>
+          </div>
+
+          <div className="standard-features">
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Service demand, at the root</h3>
+                <p>
+                  Reveals what drives contacts, repeats, and customer effort.
+                </p>
+              </div>
+            </article>
+
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Nothing hides in the average</h3>
+                <p>
+                  Spots small drift early across queues, markets, and channels.
+                </p>
+              </div>
+            </article>
+
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Every language, one standard</h3>
+                <p>
+                  Unifies 80+ languages into one standard while preserving every
+                  customer&apos;s original voice.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section
-        className="features-seven-section"
-        aria-label="Service intelligence features"
+        className="standard-section diagnose-section"
+        aria-labelledby="diagnose-heading"
       >
-        <div className="features-seven-inner">
-          <div className="features-seven-list">
-            <article className="features-seven-row">
-              <div className="features-seven-copy">
-                <div className="features-seven-meta">
-                  <span className="features-seven-index">01</span>
-                  <span className="standard-eyebrow">See</span>
-                </div>
-                <h3>One standard. Every channel.</h3>
-                <p>
-                  DataOrb unifies every channel into one structured view,
-                  revealing demand, repeat contacts, risk, and customer effort.
-                </p>
+        <div className="standard-inner">
+          <div className="standard-top diagnose-top">
+            <div className="standard-copy diagnose-copy">
+              <span className="standard-eyebrow">Diagnose</span>
+              <h2 id="diagnose-heading">Diagnose the pain, fix the cause.</h2>
+              <p>
+                Separates why customers contact you from the friction they face,
+                identifying the driver, severity, and exact evidence.
+              </p>
+            </div>
 
-                <div className="features-seven-benefits">
-                  <div className="features-seven-benefit" data-icon="↗">
-                    <h4>Service demand, at the root</h4>
-                    <p>
-                      Reveals what drives contacts, repeats, and customer effort.
-                    </p>
-                  </div>
-                  <div className="features-seven-benefit" data-icon="≋">
-                    <h4>Nothing hides in the average</h4>
-                    <p>
-                      Spots small drift early across queues, markets, and
-                      channels.
-                    </p>
-                  </div>
-                  <div className="features-seven-benefit" data-icon="A">
-                    <h4>Every language, one standard</h4>
-                    <p>
-                      Unifies 80+ languages into one standard while preserving
-                      every customer&apos;s original voice.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="features-seven-media"
-                data-graphic="see"
-                aria-hidden="true"
+            <div className="standard-visual diagnose-visual">
+              <img
+                src="/diagnose-graphic.svg"
+                alt="Trajectory deterioration and defect ticket analytics cards"
               />
+            </div>
+          </div>
+
+          <div className="standard-features">
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Know which failures you own</h3>
+                <p>
+                  Separates advisor-fixable issues from business defects turning
+                  one into coaching &amp; the other into action.
+                </p>
+              </div>
             </article>
 
-            <article className="features-seven-row features-seven-row-reverse">
-              <div className="features-seven-copy">
-                <div className="features-seven-meta">
-                  <span className="features-seven-index">02</span>
-                  <span className="standard-eyebrow">Diagnose</span>
-                </div>
-                <h3>Diagnose the pain, fix the cause.</h3>
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Watch the moment it turns</h3>
                 <p>
-                  Separates why customers contact you from the friction they
-                  face, identifying the driver, severity, and exact evidence.
+                  Tracks sentiment from entry to exit, pinpointing where the
+                  customer&apos;s mood changed.
                 </p>
-
-                <div className="features-seven-benefits">
-                  <div className="features-seven-benefit" data-icon="!">
-                    <h4>Know which failures you own</h4>
-                    <p>
-                      Separates advisor-fixable issues from business defects,
-                      turning one into coaching and the other into action.
-                    </p>
-                  </div>
-                  <div className="features-seven-benefit" data-icon="⌁">
-                    <h4>Watch the moment it turns</h4>
-                    <p>
-                      Tracks sentiment from entry to exit, pinpointing where the
-                      customer&apos;s mood changed.
-                    </p>
-                  </div>
-                  <div className="features-seven-benefit" data-icon="◫">
-                    <h4>From anecdote to business case</h4>
-                    <p>
-                      Turns frustration into evidence: volume, severity, and
-                      relationship impact that can drive action.
-                    </p>
-                  </div>
-                </div>
               </div>
-              <div
-                className="features-seven-media"
-                data-graphic="diagnose"
-                aria-hidden="true"
-              />
             </article>
 
-            <article className="features-seven-row">
-              <div className="features-seven-copy">
-                <div className="features-seven-meta">
-                  <span className="features-seven-index">03</span>
-                  <span className="standard-eyebrow">Resolve</span>
-                </div>
-                <h3>Resolve more, repeat less.</h3>
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>From anecdote to business case</h3>
                 <p>
-                  Measures what was actually resolved, issue by issue, and what
-                  still blocks resolution.
+                  Turns frustration into evidence: volume, severity, and
+                  relationship impact that can drive action.
                 </p>
-
-                <div className="features-seven-benefits">
-                  <div className="features-seven-benefit" data-icon="✓">
-                    <h4>True resolution, per issue</h4>
-                    <p>
-                      Tracks each issue to its true outcome, separate from what
-                      the advisor declared.
-                    </p>
-                  </div>
-                  <div className="features-seven-benefit" data-icon="↻">
-                    <h4>Repeat contact risk</h4>
-                    <p>
-                      Flags unfinished issues early to predict and prevent
-                      repeat contacts.
-                    </p>
-                  </div>
-                  <div className="features-seven-benefit" data-icon="→">
-                    <h4>Next best intervention</h4>
-                    <p>
-                      Recommends the next best follow-up for unresolved issues,
-                      with a person confirming the action.
-                    </p>
-                  </div>
-                </div>
               </div>
-              <div
-                className="features-seven-media"
-                data-graphic="resolve"
-                aria-hidden="true"
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="standard-section resolve-section"
+        aria-labelledby="resolve-heading"
+      >
+        <div className="standard-inner">
+          <div className="standard-top resolve-top">
+            <div className="standard-visual resolve-visual">
+              <img
+                src="/resolve-graphic.svg"
+                alt="Recommended intervention and repeat-contact prevention cards"
               />
+            </div>
+
+            <div className="standard-copy resolve-copy">
+              <span className="standard-eyebrow">Resolve</span>
+              <h2 id="resolve-heading">Resolve more, repeat less.</h2>
+              <p>
+                Measures what was actually resolved, issue by issue, and what
+                still blocks resolution.
+              </p>
+            </div>
+          </div>
+
+          <div className="standard-features">
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>True resolution, per issue</h3>
+                <p>
+                  Tracks each issue to its true outcome, separate from what the
+                  advisor declared.
+                </p>
+              </div>
+            </article>
+
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Repeat contact risk</h3>
+                <p>
+                  Flags unfinished issues early to predict and prevent repeat
+                  contacts.
+                </p>
+              </div>
+            </article>
+
+            <article className="standard-feature">
+              <TrendIcon />
+              <div>
+                <h3>Next best intervention</h3>
+                <p>
+                  Recommends the next best follow-up for unresolved issues, with
+                  a person confirming the action.
+                </p>
+              </div>
             </article>
           </div>
         </div>

@@ -576,15 +576,13 @@ export default function Home() {
                             {link === "© DataOrb" ? (
                               <span>{link}</span>
                             ) : (
-                              <Link
-                                href={
-                                  link === "Collection Intelligence"
-                                    ? "/collection-intelligence"
-                                    : "/#top"
-                                }
-                              >
-                                {link}
-                              </Link>
+                              link === "Collection Intelligence" ? (
+                                <a href="https://questly-evidence-hero.umesh0014.chatgpt.site/collection-intelligence">
+                                  {link}
+                                </a>
+                              ) : (
+                                <Link href="/#top">{link}</Link>
+                              )
                             )}
                           </li>
                         ))}

@@ -99,8 +99,9 @@ function Header() {
   return (
     <header className="site-header">
       <nav className="header-inner" aria-label="Primary navigation">
-        <a className="logo-link" href="#top" aria-label="Questly home">
+        <a className="logo-link" href="#top" aria-label="dataOrb home">
           <BrandMark />
+          <span className="brand-wordmark">dataOrb</span>
         </a>
         <a className="header-cta" href="#demo">
           <span>Book a demo</span>
@@ -224,7 +225,7 @@ export default function Home() {
           </p>
 
           <div className="hero-actions" id="demo">
-            <a className="button button-primary" href="mailto:hello@questly.ai">
+            <a className="button button-primary" href="mailto:hello@dataorb.ai">
               <span>Book a demo</span>
               <ArrowIcon />
             </a>
@@ -241,8 +242,8 @@ export default function Home() {
           <div className="product-glow" aria-hidden="true" />
           <img
             className="product-image"
-            src="/questly-product-dark.png"
-            alt="Questly Collection Insights dashboard in a dark theme"
+            src="/dataorb-product-dark.png"
+            alt="dataOrb Collection Insights dashboard in a dark theme"
           />
         </div>
 
@@ -545,7 +546,7 @@ export default function Home() {
               </p>
             </div>
 
-            <a className="footer-cta" href="mailto:hello@questly.ai">
+            <a className="footer-cta" href="mailto:hello@dataorb.ai">
               <span>Book a demo</span>
               <ArrowIcon />
             </a>

@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const ogImage = `${protocol}://${host}/og.png`;
 
   return {
-    title: "Questly — Stop guessing what happened",
+    title: "dataOrb — Stop guessing what happened",
     description:
       "Every interaction, evidence-linked: what happened, customer impact, and what’s next.",
     icons: {
@@ -22,13 +22,13 @@ export async function generateMetadata(): Promise<Metadata> {
       shortcut: "/favicon.svg",
     },
     openGraph: {
-      title: "Questly — Stop guessing what happened",
+      title: "dataOrb — Stop guessing what happened",
       description: "Every interaction, evidence-linked.",
       images: [{ url: ogImage, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Questly — Stop guessing what happened",
+      title: "dataOrb — Stop guessing what happened",
       description: "Every interaction, evidence-linked.",
       images: [ogImage],
     },

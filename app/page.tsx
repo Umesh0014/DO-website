@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const heroBackground =
   "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260611_133301_d5f2a94a-b22e-4e4a-a6b6-eacdddf1f5b0.png&w=1280&q=85";
@@ -113,6 +115,11 @@ function Header() {
 }
 
 export default function Home() {
+  const pathname = usePathname();
+  const intelligenceName =
+    pathname === "/collection-intelligence"
+      ? "Collection Intelligence"
+      : "Service Intelligence";
   const heroRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -454,7 +461,7 @@ export default function Home() {
               <div className="faq-answer">
                 <p>
                   Speech analytics tells you which words appeared and how often.
-                  Service Intelligence tells you what happened: whether the
+                  {intelligenceName} tells you what happened: whether the
                   issue was resolved, what it cost the customer in effort, where
                   the conversation turned, and who owns the failure. Topics are
                   an index. This is a record.
@@ -497,7 +504,7 @@ export default function Home() {
               <div className="faq-answer">
                 <p>
                   No. CSAT remains a useful signal from customers who respond.
-                  Service Intelligence complements it with evidence from every
+                  {intelligenceName} complements it with evidence from every
                   interaction, including the customers who never complete a
                   survey.
                 </p>
@@ -569,7 +576,15 @@ export default function Home() {
                             {link === "© DataOrb" ? (
                               <span>{link}</span>
                             ) : (
-                              <a href="#top">{link}</a>
+                              <Link
+                                href={
+                                  link === "Collection Intelligence"
+                                    ? "/collection-intelligence"
+                                    : "/#top"
+                                }
+                              >
+                                {link}
+                              </Link>
                             )}
                           </li>
                         ))}

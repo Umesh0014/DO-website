@@ -1,7 +1,6 @@
 import { MoveUpRight } from "lucide-react"
 
 import { Badge } from "./badge"
-import { RadialBackground } from "./light-theme-tailwind-css-background-snippet"
 
 type Metric = {
   annotation: string
@@ -93,8 +92,6 @@ const caseStudies: CaseStudy[] = [
 function Stats() {
   return (
     <div className="relative isolate my-[120px] overflow-hidden text-[#171717]">
-      <RadialBackground />
-
       {caseStudies.map((caseStudy, caseStudyIndex) => (
         <section
           className={`relative z-10 w-full py-24 lg:py-32${caseStudyIndex > 0 ? " border-t border-black/[0.08]" : ""}`}

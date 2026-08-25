@@ -930,6 +930,10 @@ a {
   background: var(--page-bg);
 }
 
+.faq-section--proof-bg {
+  background: transparent;
+}
+
 .faq-panel {
   display: flex;
   width: min(var(--faq-panel-width), 100%);

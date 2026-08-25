@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { Stats } from "../../components/ui/stats-section-with-text";
+import { RadialBackground } from "../../components/ui/light-theme-tailwind-css-background-snippet";
 
 const heroBackground =
   "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260611_133301_d5f2a94a-b22e-4e4a-a6b6-eacdddf1f5b0.png&w=1280&q=85";
@@ -591,9 +592,21 @@ export default function IntelligenceLandingPage({
         </>
       )}
 
-      {activePage === "revenue" ? <Stats /> : null}
+      <div
+        className={
+          activePage === "revenue"
+            ? "proof-faq-background relative isolate overflow-hidden"
+            : undefined
+        }
+      >
+        {activePage === "revenue" ? <RadialBackground /> : null}
+        {activePage === "revenue" ? <Stats /> : null}
 
-      <section ref={faqRef} className="faq-section" aria-labelledby="faq-heading">
+      <section
+        ref={faqRef}
+        className={`faq-section${activePage === "revenue" ? " faq-section--proof-bg" : ""}`}
+        aria-labelledby="faq-heading"
+      >
         <div className="faq-panel">
           <div className="faq-content">
             <h2 id="faq-heading">
@@ -690,6 +703,7 @@ export default function IntelligenceLandingPage({
           </div>
         </div>
       </section>
+      </div>
 
       <footer className="site-footer">
         <div className="footer-inner">

@@ -1,7 +1,7 @@
 import { MoveUpRight } from "lucide-react"
 
 import { Badge } from "./badge"
-import { GradientBackground } from "./noisy-gradient-backgrounds"
+import { RadialBackground } from "./light-theme-tailwind-css-background-snippet"
 
 type Metric = {
   annotation: string
@@ -92,24 +92,8 @@ const caseStudies: CaseStudy[] = [
 
 function Stats() {
   return (
-    <div className="relative isolate my-[120px] overflow-hidden bg-white text-[#171717]">
-      <GradientBackground
-        className="z-0"
-        noisePatternAlpha={18}
-        noisePatternRefreshInterval={0}
-      />
-      <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-white/35"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 z-[2] h-64 bg-gradient-to-b from-white via-white/80 to-transparent"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-40 bg-gradient-to-t from-white to-transparent"
-        aria-hidden="true"
-      />
+    <div className="relative isolate my-[120px] overflow-hidden text-[#171717]">
+      <RadialBackground />
 
       {caseStudies.map((caseStudy, caseStudyIndex) => (
         <section

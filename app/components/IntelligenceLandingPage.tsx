@@ -247,13 +247,17 @@ const primaryNavigation = [
     ],
   },
   { label: "Resources", href: "/resources" },
-  ...[footerGroups[4]].map((group) => ({
-    label: group.title,
-    items: group.links.map((link) => ({
-      label: link,
-      href: getFooterLinkHref(link),
-    })),
-  })),
+  {
+    label: "Company",
+    layout: "single-column" as const,
+    items: [
+      { label: "About", href: "/company/about" },
+      { label: "Careers", href: "/company/careers" },
+      { label: "Contact", href: "/company/contact" },
+      { label: "Security", href: "/trust/security" },
+      { label: "Responsible AI and AAPES", href: "/trust/responsible-ai" },
+    ],
+  },
 ];
 
 function BrandMark() {

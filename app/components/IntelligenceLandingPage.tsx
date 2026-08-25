@@ -147,24 +147,23 @@ const collectionSections: IntelligenceSection[] = [
     ],
   },
   {
-    eyebrow: "See",
-    heading: "Every outcome, recorded.",
-    body: "Track commitments, disputes, vulnerability, outcomes, and open actions across teams and partners.",
+    eyebrow: "Protect",
+    heading: "Compliance you can prove.",
+    body: "Collection is one of the most regulated conversations in financial services, and a sampled QA program leaves most of it unwitnessed. DataOrb monitors every call against your compliance scorecard, across EU and US programs, and cites the exact moment anything goes wrong.",
     features: [
       {
-        title: "Reasons for non-payment, named",
-        body: "DataOrb separates affordability, disputes, service failures, and avoidance so your teams know what is preventing payment and which response is most likely to work.",
+        title: "The disclosures, verified",
+        body: "Identity confirmed, reason for the call stated, required notifications given, payment details and amounts checked, the outcome reformulated. DataOrb verifies the mandatory steps on every call and flags the one that was skipped, with the moment cited.",
       },
       {
-        title: "Advisor problem or process problem",
-        body: "When recovery drops, DataOrb distinguishes conversation quality from broken journeys, policies, and handoffs. One points to coaching; the other points to operational change.",
+        title: "The lines never to cross",
+        body: "DataOrb flags prohibited language, harassment risk, and pressure where restraint is required. A violation surfaces the day it happens, while it is still a coaching matter.",
       },
       {
-        title: "Campaign performance, end to end",
-        body: "See right-party contact, promises made, promises kept, disputes raised, and recovery outcomes for every campaign, team, and partner before the month-end report arrives.",
+        title: "Vulnerability, detected",
+        body: "When a customer signals hardship or vulnerability, DataOrb flags the account, so it gets the treatment your policy and the regulator require. Customer treatment stops depending on which calls QA happened to pull.",
       },
     ],
-    note: "All of this arrives as structured, trended data, queryable through Ask Mira on the Insights page. Ask why kept-promise rates changed and get a cited answer.",
   },
   {
     eyebrow: "Prepare",

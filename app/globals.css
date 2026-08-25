@@ -31,6 +31,239 @@ a {
   text-decoration: none;
 }
 
+.collection-page {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f3f0e8;
+}
+
+.collection-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 20;
+  height: 84px;
+  border-bottom: 1px solid rgba(17, 18, 20, 0.1);
+}
+
+.collection-nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 6.6vw, 95px);
+}
+
+.collection-hero {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  align-items: center;
+  gap: clamp(40px, 5vw, 80px);
+  grid-template-columns: minmax(300px, 0.86fr) minmax(480px, 1.14fr);
+  padding: 150px clamp(24px, 6.6vw, 95px) 80px;
+  isolation: isolate;
+}
+
+.collection-hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.collection-kicker {
+  margin: 0 0 24px;
+  color: #6a6d62;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.collection-hero h1 {
+  margin: 0;
+  color: #111214;
+  font-size: clamp(52px, 5.8vw, 86px);
+  font-weight: 400;
+  letter-spacing: -0.057em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.collection-intro {
+  max-width: 580px;
+  margin: 28px 0 0;
+  color: #545851;
+  font-size: clamp(17px, 1.35vw, 20px);
+  line-height: 1.55;
+}
+
+.collection-actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-top: 34px;
+}
+
+.collection-text-link {
+  border-bottom: 1px solid currentColor;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.collection-product {
+  position: relative;
+  z-index: 2;
+  width: min(820px, 58vw);
+  transform: perspective(1600px) rotateY(-7deg) rotateX(2deg);
+  transform-origin: center left;
+}
+
+.collection-product img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  box-shadow: 0 42px 100px rgba(46, 45, 38, 0.25);
+}
+
+.collection-product-glow {
+  position: absolute;
+  inset: 8% -8% -8% 8%;
+  z-index: -1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  filter: blur(54px);
+}
+
+.collection-orb {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.collection-orb-one {
+  top: -18vw;
+  right: -8vw;
+  width: 54vw;
+  height: 54vw;
+  background: rgba(194, 216, 203, 0.58);
+}
+
+.collection-orb-two {
+  bottom: -24vw;
+  left: -18vw;
+  width: 48vw;
+  height: 48vw;
+  background: rgba(224, 203, 160, 0.38);
+}
+
+.collection-outcomes {
+  padding: clamp(100px, 11vw, 160px) clamp(24px, 6.6vw, 95px);
+  background: #151713;
+  color: #f6f4ed;
+}
+
+.collection-outcomes-heading {
+  display: grid;
+  align-items: start;
+  gap: 30px;
+  grid-template-columns: 0.65fr 1.35fr;
+}
+
+.collection-outcomes-heading .collection-kicker {
+  color: #969b8e;
+}
+
+.collection-outcomes h2 {
+  max-width: 800px;
+  margin: 0;
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+}
+
+.collection-outcome-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: clamp(70px, 8vw, 110px);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.collection-outcome-card {
+  min-height: 330px;
+  padding: 36px;
+  background: #151713;
+}
+
+.collection-outcome-card > span {
+  color: #8f9588;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.collection-outcome-card h3 {
+  margin: 100px 0 16px;
+  font-size: clamp(25px, 2vw, 32px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.collection-outcome-card p {
+  max-width: 340px;
+  margin: 0;
+  color: #afb3aa;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .collection-hero {
+    grid-template-columns: 1fr;
+    padding-top: 140px;
+  }
+
+  .collection-product {
+    width: 100%;
+    transform: none;
+  }
+
+  .collection-outcomes-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-outcome-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .collection-header .header-cta {
+    width: auto;
+  }
+
+  .collection-header .header-cta .arrow-icon {
+    display: none;
+  }
+
+  .collection-hero h1 {
+    font-size: clamp(46px, 14vw, 64px);
+  }
+
+  .collection-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .collection-outcome-card {
+    min-height: 280px;
+    padding: 28px 0;
+  }
+}
+
 .site-header {
   position: fixed;
   top: 0;

@@ -47,7 +47,7 @@ const footerGroups = [
   },
 ];
 
-type IntelligencePage = "service" | "revenue";
+type IntelligencePage = "collection" | "revenue" | "service";
 
 type IntelligenceLandingPageProps = {
   activePage: IntelligencePage;
@@ -59,6 +59,7 @@ type IntelligenceLandingPageProps = {
 function getFooterLinkHref(link: string) {
   if (link === "Service Intelligence") return "/";
   if (link === "Revenue Intelligence") return "/revenue-intelligence";
+  if (link === "Collection Intelligence") return "/collection-intelligence";
   return "#top";
 }
 
@@ -133,6 +134,12 @@ export default function IntelligenceLandingPage({
   heroEyebrow,
   heroHeading,
 }: IntelligenceLandingPageProps) {
+  const intelligenceName =
+    activePage === "collection"
+      ? "Collection Intelligence"
+      : activePage === "revenue"
+        ? "Revenue Intelligence"
+        : "Service Intelligence";
   const heroRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -474,7 +481,7 @@ export default function IntelligenceLandingPage({
               <div className="faq-answer">
                 <p>
                   Speech analytics tells you which words appeared and how often.
-                  Service Intelligence tells you what happened: whether the
+                  {intelligenceName} tells you what happened: whether the
                   issue was resolved, what it cost the customer in effort, where
                   the conversation turned, and who owns the failure. Topics are
                   an index. This is a record.
@@ -517,7 +524,7 @@ export default function IntelligenceLandingPage({
               <div className="faq-answer">
                 <p>
                   No. CSAT remains a useful signal from customers who respond.
-                  Service Intelligence complements it with evidence from every
+                  {intelligenceName} complements it with evidence from every
                   interaction, including the customers who never complete a
                   survey.
                 </p>
@@ -595,7 +602,9 @@ export default function IntelligenceLandingPage({
                                   (activePage === "service" &&
                                     link === "Service Intelligence") ||
                                   (activePage === "revenue" &&
-                                    link === "Revenue Intelligence")
+                                    link === "Revenue Intelligence") ||
+                                  (activePage === "collection" &&
+                                    link === "Collection Intelligence")
                                     ? "page"
                                     : undefined
                                 }

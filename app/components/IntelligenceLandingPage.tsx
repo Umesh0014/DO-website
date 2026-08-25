@@ -840,14 +840,14 @@ export default function IntelligenceLandingPage({
                 {activePage === "revenue"
                   ? "See the revenue sitting in last month's calls."
                   : activePage === "collection"
-                    ? "See what your last 1,000 collection conversations can recover."
+                    ? "See what last month's campaigns left on the table."
                     : "See what your last 1,000 conversations are telling you."}
               </h2>
               <p>
                 {activePage === "revenue"
                   ? "Bring a sample of your own sales conversations. We will decode them and show you how many carried a buying signal that was never pitched, which offers are converting, and where your next recovery campaign is hiding."
                   : activePage === "collection"
-                    ? "Bring a sample of your own collection conversations. We will reveal promises made, barriers to payment, treatment risks, and the next actions most likely to improve recovery."
+                    ? "Bring a batch of your own collection calls. We will decode them and show you your real promise-to-pay conversion, the objections costing you the most, and where your compliance coverage actually stands."
                     : "Bring your interactions. We'll reveal resolution rates, effort hotspots, and repeat-contact drivers."}
               </p>
             </div>

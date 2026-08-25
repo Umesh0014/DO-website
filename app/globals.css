@@ -420,6 +420,11 @@ a {
   padding: 16px;
 }
 
+.top-navigation-dropdown--single {
+  width: 340px;
+  grid-template-columns: 1fr;
+}
+
 .top-navigation-dropdown-group {
   min-width: 0;
   padding: 4px 16px;
@@ -1680,6 +1685,10 @@ a {
 
   .top-navigation-dropdown.top-navigation-dropdown--grouped {
     grid-template-columns: 1fr;
+  }
+
+  .top-navigation-dropdown.top-navigation-dropdown--single {
+    width: 100%;
   }
 
   .top-navigation-dropdown-group {

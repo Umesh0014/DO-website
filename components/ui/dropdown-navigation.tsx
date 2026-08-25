@@ -18,6 +18,7 @@ type NavigationItem = {
   groups?: NavigationGroup[];
   items?: NavigationSubItem[];
   label: string;
+  layout?: "single-column";
 };
 
 type DropdownNavigationProps = {
@@ -106,7 +107,7 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
               ) : (
                 <ul
                   aria-label={`${item.label} links`}
-                  className="top-navigation-dropdown"
+                  className={`top-navigation-dropdown${item.layout === "single-column" ? " top-navigation-dropdown--single" : ""}`}
                   role="menu"
                 >
                   {(item.items ?? []).map((subItem) => (

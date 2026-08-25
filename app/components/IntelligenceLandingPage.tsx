@@ -49,6 +49,78 @@ const footerGroups = [
 
 type IntelligencePage = "collection" | "revenue" | "service";
 
+type RevenueSection = {
+  body: string;
+  eyebrow: string;
+  features: Array<{
+    body: string;
+    title: string;
+  }>;
+  heading: string;
+  note?: string;
+};
+
+const revenueSections: RevenueSection[] = [
+  {
+    eyebrow: "Recover",
+    heading: "Find the sale that got away.",
+    body: "Most missed revenue is not a lost negotiation. It is a buying signal nobody answered, a maybe nobody followed up, a churn risk nobody saw. DataOrb pulls each one out of the conversation while it can still be recovered.",
+    features: [
+      {
+        title: "The lead nobody pitched",
+        body: "A customer calls about a bill and mentions a new phone, a second line, a competitor’s price. DataOrb flags every interaction where a buying signal appeared and no offer followed. The lead goes to recovery instead of the archive.",
+      },
+      {
+        title: "The customer still deciding",
+        body: "“Call me back next week.” “I need to talk it over at home.” Neither a yes nor a no. DataOrb reads the response, marks the opportunity as considering, and queues the follow-up with the context of the original call attached, while the interest is still warm.",
+      },
+      {
+        title: "The customer about to leave",
+        body: "Some conversations end with a sale missed. Others end with a customer halfway out the door. DataOrb flags high churn risk the moment the interaction closes, so your retention campaign reaches them before they act.",
+      },
+    ],
+  },
+  {
+    eyebrow: "See",
+    heading: "Every offer, on the record.",
+    body: "Your advisors make offers all day, across in-house teams and BPO partners. DataOrb tracks every offer: what was pitched, when in the call, proactive or reactive, retention or recovery, accepted, declined, or left open. Your sales operation stops being a number on a dashboard and becomes a record you can read, week over week, team by team.",
+    features: [
+      {
+        title: "Objections and competitors, named",
+        body: "DataOrb logs every objection raised, every competitor mentioned, and how the advisor handled each one. You learn which rival you actually lose to, and why, in the customer’s own words.",
+      },
+      {
+        title: "Training problem or process problem",
+        body: "When conversion drops, DataOrb separates how advisors sell from what they were given to sell with. One points to coaching. The other points to the offer, the pricing, or the playbook itself.",
+      },
+      {
+        title: "Telesales, funnel to outcome",
+        body: "For dedicated telesales programs, DataOrb tracks the funnel per campaign and per product: right-party contact, offers made, objections faced, win rate. You see where each program leaks before the month-end report does.",
+      },
+    ],
+    note: "All of this arrives as structured, trended data, queryable through Ask Mira on the Insights page. Ask why conversion dropped and get a cited answer.",
+  },
+  {
+    eyebrow: "Prepare",
+    heading: "Turn lost deals into training.",
+    body: "Anecdotal training builds advisors who are ready for the average call. DataOrb builds them for the calls your team actually loses.",
+    features: [
+      {
+        title: "A digital twin of the hard customer",
+        body: "DataOrb turns a real lost conversation into a practice persona, with the identity stripped and the objection intact. Advisors rehearse the exact scenario the team keeps losing, through AI roleplay, before it comes around again.",
+      },
+      {
+        title: "Sales QA on every call",
+        body: "DataOrb evaluates every sales conversation against your compliance rules and your best practices, not a sample. Supervisors spend their hours coaching, not listening back.",
+      },
+      {
+        title: "Coaching from their own calls",
+        body: "Each advisor’s record shows where they pitch, where they miss, and where they convert. You see who leads, who needs coaching, and who needs reskilling, and the coaching starts from their own calls, not a generic script.",
+      },
+    ],
+  },
+];
+
 type IntelligenceLandingPageProps = {
   activePage: IntelligencePage;
   heroBody: string;
@@ -125,6 +197,52 @@ function Header() {
         </a>
       </nav>
     </header>
+  );
+}
+
+function RevenueIntelligenceSections() {
+  return (
+    <>
+      {revenueSections.map((section, sectionIndex) => {
+        const isReverse = sectionIndex === 1;
+        const headingId = `revenue-${section.eyebrow.toLowerCase()}-heading`;
+
+        return (
+          <section
+            className={`standard-section revenue-section revenue-section-${sectionIndex + 1}`}
+            aria-labelledby={headingId}
+            key={section.eyebrow}
+          >
+            <div className="standard-inner">
+              <div className={`standard-top revenue-top${isReverse ? " revenue-top-reverse" : ""}`}>
+                <div className="standard-visual revenue-blank-visual" aria-hidden="true" />
+
+                <div className="standard-copy revenue-copy">
+                  <span className="standard-eyebrow">{section.eyebrow}</span>
+                  <h2 id={headingId}>{section.heading}</h2>
+                  <p>{section.body}</p>
+                  {section.note ? (
+                    <p className="revenue-insights-note">{section.note}</p>
+                  ) : null}
+                </div>
+              </div>
+
+              <div className="standard-features revenue-features">
+                {section.features.map((feature) => (
+                  <article className="standard-feature" key={feature.title}>
+                    <TrendIcon />
+                    <div>
+                      <h3>{feature.title}</h3>
+                      <p>{feature.body}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })}
+    </>
   );
 }
 
@@ -265,13 +383,20 @@ export default function IntelligenceLandingPage({
           </div>
         </div>
 
-        <div className="product-stage" id="product">
+        <div
+          className={`product-stage${activePage === "revenue" ? " product-stage-blank" : ""}`}
+          id="product"
+        >
           <div className="product-glow" aria-hidden="true" />
-          <img
-            className="product-image"
-            src="/dataorb-product-dark.png"
-            alt="dataOrb Collection Insights dashboard in a dark theme"
-          />
+          {activePage === "revenue" ? (
+            <div className="product-placeholder" aria-hidden="true" />
+          ) : (
+            <img
+              className="product-image"
+              src="/dataorb-product-dark.png"
+              alt="dataOrb Collection Insights dashboard in a dark theme"
+            />
+          )}
         </div>
 
         <img
@@ -282,6 +407,10 @@ export default function IntelligenceLandingPage({
         />
       </section>
 
+      {activePage === "revenue" ? (
+        <RevenueIntelligenceSections />
+      ) : (
+        <>
       <section className="standard-section" aria-labelledby="standard-heading">
         <div className="standard-inner">
           <div className="standard-top">
@@ -456,6 +585,9 @@ export default function IntelligenceLandingPage({
           </div>
         </div>
       </section>
+
+        </>
+      )}
 
       <section ref={faqRef} className="faq-section" aria-labelledby="faq-heading">
         <div className="faq-panel">

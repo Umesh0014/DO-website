@@ -518,6 +518,21 @@ a {
     0 12px 60px rgba(41, 49, 43, 0.16);
 }
 
+.product-stage-blank {
+  width: min(956px, 72vw);
+}
+
+.product-placeholder {
+  width: 100%;
+  aspect-ratio: 956 / 560;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px 18px 0 0;
+  background: #242424;
+  box-shadow:
+    0 -16px 55px rgba(50, 55, 48, 0.12),
+    0 18px 60px rgba(41, 49, 43, 0.18);
+}
+
 .grass {
   position: absolute;
   bottom: clamp(-70px, -3.5vw, -40px);
@@ -807,6 +822,66 @@ a {
 .resolve-visual img {
   width: min(659px, 110.75%);
   margin-left: -2%;
+}
+
+.revenue-section {
+  min-height: auto;
+  padding-block: clamp(96px, 8vw, 128px);
+}
+
+.revenue-section .standard-inner {
+  gap: clamp(64px, 6vw, 88px);
+}
+
+.revenue-top {
+  min-height: 430px;
+  grid-template-columns: minmax(0, 615px) minmax(360px, 492px);
+}
+
+.revenue-top-reverse {
+  grid-template-columns: minmax(360px, 492px) minmax(0, 615px);
+}
+
+.revenue-top-reverse .revenue-blank-visual {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.revenue-top-reverse .revenue-copy {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.revenue-blank-visual {
+  width: 100%;
+  min-height: 430px;
+  border: 1px solid #3a3a3a;
+  border-radius: 28px;
+  background: #242424;
+}
+
+.revenue-copy {
+  max-width: 500px;
+}
+
+.revenue-copy > p {
+  line-height: 1.5;
+}
+
+.revenue-insights-note {
+  padding-top: 4px;
+  color: #666 !important;
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+}
+
+.revenue-features .standard-feature {
+  min-height: 190px;
+}
+
+.revenue-features .standard-feature p {
+  color: #4b4b4b;
+  line-height: 1.55;
 }
 
 .faq-section {
@@ -1224,6 +1299,22 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .revenue-top,
+  .revenue-top-reverse {
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .revenue-top-reverse .revenue-blank-visual,
+  .revenue-top-reverse .revenue-copy {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .revenue-blank-visual {
+    min-height: 380px;
+  }
+
   .standard-visual {
     width: min(667px, 100%);
     margin-inline: auto;
@@ -1351,6 +1442,10 @@ a {
     margin-top: 48px;
   }
 
+  .product-stage-blank {
+    width: 92vw;
+  }
+
   .grass {
     bottom: -35px;
     width: 125%;
@@ -1402,6 +1497,19 @@ a {
   .standard-copy p {
     font-size: 16px;
     line-height: 1.45;
+  }
+
+  .revenue-section {
+    padding-block: 72px;
+  }
+
+  .revenue-blank-visual {
+    min-height: 260px;
+    border-radius: 22px;
+  }
+
+  .revenue-features .standard-feature {
+    min-height: 0;
   }
 
   .faq-section {

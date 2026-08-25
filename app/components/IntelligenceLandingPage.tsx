@@ -707,10 +707,15 @@ export default function IntelligenceLandingPage({
             </div>
 
             <div className="footer-message">
-              <h2>See what your last 1,000 conversations are telling you.</h2>
+              <h2>
+                {activePage === "revenue"
+                  ? "See the revenue sitting in last month's calls."
+                  : "See what your last 1,000 conversations are telling you."}
+              </h2>
               <p>
-                Bring your interactions. We&apos;ll reveal resolution rates,
-                effort hotspots, and repeat-contact drivers.
+                {activePage === "revenue"
+                  ? "Bring a sample of your own sales conversations. We will decode them and show you how many carried a buying signal that was never pitched, which offers are converting, and where your next recovery campaign is hiding."
+                  : "Bring your interactions. We'll reveal resolution rates, effort hotspots, and repeat-contact drivers."}
               </p>
             </div>
 

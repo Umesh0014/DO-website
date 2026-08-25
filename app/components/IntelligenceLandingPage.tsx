@@ -291,7 +291,7 @@ function IntelligenceSections({
 }) {
   return (
     <>
-      {revenueSections.map((section, sectionIndex) => {
+      {sections.map((section, sectionIndex) => {
         const isReverse = sectionIndex === 1;
         const headingId = `${page}-${section.eyebrow.toLowerCase()}-heading`;
 

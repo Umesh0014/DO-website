@@ -237,8 +237,16 @@ const primaryNavigation = [
       },
     ],
   },
+  {
+    label: "Industries",
+    layout: "single-column" as const,
+    items: [
+      { label: "Telecommunications", href: "/industries/telecommunications" },
+      { label: "Energy and utilities", href: "/industries/energy-utilities" },
+      { label: "Insurance", href: "/industries/insurance" },
+    ],
+  },
   ...[
-    { title: "Industries", links: ["Financial Services", "Telecommunications", "Insurance", "Energy & Utilities", "Healthcare"] },
     footerGroups[2],
     footerGroups[4],
   ].map((group) => ({

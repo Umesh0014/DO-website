@@ -92,9 +92,9 @@ const caseStudies: CaseStudy[] = [
 function Stats() {
   return (
     <div className="relative isolate my-[120px] overflow-hidden text-[#171717]">
-      {caseStudies.map((caseStudy, caseStudyIndex) => (
+      {caseStudies.map((caseStudy) => (
         <section
-          className={`relative z-10 w-full py-24 lg:py-32${caseStudyIndex > 0 ? " border-t border-black/[0.08]" : ""}`}
+          className="relative z-10 w-full py-24 lg:py-32"
           aria-labelledby={`${caseStudy.id}-stats-heading`}
           key={caseStudy.id}
         >

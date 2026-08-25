@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import { Feature135 } from "../../components/ui/feature135";
 import { Component as GradientBackground } from "../../components/ui/gradient-backgrounds";
 import { Stats } from "../../components/ui/stats-section-with-text";
 
@@ -652,6 +653,12 @@ export default function IntelligenceLandingPage({
       >
         {activePage === "revenue" ? <GradientBackground /> : null}
         {activePage === "revenue" ? <Stats /> : null}
+        {activePage === "revenue" ? (
+          <Feature135
+            heading="You hold the controls."
+            description="You choose which conversations DataOrb reads and who sees each advisor’s record. Every opportunity cites the exchange behind it, identities are stripped from digital twins, and a person confirms every recovery move."
+          />
+        ) : null}
 
       <section
         ref={faqRef}

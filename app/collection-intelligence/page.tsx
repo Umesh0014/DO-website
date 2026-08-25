@@ -27,7 +27,7 @@ export default function CollectionIntelligencePage() {
       activePage="collection"
       heroEyebrow="Collection Intelligence"
       heroHeading="Stop dialing in the dark."
-      heroBody="Every collections conversation contains a commitment, a barrier, or a signal that the next action should change. DataOrb analyzes every interaction to show what was promised, what is at risk, and what your team should do next."
+      heroBody="Collection is a negotiation over cash, run at massive volume, under heavy regulation. DataOrb reads 100% of your collection calls: every promise, every objection, every disclosure, every risk. The insight arrives the moment the call ends, while the account is still young. Every conversation, not a sample."
     />
   );
 }

@@ -129,20 +129,20 @@ const revenueSections: IntelligenceSection[] = [
 const collectionSections: IntelligenceSection[] = [
   {
     eyebrow: "Recover",
-    heading: "Recover more, earlier.",
-    body: "Find broken commitments, emerging hardship, and stalled accounts while there is still time to act.",
+    heading: "Find the lift in your funnel.",
+    body: "Recovery lives in margins. A point of right-party contact here, a point of promise-to-pay there, multiplied across millions of dials. DataOrb tracks every funnel KPI against the goal you set, from contactability and contact utility to dials per arrangement and recovery conversion, and shows you where the next point is hiding.",
     features: [
       {
-        title: "Every promise, captured",
-        body: "DataOrb records the amount, date, and conditions behind every promise to pay, then flags commitments that need attention before they quietly become another missed outcome.",
+        title: "Every outcome, on the record",
+        body: "DataOrb tracks every contact to its outcome: payment taken, promise made, rescheduled, refused, disputed, or wrong party. Your funnel, from dial to cash, becomes a record you can read and trend, campaign by campaign.",
       },
       {
-        title: "The right follow-up, at the right time",
-        body: "When a customer asks for a callback or needs time to arrange payment, DataOrb queues the next action with the original context attached so the conversation continues instead of starting over.",
+        title: "Objections, named and graded",
+        body: "Non-recognition of the debt, financial hardship, disputed services, timing, already paid, hard refusal. DataOrb names the objection on every call and grades how it was handled. You learn which objections cost you the most, and which rebuttals actually move them.",
       },
       {
-        title: "Hardship signals, surfaced early",
-        body: "Changes in language, affordability, and intent reveal when a standard collection path is no longer appropriate. Teams can intervene early with the right treatment and evidence.",
+        title: "Promises, tracked to the cash",
+        body: "A promise to pay is not a payment. DataOrb follows each promise through to resolution or refusal, so you see which arrangements hold, which collapse, and where to intervene before the money slips.",
       },
     ],
   },

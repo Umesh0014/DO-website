@@ -652,7 +652,7 @@ export default function IntelligenceLandingPage({
         }
       >
         {activePage === "revenue" ? (
-          <GradientBackground gradientTo="#c2d8cb" />
+          <GradientBackground gradientTo="#68704e" />
         ) : null}
         {activePage === "revenue" ? <Stats /> : null}
         {activePage === "revenue" ? (

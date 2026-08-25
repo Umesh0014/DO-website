@@ -246,10 +246,8 @@ const primaryNavigation = [
       { label: "Insurance", href: "/industries/insurance" },
     ],
   },
-  ...[
-    footerGroups[2],
-    footerGroups[4],
-  ].map((group) => ({
+  { label: "Resources", href: "/resources" },
+  ...[footerGroups[4]].map((group) => ({
     label: group.title,
     items: group.links.map((link) => ({
       label: link,

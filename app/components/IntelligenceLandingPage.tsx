@@ -264,6 +264,57 @@ export default function IntelligenceLandingPage({
   const heroRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const faqItems =
+    activePage === "revenue"
+      ? [
+          {
+            question:
+              "How is this different from a conversation intelligence tool?",
+            answer:
+              "Most tools tell you what was said. Revenue Intelligence tells you what it was worth: which interactions carried a buying signal, whether an offer followed, what the customer objected to, and which opportunities are still open. Then it queues the recovery, with the evidence attached.",
+          },
+          {
+            question:
+              "Does this work for outbound telesales, or only service-to-sales?",
+            answer:
+              "Yes, both. DataOrb reads inbound service conversations for missed sales moments, and it runs full-funnel intelligence on dedicated telesales programs in telco, insurance, energy, and medical devices, from right-party contact through to the close.",
+          },
+          {
+            question: "Does DataOrb call the customer itself?",
+            answer:
+              "No. DataOrb builds the recovery list, the evidence, and the context for the callback. Your team, your dialer, or your orchestrator runs the campaign. The intelligence is headless, the runtime is yours. A person confirms the move.",
+          },
+          {
+            question: "Do the practice personas expose customer data?",
+            answer:
+              "No. The digital twin keeps the scenario — the objection, the mood, the turn where the deal was lost — and strips the identity. Advisors practice the situation, not the person.",
+          },
+          {
+            question: "Can we compare in-house teams with our BPO partners?",
+            answer:
+              "Yes. DataOrb measures every advisor, in-house or BPO, against the same offer tracking and the same scorecards. Brand and partner read from one record, which is the only way the conversation about performance stays honest.",
+          },
+        ]
+      : [
+          {
+            question: "How is this different from speech analytics?",
+            answer: `Speech analytics tells you which words appeared and how often. ${intelligenceName} tells you what happened: whether the issue was resolved, what it cost the customer in effort, where the conversation turned, and who owns the failure. Topics are an index. This is a record.`,
+          },
+          {
+            question: "How do we know the scores are right?",
+            answer:
+              "Every score links back to the interaction evidence that produced it. Teams can review the source, calibrate the model against human-reviewed examples, and track consistency over time.",
+          },
+          {
+            question: "Does this replace our CSAT survey?",
+            answer: `No. CSAT remains a useful signal from customers who respond. ${intelligenceName} complements it with evidence from every interaction, including the customers who never complete a survey.`,
+          },
+          {
+            question: "Does this work for AI teammates, or only for advisors?",
+            answer:
+              "Both. The same evidence standard can evaluate human advisors, AI teammates, and journeys that move between them, so every outcome can be compared in one view.",
+          },
+        ];
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -616,89 +667,29 @@ export default function IntelligenceLandingPage({
             </h2>
 
             <div className="faq-list">
-            <details className="faq-item" open={openFaqIndex === 0}>
-              <summary
-                aria-expanded={openFaqIndex === 0}
-                onClick={(event) => {
-                  event.preventDefault();
-                  setOpenFaqIndex((current) => (current === 0 ? null : 0));
-                }}
-              >
-                <span>How is this different from speech analytics?</span>
-                <span className="faq-toggle" aria-hidden="true" />
-              </summary>
-              <div className="faq-answer">
-                <p>
-                  Speech analytics tells you which words appeared and how often.
-                  {intelligenceName} tells you what happened: whether the
-                  issue was resolved, what it cost the customer in effort, where
-                  the conversation turned, and who owns the failure. Topics are
-                  an index. This is a record.
-                </p>
-              </div>
-            </details>
-
-            <details className="faq-item" open={openFaqIndex === 1}>
-              <summary
-                aria-expanded={openFaqIndex === 1}
-                onClick={(event) => {
-                  event.preventDefault();
-                  setOpenFaqIndex((current) => (current === 1 ? null : 1));
-                }}
-              >
-                <span>How do we know the scores are right?</span>
-                <span className="faq-toggle" aria-hidden="true" />
-              </summary>
-              <div className="faq-answer">
-                <p>
-                  Every score links back to the interaction evidence that
-                  produced it. Teams can review the source, calibrate the model
-                  against human-reviewed examples, and track consistency over
-                  time.
-                </p>
-              </div>
-            </details>
-
-            <details className="faq-item" open={openFaqIndex === 2}>
-              <summary
-                aria-expanded={openFaqIndex === 2}
-                onClick={(event) => {
-                  event.preventDefault();
-                  setOpenFaqIndex((current) => (current === 2 ? null : 2));
-                }}
-              >
-                <span>Does this replace our CSAT survey?</span>
-                <span className="faq-toggle" aria-hidden="true" />
-              </summary>
-              <div className="faq-answer">
-                <p>
-                  No. CSAT remains a useful signal from customers who respond.
-                  {intelligenceName} complements it with evidence from every
-                  interaction, including the customers who never complete a
-                  survey.
-                </p>
-              </div>
-            </details>
-
-            <details className="faq-item" open={openFaqIndex === 3}>
-              <summary
-                aria-expanded={openFaqIndex === 3}
-                onClick={(event) => {
-                  event.preventDefault();
-                  setOpenFaqIndex((current) => (current === 3 ? null : 3));
-                }}
-              >
-                <span>Does this work for AI teammates, or only for advisors?</span>
-                <span className="faq-toggle" aria-hidden="true" />
-              </summary>
-              <div className="faq-answer">
-                <p>
-                  Both. The same evidence standard can evaluate human advisors,
-                  AI teammates, and journeys that move between them, so every
-                  outcome can be compared in one view.
-                </p>
-              </div>
-            </details>
+              {faqItems.map((item, index) => (
+                <details
+                  className="faq-item"
+                  key={item.question}
+                  open={openFaqIndex === index}
+                >
+                  <summary
+                    aria-expanded={openFaqIndex === index}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setOpenFaqIndex((current) =>
+                        current === index ? null : index,
+                      );
+                    }}
+                  >
+                    <span>{item.question}</span>
+                    <span className="faq-toggle" aria-hidden="true" />
+                  </summary>
+                  <div className="faq-answer">
+                    <p>{item.answer}</p>
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
         </div>

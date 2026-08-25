@@ -1,9 +1,10 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 type NavigationSubItem = {
+  description: string;
   href: string;
   label: string;
 };
@@ -56,7 +57,16 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
                 {item.items.map((subItem) => (
                   <li key={subItem.label} role="none">
                     <a href={subItem.href} role="menuitem">
-                      {subItem.label}
+                      <span className="top-navigation-dropdown-title">
+                        {subItem.label}
+                      </span>
+                      <span className="top-navigation-dropdown-description">
+                        {subItem.description}
+                      </span>
+                      <ArrowUpRight
+                        aria-hidden="true"
+                        className="top-navigation-dropdown-arrow"
+                      />
                     </a>
                   </li>
                 ))}

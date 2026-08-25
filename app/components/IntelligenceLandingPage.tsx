@@ -150,6 +150,7 @@ const primaryNavigation = [
   label: group.title,
   items: group.links.map((link) => ({
     label: link,
+    description: "Description will come here",
     href: getFooterLinkHref(link),
   })),
 }));

@@ -200,27 +200,55 @@ function getFooterLinkHref(link: string) {
   return "#top";
 }
 
-const industryLinks = [
-  "Financial Services",
-  "Telecommunications",
-  "Insurance",
-  "Energy & Utilities",
-  "Healthcare",
-];
-
 const primaryNavigation = [
-  footerGroups[0],
-  { title: "Industries", links: industryLinks },
-  footerGroups[2],
-  footerGroups[4],
-].map((group) => ({
-  label: group.title,
-  items: group.links.map((link) => ({
-    label: link,
-    description: "Description will come here",
-    href: getFooterLinkHref(link),
+  {
+    label: "Platform",
+    groups: [
+      {
+        label: "Products",
+        items: [
+          { label: "Service Intelligence", href: "/platform/service-intelligence" },
+          { label: "Revenue Intelligence", href: "/platform/revenue-intelligence" },
+          { label: "Collection Intelligence", href: "/platform/collection-intelligence" },
+          { label: "Quality and Coaching", href: "/platform/quality-and-coaching" },
+          { label: "Training and Learning", href: "/platform/training-and-learning" },
+          { label: "Insights", href: "/platform/insights" },
+          { label: "Context Engine", href: "/platform/context-engine" },
+        ],
+      },
+      {
+        label: "Explore",
+        items: [
+          { label: "Browse features", href: "/platform/features" },
+          { label: "DataOrb Ecosystem", href: "/platform/ecosystem" },
+          { label: "Responsible AI and AAPES", href: "/trust/responsible-ai" },
+        ],
+      },
+      {
+        label: "By team",
+        items: [
+          { label: "Chief Customer Office", href: "/teams/chief-customer-office" },
+          { label: "AI and Transformation", href: "/teams/ai-and-transformation" },
+          { label: "Service Ops", href: "/teams/service-ops" },
+          { label: "Retention Ops", href: "/teams/retention-ops" },
+          { label: "Sales Teams", href: "/teams/sales" },
+          { label: "Enablement", href: "/teams/enablement" },
+        ],
+      },
+    ],
+  },
+  ...[
+    { title: "Industries", links: ["Financial Services", "Telecommunications", "Insurance", "Energy & Utilities", "Healthcare"] },
+    footerGroups[2],
+    footerGroups[4],
+  ].map((group) => ({
+    label: group.title,
+    items: group.links.map((link) => ({
+      label: link,
+      href: getFooterLinkHref(link),
+    })),
   })),
-}));
+];
 
 function BrandMark() {
   return (

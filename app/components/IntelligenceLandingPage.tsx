@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { Component as GradientBackground } from "../../components/ui/bg-gredient";
+import { DropdownNavigation } from "../../components/ui/dropdown-navigation";
 import { Feature135 } from "../../components/ui/feature135";
 import { Stats } from "../../components/ui/stats-section-with-text";
 
@@ -139,6 +140,20 @@ function getFooterLinkHref(link: string) {
   return "#top";
 }
 
+const primaryNavigation = [
+  footerGroups[0],
+  footerGroups[3],
+  footerGroups[4],
+  footerGroups[1],
+  footerGroups[2],
+].map((group) => ({
+  label: group.title,
+  items: group.links.map((link) => ({
+    label: link,
+    href: getFooterLinkHref(link),
+  })),
+}));
+
 function BrandMark() {
   return (
     <svg
@@ -195,6 +210,7 @@ function Header() {
           <BrandMark />
           <span className="brand-wordmark">dataOrb</span>
         </a>
+        <DropdownNavigation navItems={primaryNavigation} />
         <a className="header-cta" href="#demo">
           <span>Book a demo</span>
           <ArrowIcon />
@@ -741,9 +757,16 @@ export default function IntelligenceLandingPage({
           <nav className="footer-nav" aria-label="Footer navigation">
             {[footerGroups.slice(0, 2), footerGroups.slice(2, 4), footerGroups.slice(4)].map(
               (column, columnIndex) => (
-                <div className="footer-nav-column" key={columnIndex}>
+                <div
+                  className="footer-nav-column"
+                  key={columnIndex}
+                >
                   {column.map((group) => (
-                    <div className="footer-group" key={group.title}>
+                    <div
+                      className="footer-group"
+                      id={group.title.toLowerCase()}
+                      key={group.title}
+                    >
                       <h3>{group.title}</h3>
                       <ul>
                         {group.links.map((link) => (

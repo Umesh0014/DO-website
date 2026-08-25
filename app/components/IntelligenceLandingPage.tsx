@@ -200,12 +200,19 @@ function getFooterLinkHref(link: string) {
   return "#top";
 }
 
+const industryLinks = [
+  "Financial Services",
+  "Telecommunications",
+  "Insurance",
+  "Energy & Utilities",
+  "Healthcare",
+];
+
 const primaryNavigation = [
   footerGroups[0],
-  footerGroups[3],
-  footerGroups[4],
-  footerGroups[1],
+  { title: "Industries", links: industryLinks },
   footerGroups[2],
+  footerGroups[4],
 ].map((group) => ({
   label: group.title,
   items: group.links.map((link) => ({

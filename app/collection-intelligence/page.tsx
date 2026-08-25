@@ -3,7 +3,7 @@ import IntelligenceLandingPage from "../components/IntelligenceLandingPage";
 
 const title = "Collection Intelligence | dataOrb";
 const description =
-  "Collection Intelligence from dataOrb turns every customer interaction into evidence, action, and measurable outcomes.";
+  "Turn every collections conversation into evidence, action, and measurable recovery outcomes.";
 
 export const metadata: Metadata = {
   title,
@@ -25,8 +25,9 @@ export default function CollectionIntelligencePage() {
   return (
     <IntelligenceLandingPage
       activePage="collection"
-      heroHeading="Stop guessing what happened"
-      heroBody="Every interaction, evidence-linked: what happened, customer impact, and what's next."
+      heroEyebrow="Collection Intelligence"
+      heroHeading="Turn every promise into progress."
+      heroBody="Every collections conversation contains a commitment, a barrier, or a signal that the next action should change. DataOrb analyzes every interaction to show what was promised, what is at risk, and what your team should do next."
     />
   );
 }

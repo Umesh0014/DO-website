@@ -67,8 +67,8 @@ type RevenueSection = {
 const revenueSections: RevenueSection[] = [
   {
     eyebrow: "Recover",
-    heading: "Find the sale that got away.",
-    body: "Most missed revenue is not a lost negotiation. It is a buying signal nobody answered, a maybe nobody followed up, a churn risk nobody saw. DataOrb pulls each one out of the conversation while it can still be recovered.",
+    heading: "Recover missed revenue.",
+    body: "Find missed buying signals, stalled interest, and churn risk in time to recover them.",
     features: [
       {
         title: "The lead nobody pitched",
@@ -86,8 +86,8 @@ const revenueSections: RevenueSection[] = [
   },
   {
     eyebrow: "See",
-    heading: "Every offer, on the record.",
-    body: "Your advisors make offers all day, across in-house teams and BPO partners. DataOrb tracks every offer: what was pitched, when in the call, proactive or reactive, retention or recovery, accepted, declined, or left open. Your sales operation stops being a number on a dashboard and becomes a record you can read, week over week, team by team.",
+    heading: "Every offer, recorded.",
+    body: "Track every offer, objection, outcome, and open opportunity across teams and partners.",
     features: [
       {
         title: "Objections and competitors, named",
@@ -106,8 +106,8 @@ const revenueSections: RevenueSection[] = [
   },
   {
     eyebrow: "Prepare",
-    heading: "Turn lost deals into training.",
-    body: "Anecdotal training builds advisors who are ready for the average call. DataOrb builds them for the calls your team actually loses.",
+    heading: "Train on lost deals.",
+    body: "Turn the calls your team loses into focused practice, QA, and coaching.",
     features: [
       {
         title: "A digital twin of the hard customer",

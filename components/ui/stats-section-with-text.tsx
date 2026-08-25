@@ -1,6 +1,7 @@
 import { MoveUpRight } from "lucide-react"
 
 import { Badge } from "./badge"
+import { GradientBackground } from "./noisy-gradient-backgrounds"
 
 type Metric = {
   annotation: string
@@ -91,10 +92,28 @@ const caseStudies: CaseStudy[] = [
 
 function Stats() {
   return (
-    <div className="dark bg-[#111111] text-white">
+    <div className="relative isolate overflow-hidden bg-white text-[#171717]">
+      <GradientBackground
+        className="z-0"
+        noisePatternAlpha={18}
+        noisePatternRefreshInterval={0}
+      />
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] bg-white/35"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 z-[2] h-64 bg-gradient-to-b from-white via-white/80 to-transparent"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-40 bg-gradient-to-t from-white to-transparent"
+        aria-hidden="true"
+      />
+
       {caseStudies.map((caseStudy, caseStudyIndex) => (
         <section
-          className={`w-full py-24 lg:py-32${caseStudyIndex > 0 ? " border-t border-white/[0.08]" : ""}`}
+          className={`relative z-10 w-full py-24 lg:py-32${caseStudyIndex > 0 ? " border-t border-black/[0.08]" : ""}`}
           aria-labelledby={`${caseStudy.id}-stats-heading`}
           key={caseStudy.id}
         >
@@ -103,7 +122,7 @@ function Stats() {
               <div className="flex flex-col items-start gap-7">
                 <Badge
                   variant="outline"
-                  className="border-white/20 bg-white/[0.04] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-white/75"
+                  className="border-black/15 bg-white/35 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-black/65 backdrop-blur-sm"
                 >
                   Proof in production
                 </Badge>
@@ -111,11 +130,11 @@ function Stats() {
                 <div className="flex flex-col gap-5">
                   <h2
                     id={`${caseStudy.id}-stats-heading`}
-                    className="max-w-xl text-left text-4xl font-normal tracking-[-0.045em] text-white md:text-5xl lg:text-[56px] lg:leading-[1.03]"
+                    className="max-w-xl text-left text-4xl font-normal tracking-[-0.045em] text-[#171717] md:text-5xl lg:text-[56px] lg:leading-[1.03]"
                   >
                     {caseStudy.title}
                   </h2>
-                  <p className="max-w-md text-left text-base leading-relaxed text-white/55 md:text-lg">
+                  <p className="max-w-md text-left text-base leading-relaxed text-black/58 md:text-lg">
                     {caseStudy.description}
                   </p>
                 </div>
@@ -124,23 +143,23 @@ function Stats() {
               <div className="grid w-full grid-cols-1 gap-3 text-left sm:grid-cols-2">
                 {caseStudy.metrics.map((metric, metricIndex) => (
                   <article
-                    className={`flex min-h-64 flex-col justify-between rounded-[22px] border border-white/10 bg-white/[0.035] p-6 md:p-7${caseStudy.metrics.length === 3 && metricIndex === 2 ? " sm:col-span-2" : ""}`}
+                    className={`flex min-h-64 flex-col justify-between rounded-[22px] border border-black/10 bg-white/42 p-6 shadow-[0_18px_60px_rgba(46,35,25,0.08)] backdrop-blur-[3px] md:p-7${caseStudy.metrics.length === 3 && metricIndex === 2 ? " sm:col-span-2" : ""}`}
                     key={`${caseStudy.id}-${metric.value}`}
                   >
                     <MoveUpRight
-                      className="mb-12 size-5 text-white/55"
+                      className="mb-12 size-5 text-black/50"
                       aria-hidden="true"
                     />
                     <div>
                       <div className="flex flex-wrap items-end gap-x-4 gap-y-2">
-                        <strong className="text-5xl font-normal tracking-[-0.055em] text-white md:text-6xl">
+                        <strong className="text-5xl font-normal tracking-[-0.055em] text-[#171717] md:text-6xl">
                           {metric.value}
                         </strong>
-                        <span className="pb-1 text-xs font-medium uppercase tracking-[0.12em] text-white/38">
+                        <span className="pb-1 text-xs font-medium uppercase tracking-[0.12em] text-black/38">
                           {metric.annotation}
                         </span>
                       </div>
-                      <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/55 md:text-[15px]">
+                      <p className="mt-4 max-w-sm text-sm leading-relaxed text-black/58 md:text-[15px]">
                         {metric.description}
                       </p>
                     </div>

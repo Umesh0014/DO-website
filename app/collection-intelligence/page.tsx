@@ -26,7 +26,7 @@ export default function CollectionIntelligencePage() {
     <IntelligenceLandingPage
       activePage="collection"
       heroEyebrow="Collection Intelligence"
-      heroHeading="Turn every promise into progress."
+      heroHeading="Stop dialing in the dark."
       heroBody="Every collections conversation contains a commitment, a barrier, or a signal that the next action should change. DataOrb analyzes every interaction to show what was promised, what is at risk, and what your team should do next."
     />
   );

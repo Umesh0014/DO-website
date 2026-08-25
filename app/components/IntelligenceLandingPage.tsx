@@ -765,7 +765,7 @@ export default function IntelligenceLandingPage({
         {isCommercialLayout ? (
           <GradientBackground gradientTo="#c2d8cb" />
         ) : null}
-        {isCommercialLayout ? <Stats /> : null}
+        {activePage === "revenue" ? <Stats /> : null}
         {isCommercialLayout ? (
           <Feature135
             heading="You hold the controls."

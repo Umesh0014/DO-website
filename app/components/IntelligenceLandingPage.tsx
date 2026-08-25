@@ -167,20 +167,20 @@ const collectionSections: IntelligenceSection[] = [
   },
   {
     eyebrow: "Prepare",
-    heading: "Train on difficult conversations.",
-    body: "Turn challenging collection calls into focused practice, QA, and coaching.",
+    heading: "Scale what your best closers do.",
+    body: "What works in collection lives inside the conversation: how the questions are sequenced, how the anchor is set, when to hold the silence. DataOrb finds it in your best calls and turns it into coaching and practice for everyone else.",
     features: [
       {
-        title: "Practice the conversation that matters",
-        body: "DataOrb turns a difficult real interaction into an identity-safe practice persona, preserving the objection, emotion, and decision points your team needs to rehearse.",
+        title: "Coaching, per agent, per gap",
+        body: "Every agent's record shows the objection they lose to, the disclosure they skip, the metric they miss. DataOrb writes the coaching recommendation against each one, drawn from 100% of their calls. Team leads intervene where it counts, not where the sample pointed.",
       },
       {
-        title: "Collections QA on every call",
-        body: "Evaluate every conversation against your conduct, vulnerability, disclosure, and treatment standards instead of relying on a small sample.",
+        title: "The hard call, rehearsed",
+        body: "DataOrb turns real collection scenarios into practice personas, identity stripped, hardship and refusal intact. New hires meet the hard refusal in simulation, through AI roleplay, before they meet it live.",
       },
       {
-        title: "Coaching from their own calls",
-        body: "Each advisor’s record shows where commitments are secured, where trust breaks down, and which skills will improve outcomes, grounded in their own evidence.",
+        title: "Ramp you can verify",
+        body: "Drills built from real calls take the fear out of the first shift. New advisors reach proficiency sooner, their next real calls are evaluated against the same scorecard, and better-prepared advisors stay longer. The loop runs until the outcome moves.",
       },
     ],
   },

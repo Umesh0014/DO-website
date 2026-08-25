@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import { Component as GradientBackground } from "../../components/ui/bg-gredient";
 import { Feature135 } from "../../components/ui/feature135";
-import { Component as GradientBackground } from "../../components/ui/gradient-backgrounds";
 import { Stats } from "../../components/ui/stats-section-with-text";
 
 const heroBackground =
@@ -651,7 +651,9 @@ export default function IntelligenceLandingPage({
             : undefined
         }
       >
-        {activePage === "revenue" ? <GradientBackground /> : null}
+        {activePage === "revenue" ? (
+          <GradientBackground gradientTo="#c2d8cb" />
+        ) : null}
         {activePage === "revenue" ? <Stats /> : null}
         {activePage === "revenue" ? (
           <Feature135

@@ -16,6 +16,7 @@ type NavigationGroup = {
 
 type NavigationItem = {
   groups?: NavigationGroup[];
+  href?: string;
   items?: NavigationSubItem[];
   label: string;
   layout?: "single-column";
@@ -56,26 +57,34 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
               setOpenMenu(null);
             }
           }}
-          onMouseEnter={() => setOpenMenu(item.label)}
+          onMouseEnter={() => {
+            if (!item.href) setOpenMenu(item.label);
+          }}
           onMouseLeave={() => setOpenMenu(null)}
         >
-          <button
-            aria-expanded={openMenu === item.label}
-            aria-haspopup="menu"
-            className="top-navigation-link"
-            onClick={() =>
-              setOpenMenu((current) =>
-                current === item.label ? null : item.label,
-              )
-            }
-            onFocus={() => setOpenMenu(item.label)}
-            type="button"
-          >
-            {item.label}
-            <ChevronDown aria-hidden="true" className="top-navigation-chevron" />
-          </button>
+          {item.href ? (
+            <a className="top-navigation-link" href={item.href}>
+              {item.label}
+            </a>
+          ) : (
+            <button
+              aria-expanded={openMenu === item.label}
+              aria-haspopup="menu"
+              className="top-navigation-link"
+              onClick={() =>
+                setOpenMenu((current) =>
+                  current === item.label ? null : item.label,
+                )
+              }
+              onFocus={() => setOpenMenu(item.label)}
+              type="button"
+            >
+              {item.label}
+              <ChevronDown aria-hidden="true" className="top-navigation-chevron" />
+            </button>
+          )}
 
-          {openMenu === item.label ? (
+          {!item.href && openMenu === item.label ? (
             <div
               className={`top-navigation-dropdown-shell${item.groups ? " top-navigation-dropdown-shell--grouped" : ""}`}
             >

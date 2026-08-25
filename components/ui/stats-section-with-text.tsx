@@ -92,7 +92,7 @@ const caseStudies: CaseStudy[] = [
 
 function Stats() {
   return (
-    <div className="relative isolate overflow-hidden bg-white text-[#171717]">
+    <div className="relative isolate my-[120px] overflow-hidden bg-white text-[#171717]">
       <GradientBackground
         className="z-0"
         noisePatternAlpha={18}

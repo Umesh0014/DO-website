@@ -54,7 +54,7 @@ const footerGroups = [
 
 type IntelligencePage = "collection" | "revenue" | "service";
 
-type RevenueSection = {
+type IntelligenceSection = {
   body: string;
   eyebrow: string;
   features: Array<{
@@ -65,7 +65,7 @@ type RevenueSection = {
   note?: string;
 };
 
-const revenueSections: RevenueSection[] = [
+const revenueSections: IntelligenceSection[] = [
   {
     eyebrow: "Recover",
     heading: "Recover missed revenue.",
@@ -121,6 +121,67 @@ const revenueSections: RevenueSection[] = [
       {
         title: "Coaching from their own calls",
         body: "Each advisor’s record shows where they pitch, where they miss, and where they convert. You see who leads, who needs coaching, and who needs reskilling, and the coaching starts from their own calls, not a generic script.",
+      },
+    ],
+  },
+];
+
+const collectionSections: IntelligenceSection[] = [
+  {
+    eyebrow: "Recover",
+    heading: "Recover more, earlier.",
+    body: "Find broken commitments, emerging hardship, and stalled accounts while there is still time to act.",
+    features: [
+      {
+        title: "Every promise, captured",
+        body: "DataOrb records the amount, date, and conditions behind every promise to pay, then flags commitments that need attention before they quietly become another missed outcome.",
+      },
+      {
+        title: "The right follow-up, at the right time",
+        body: "When a customer asks for a callback or needs time to arrange payment, DataOrb queues the next action with the original context attached so the conversation continues instead of starting over.",
+      },
+      {
+        title: "Hardship signals, surfaced early",
+        body: "Changes in language, affordability, and intent reveal when a standard collection path is no longer appropriate. Teams can intervene early with the right treatment and evidence.",
+      },
+    ],
+  },
+  {
+    eyebrow: "See",
+    heading: "Every outcome, recorded.",
+    body: "Track commitments, disputes, vulnerability, outcomes, and open actions across teams and partners.",
+    features: [
+      {
+        title: "Reasons for non-payment, named",
+        body: "DataOrb separates affordability, disputes, service failures, and avoidance so your teams know what is preventing payment and which response is most likely to work.",
+      },
+      {
+        title: "Advisor problem or process problem",
+        body: "When recovery drops, DataOrb distinguishes conversation quality from broken journeys, policies, and handoffs. One points to coaching; the other points to operational change.",
+      },
+      {
+        title: "Campaign performance, end to end",
+        body: "See right-party contact, promises made, promises kept, disputes raised, and recovery outcomes for every campaign, team, and partner before the month-end report arrives.",
+      },
+    ],
+    note: "All of this arrives as structured, trended data, queryable through Ask Mira on the Insights page. Ask why kept-promise rates changed and get a cited answer.",
+  },
+  {
+    eyebrow: "Prepare",
+    heading: "Train on difficult conversations.",
+    body: "Turn challenging collection calls into focused practice, QA, and coaching.",
+    features: [
+      {
+        title: "Practice the conversation that matters",
+        body: "DataOrb turns a difficult real interaction into an identity-safe practice persona, preserving the objection, emotion, and decision points your team needs to rehearse.",
+      },
+      {
+        title: "Collections QA on every call",
+        body: "Evaluate every conversation against your conduct, vulnerability, disclosure, and treatment standards instead of relying on a small sample.",
+      },
+      {
+        title: "Coaching from their own calls",
+        body: "Each advisor’s record shows where commitments are secured, where trust breaks down, and which skills will improve outcomes, grounded in their own evidence.",
       },
     ],
   },
@@ -221,12 +282,18 @@ function Header() {
   );
 }
 
-function RevenueIntelligenceSections() {
+function IntelligenceSections({
+  page,
+  sections,
+}: {
+  page: "collection" | "revenue";
+  sections: IntelligenceSection[];
+}) {
   return (
     <>
       {revenueSections.map((section, sectionIndex) => {
         const isReverse = sectionIndex === 1;
-        const headingId = `revenue-${section.eyebrow.toLowerCase()}-heading`;
+        const headingId = `${page}-${section.eyebrow.toLowerCase()}-heading`;
 
         return (
           <section
@@ -279,6 +346,10 @@ export default function IntelligenceLandingPage({
       : activePage === "revenue"
         ? "Revenue Intelligence"
         : "Service Intelligence";
+  const isCommercialLayout =
+    activePage === "collection" || activePage === "revenue";
+  const commercialSections =
+    activePage === "collection" ? collectionSections : revenueSections;
   const heroRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -313,7 +384,31 @@ export default function IntelligenceLandingPage({
               "Yes. DataOrb measures every advisor, in-house or BPO, against the same offer tracking and the same scorecards. Brand and partner read from one record, which is the only way the conversation about performance stays honest.",
           },
         ]
-      : [
+      : activePage === "collection"
+        ? [
+            {
+              question:
+                "How is this different from a collections analytics tool?",
+              answer:
+                "Most tools report activity and balances. Collection Intelligence explains what happened in the conversation: what the customer promised, what prevented payment, whether vulnerability or a dispute appeared, and which action should follow. Every result links back to the evidence.",
+            },
+            {
+              question: "Can it track promises to pay?",
+              answer:
+                "Yes. DataOrb captures the amount, timing, conditions, and confidence behind each promise, then connects the commitment to the eventual outcome so teams can see which promises are kept and why others break.",
+            },
+            {
+              question: "Does it identify vulnerable customers?",
+              answer:
+                "It can surface language and context associated with hardship or vulnerability and route the interaction for the appropriate human review. Your policies and teams remain in control of the final treatment decision.",
+            },
+            {
+              question: "Can we compare in-house teams with agency partners?",
+              answer:
+                "Yes. DataOrb evaluates every team against the same outcome, conduct, and evidence standards, creating one comparable record across internal operations and external partners.",
+            },
+          ]
+        : [
           {
             question: "How is this different from speech analytics?",
             answer: `Speech analytics tells you which words appeared and how often. ${intelligenceName} tells you what happened: whether the issue was resolved, what it cost the customer in effort, where the conversation turned, and who owns the failure. Topics are an index. This is a record.`,
@@ -456,11 +551,11 @@ export default function IntelligenceLandingPage({
         </div>
 
         <div
-          className={`product-stage${activePage === "revenue" ? " product-stage-blank" : ""}`}
+          className={`product-stage${isCommercialLayout ? " product-stage-blank" : ""}`}
           id="product"
         >
           <div className="product-glow" aria-hidden="true" />
-          {activePage === "revenue" ? (
+          {isCommercialLayout ? (
             <div className="product-placeholder" aria-hidden="true" />
           ) : (
             <img
@@ -479,8 +574,8 @@ export default function IntelligenceLandingPage({
         />
       </section>
 
-      {activePage === "revenue" ? (
-        <RevenueIntelligenceSections />
+      {isCommercialLayout ? (
+        <IntelligenceSections page={activePage} sections={commercialSections} />
       ) : (
         <>
       <section className="standard-section" aria-labelledby="standard-heading">
@@ -663,25 +758,29 @@ export default function IntelligenceLandingPage({
 
       <div
         className={
-          activePage === "revenue"
+          isCommercialLayout
             ? "proof-faq-background relative isolate overflow-hidden"
             : undefined
         }
       >
-        {activePage === "revenue" ? (
+        {isCommercialLayout ? (
           <GradientBackground gradientTo="#c2d8cb" />
         ) : null}
-        {activePage === "revenue" ? <Stats /> : null}
-        {activePage === "revenue" ? (
+        {isCommercialLayout ? <Stats /> : null}
+        {isCommercialLayout ? (
           <Feature135
             heading="You hold the controls."
-            description="You choose which conversations DataOrb reads and who sees each advisor’s record. Every opportunity cites the exchange behind it, identities are stripped from digital twins, and a person confirms every recovery move."
+            description={
+              activePage === "collection"
+                ? "You choose which conversations DataOrb reads and who sees each advisor’s record. Every commitment and recommended action cites the exchange behind it, identities are stripped from practice personas, and a person confirms every treatment decision."
+                : "You choose which conversations DataOrb reads and who sees each advisor’s record. Every opportunity cites the exchange behind it, identities are stripped from digital twins, and a person confirms every recovery move."
+            }
           />
         ) : null}
 
       <section
         ref={faqRef}
-        className={`faq-section${activePage === "revenue" ? " faq-section--proof-bg" : ""}`}
+        className={`faq-section${isCommercialLayout ? " faq-section--proof-bg" : ""}`}
         aria-labelledby="faq-heading"
       >
         <div className="faq-panel">
@@ -736,12 +835,16 @@ export default function IntelligenceLandingPage({
               <h2>
                 {activePage === "revenue"
                   ? "See the revenue sitting in last month's calls."
-                  : "See what your last 1,000 conversations are telling you."}
+                  : activePage === "collection"
+                    ? "See what your last 1,000 collection conversations can recover."
+                    : "See what your last 1,000 conversations are telling you."}
               </h2>
               <p>
                 {activePage === "revenue"
                   ? "Bring a sample of your own sales conversations. We will decode them and show you how many carried a buying signal that was never pitched, which offers are converting, and where your next recovery campaign is hiding."
-                  : "Bring your interactions. We'll reveal resolution rates, effort hotspots, and repeat-contact drivers."}
+                  : activePage === "collection"
+                    ? "Bring a sample of your own collection conversations. We will reveal promises made, barriers to payment, treatment risks, and the next actions most likely to improve recovery."
+                    : "Bring your interactions. We'll reveal resolution rates, effort hotspots, and repeat-contact drivers."}
               </p>
             </div>
 

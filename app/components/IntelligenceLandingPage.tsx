@@ -387,24 +387,29 @@ export default function IntelligenceLandingPage({
         ? [
             {
               question:
-                "How is this different from a collections analytics tool?",
+                "How is this different from speech analytics on our recorder?",
               answer:
-                "Most tools report activity and balances. Collection Intelligence explains what happened in the conversation: what the customer promised, what prevented payment, whether vulnerability or a dispute appeared, and which action should follow. Every result links back to the evidence.",
+                "Most tools transcribe and tag. Collection Intelligence reads the negotiation: the objection raised, the rebuttal used, the promise made, the disclosure met or missed. Then it trends the funnel and writes the coaching, with every claim cited to the call.",
             },
             {
-              question: "Can it track promises to pay?",
+              question: "Do we have to configure keywords or compliance rules?",
               answer:
-                "Yes. DataOrb captures the amount, timing, conditions, and confidence behind each promise, then connects the commitment to the eventual outcome so teams can see which promises are kept and why others break.",
+                "No. DataOrb is context-aware out of the box, in 80+ languages, with no keywords, taxonomies, or prompts to maintain. Bring your compliance scorecard and your procedures, and DataOrb evaluates every call against them.",
             },
             {
-              question: "Does it identify vulnerable customers?",
+              question: "Which regulations does it cover?",
               answer:
-                "It can surface language and context associated with hardship or vulnerability and route the interaction for the appropriate human review. Your policies and teams remain in control of the final treatment decision.",
+                "Your scorecard defines the standard, and DataOrb runs it on every call: mandatory disclosures, verification, consumer-rights language, prohibited conduct, vulnerability handling. Programs run today under both EU and US regulatory regimes.",
             },
             {
-              question: "Can we compare in-house teams with agency partners?",
+              question: "How quickly are insights available?",
               answer:
-                "Yes. DataOrb evaluates every team against the same outcome, conduct, and evidence standards, creating one comparable record across internal operations and external partners.",
+                "The moment the call concludes. Every conversation is analyzed as it ends, so a compliance flag or a coaching gap reaches the team lead the same day. Recovery probability decays with the age of the account; a QA loop measured in weeks arrives too late to matter.",
+            },
+            {
+              question: "Does this cover our BPO collection partners?",
+              answer:
+                "Yes. Every agency and every in-house team is measured against the same scorecards and the same funnel, in one record. Brand and partner see the same numbers, which is the only way the conversation about recovery stays honest.",
             },
           ]
         : [

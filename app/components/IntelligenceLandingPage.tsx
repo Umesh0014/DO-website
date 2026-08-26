@@ -239,13 +239,23 @@ const primaryNavigation = [
   },
   {
     label: "Industries",
-    layout: "compact-card" as const,
+    layout: "split-card" as const,
+    feature: {
+      label: "Industries overview",
+      description: "Intelligence built for your market.",
+    },
     groups: [
       {
-        label: "Industries",
+        label: "Markets",
         items: [
           { label: "Telecommunications", href: "/industries/telecommunications" },
           { label: "Energy and utilities", href: "/industries/energy-utilities" },
+        ],
+      },
+      {
+        label: "Industry intelligence",
+        description: "Segment-specific intelligence for regulated conversations.",
+        items: [
           { label: "Insurance", href: "/industries/insurance" },
         ],
       },
@@ -253,14 +263,24 @@ const primaryNavigation = [
   },
   {
     label: "Resources",
-    layout: "compact-card" as const,
+    layout: "split-card" as const,
+    feature: {
+      label: "Resources overview",
+      description: "Ideas, guidance, and customer proof.",
+      href: "/resources",
+    },
     groups: [
       {
-        label: "Resources",
+        label: "Explore resources",
         items: [
-          { label: "Resources index", href: "/resources" },
           { label: "Blog", href: "/resources?type=blog" },
           { label: "Technical posts", href: "/resources?type=technical-posts" },
+        ],
+      },
+      {
+        label: "Customer proof",
+        description: "Stories and evidence from teams using DataOrb.",
+        items: [
           { label: "Customer stories", href: "/resources?type=customer-stories" },
         ],
       },
@@ -268,14 +288,24 @@ const primaryNavigation = [
   },
   {
     label: "Company",
-    layout: "compact-card" as const,
+    layout: "split-card" as const,
+    feature: {
+      label: "About DataOrb",
+      description: "The team building intelligence for every conversation.",
+      href: "/company/about",
+    },
     groups: [
       {
         label: "Company",
         items: [
-          { label: "About", href: "/company/about" },
           { label: "Careers", href: "/company/careers" },
           { label: "Contact", href: "/company/contact" },
+        ],
+      },
+      {
+        label: "Trust and responsibility",
+        description: "Security and responsible AI by design.",
+        items: [
           { label: "Security", href: "/trust/security" },
           { label: "Responsible AI and AAPES", href: "/trust/responsible-ai" },
         ],

@@ -413,8 +413,9 @@ a {
 
 .top-navigation-dropdown-shell--grouped {
   position: fixed;
-  top: 74px;
+  top: 56px;
   left: 50%;
+  padding-top: 28px;
 }
 
 .top-navigation-dropdown {

@@ -42,16 +42,24 @@ type NavigationSubItem = {
 };
 
 type NavigationGroup = {
+  description?: string;
   items: NavigationSubItem[];
   label: string;
 };
 
+type NavigationFeature = {
+  description: string;
+  href?: string;
+  label: string;
+};
+
 type NavigationItem = {
+  feature?: NavigationFeature;
   groups?: NavigationGroup[];
   href?: string;
   items?: NavigationSubItem[];
   label: string;
-  layout?: "compact-card" | "single-column";
+  layout?: "compact-card" | "single-column" | "split-card";
 };
 
 type DropdownNavigationProps = {
@@ -65,6 +73,9 @@ const navigationGroupIcons: Record<string, LucideIcon> = {
   Industries: Building2,
   Resources: Library,
   Company: Building2,
+  "Industry intelligence": RadioTower,
+  "Customer proof": BookOpen,
+  "Trust and responsibility": ShieldCheck,
 };
 
 const navigationGroupDescriptions: Record<string, string> = {
@@ -74,6 +85,9 @@ const navigationGroupDescriptions: Record<string, string> = {
   Industries: "Intelligence built for your market.",
   Resources: "Ideas, guidance, and customer proof.",
   Company: "Company, careers, contact, and trust.",
+  "Industry intelligence": "Segment-specific intelligence for regulated conversations.",
+  "Customer proof": "Stories and evidence from teams using DataOrb.",
+  "Trust and responsibility": "Security and responsible AI by design.",
 };
 
 const navigationItemIcons: Record<string, LucideIcon> = {
@@ -137,6 +151,28 @@ function DropdownLink({
         className="top-navigation-dropdown-arrow"
       />
     </a>
+  );
+}
+
+function NavigationFeatureCard({ feature }: { feature: NavigationFeature }) {
+  const content = (
+    <>
+      <span className="top-navigation-feature-title">{feature.label}</span>
+      <span className="top-navigation-feature-description">
+        {feature.description}
+      </span>
+      {feature.href ? (
+        <ArrowUpRight aria-hidden="true" className="top-navigation-feature-arrow" />
+      ) : null}
+    </>
+  );
+
+  return feature.href ? (
+    <a className="top-navigation-feature" href={feature.href} role="menuitem">
+      {content}
+    </a>
+  ) : (
+    <div className="top-navigation-feature">{content}</div>
   );
 }
 
@@ -213,22 +249,46 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
 
           {!item.href && openMenu === item.label ? (
             <div
-              className={`top-navigation-dropdown-shell${item.groups ? " top-navigation-dropdown-shell--grouped" : ""}${item.layout === "compact-card" ? " top-navigation-dropdown-shell--compact" : ""}`}
+              className={`top-navigation-dropdown-shell${item.groups ? " top-navigation-dropdown-shell--grouped" : ""}${item.layout === "compact-card" ? " top-navigation-dropdown-shell--compact" : ""}${item.layout === "split-card" ? " top-navigation-dropdown-shell--split" : ""}`}
               onMouseEnter={cancelClose}
               onMouseLeave={scheduleClose}
             >
               {item.groups ? (
                 <div
                   aria-label={`${item.label} links`}
-                  className={`top-navigation-dropdown top-navigation-dropdown--grouped${item.layout === "compact-card" ? " top-navigation-dropdown--compact" : ""}`}
+                  className={`top-navigation-dropdown top-navigation-dropdown--grouped${item.layout === "compact-card" ? " top-navigation-dropdown--compact" : ""}${item.layout === "split-card" ? " top-navigation-dropdown--split" : ""}`}
                   role="menu"
                 >
+                  {item.layout === "split-card" && item.feature ? (
+                    <section
+                      className="top-navigation-dropdown-split-overview"
+                      role="none"
+                    >
+                      <NavigationFeatureCard feature={item.feature} />
+                      {item.groups[0] ? (
+                        <ul
+                          className="top-navigation-dropdown-group-list top-navigation-dropdown-split-list"
+                          role="none"
+                        >
+                          {item.groups[0].items.map((subItem) => (
+                            <li key={subItem.label} role="none">
+                              <DropdownLink item={subItem} showIcon />
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </section>
+                  ) : null}
                   {item.groups.map((group) => {
                     const GroupIcon = navigationGroupIcons[group.label] ?? LayoutGrid;
 
+                    if (item.layout === "split-card" && group === item.groups?.[0]) {
+                      return null;
+                    }
+
                     return (
                       <section
-                        className="top-navigation-dropdown-group"
+                        className={`top-navigation-dropdown-group${item.layout === "split-card" ? " top-navigation-dropdown-split-detail" : ""}`}
                         key={group.label}
                         role="none"
                       >
@@ -241,7 +301,7 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
                               {group.label}
                             </h3>
                             <p className="top-navigation-dropdown-group-description">
-                              {navigationGroupDescriptions[group.label]}
+                              {group.description ?? navigationGroupDescriptions[group.label]}
                             </p>
                           </div>
                         </div>

@@ -239,23 +239,47 @@ const primaryNavigation = [
   },
   {
     label: "Industries",
-    layout: "single-column" as const,
-    items: [
-      { label: "Telecommunications", href: "/industries/telecommunications" },
-      { label: "Energy and utilities", href: "/industries/energy-utilities" },
-      { label: "Insurance", href: "/industries/insurance" },
+    layout: "compact-card" as const,
+    groups: [
+      {
+        label: "Industries",
+        items: [
+          { label: "Telecommunications", href: "/industries/telecommunications" },
+          { label: "Energy and utilities", href: "/industries/energy-utilities" },
+          { label: "Insurance", href: "/industries/insurance" },
+        ],
+      },
     ],
   },
-  { label: "Resources", href: "/resources" },
+  {
+    label: "Resources",
+    layout: "compact-card" as const,
+    groups: [
+      {
+        label: "Resources",
+        items: [
+          { label: "Resources index", href: "/resources" },
+          { label: "Blog", href: "/resources?type=blog" },
+          { label: "Technical posts", href: "/resources?type=technical-posts" },
+          { label: "Customer stories", href: "/resources?type=customer-stories" },
+        ],
+      },
+    ],
+  },
   {
     label: "Company",
-    layout: "single-column" as const,
-    items: [
-      { label: "About", href: "/company/about" },
-      { label: "Careers", href: "/company/careers" },
-      { label: "Contact", href: "/company/contact" },
-      { label: "Security", href: "/trust/security" },
-      { label: "Responsible AI and AAPES", href: "/trust/responsible-ai" },
+    layout: "compact-card" as const,
+    groups: [
+      {
+        label: "Company",
+        items: [
+          { label: "About", href: "/company/about" },
+          { label: "Careers", href: "/company/careers" },
+          { label: "Contact", href: "/company/contact" },
+          { label: "Security", href: "/trust/security" },
+          { label: "Responsible AI and AAPES", href: "/trust/responsible-ai" },
+        ],
+      },
     ],
   },
 ];

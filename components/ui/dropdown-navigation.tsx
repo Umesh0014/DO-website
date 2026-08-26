@@ -49,6 +49,9 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
   return (
     <ul
       className={`top-navigation-list${openMenu ? " top-navigation-list--open" : ""}`}
+      onKeyDown={(event) => {
+        if (event.key === "Escape") setOpenMenu(null);
+      }}
     >
       {navItems.map((item) => (
         <li
@@ -73,11 +76,7 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
               aria-expanded={openMenu === item.label}
               aria-haspopup="menu"
               className="top-navigation-link"
-              onClick={() =>
-                setOpenMenu((current) =>
-                  current === item.label ? null : item.label,
-                )
-              }
+              onClick={() => setOpenMenu(item.label)}
               onFocus={() => setOpenMenu(item.label)}
               type="button"
             >

@@ -260,31 +260,7 @@ const primaryNavigation = [
       },
     ],
   },
-  {
-    label: "Resources",
-    layout: "split-card" as const,
-    feature: {
-      label: "Resources overview",
-      description: "Ideas, guidance, and customer proof.",
-      href: "/resources",
-    },
-    groups: [
-      {
-        label: "Explore resources",
-        items: [
-          { label: "Blog", href: "/resources?type=blog" },
-          { label: "Technical posts", href: "/resources?type=technical-posts" },
-        ],
-      },
-      {
-        label: "Customer proof",
-        description: "Stories and evidence from teams using DataOrb.",
-        items: [
-          { label: "Customer stories", href: "/resources?type=customer-stories" },
-        ],
-      },
-    ],
-  },
+  { label: "Resources", href: "/resources" },
   {
     label: "Company",
     layout: "split-card" as const,

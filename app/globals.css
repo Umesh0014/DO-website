@@ -397,7 +397,7 @@ a {
 .top-navigation-link:hover,
 .top-navigation-link:focus-visible,
 .top-navigation-link[aria-expanded="true"] {
-  background: rgba(255, 255, 255, 0.48);
+  background: transparent;
   color: #000;
   outline: none;
 }
@@ -502,11 +502,6 @@ a {
   padding: 10px 34px 10px 10px;
 }
 
-.top-navigation-dropdown--grouped a:hover,
-.top-navigation-dropdown--grouped a:focus-visible {
-  background: transparent;
-}
-
 .top-navigation-dropdown--grouped a:hover .top-navigation-dropdown-title,
 .top-navigation-dropdown--grouped a:focus-visible .top-navigation-dropdown-title {
   color: #6b43d6;
@@ -570,6 +565,11 @@ a {
   background: rgba(0, 0, 0, 0.06);
   color: #000;
   outline: none;
+}
+
+.top-navigation-dropdown--grouped a:hover,
+.top-navigation-dropdown--grouped a:focus-visible {
+  background: transparent;
 }
 
 .top-navigation-dropdown a:hover .top-navigation-dropdown-arrow,

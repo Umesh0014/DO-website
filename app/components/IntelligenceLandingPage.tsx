@@ -272,15 +272,14 @@ const primaryNavigation = [
     groups: [
       {
         label: "Company",
-        items: [
-          { label: "Careers", href: "/company/careers" },
-          { label: "Contact", href: "/company/contact" },
-        ],
+        items: [],
       },
       {
         label: "Trust and responsibility",
         description: "Security and responsible AI by design.",
         items: [
+          { label: "Careers", href: "/company/careers" },
+          { label: "Contact", href: "/company/contact" },
           { label: "Security", href: "/trust/security" },
           { label: "Responsible AI and AAPES", href: "/trust/responsible-ai" },
         ],

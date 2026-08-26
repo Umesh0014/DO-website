@@ -1,6 +1,27 @@
 "use client";
 
-import { ArrowUpRight, ChevronDown } from "lucide-react";
+import {
+  ArrowUpRight,
+  BadgeCheck,
+  BarChart3,
+  BookOpenCheck,
+  Boxes,
+  ChevronDown,
+  Compass,
+  GraduationCap,
+  HandCoins,
+  Handshake,
+  Headphones,
+  HeartHandshake,
+  LayoutGrid,
+  Network,
+  Settings2,
+  ShieldCheck,
+  Sparkles,
+  TrendingUp,
+  UsersRound,
+  type LucideIcon,
+} from "lucide-react";
 import { useState } from "react";
 
 type NavigationSubItem = {
@@ -26,15 +47,63 @@ type DropdownNavigationProps = {
   navItems: NavigationItem[];
 };
 
-function DropdownLink({ item }: { item: NavigationSubItem }) {
+const navigationGroupIcons: Record<string, LucideIcon> = {
+  Products: LayoutGrid,
+  Explore: Compass,
+  "By team": UsersRound,
+};
+
+const navigationGroupDescriptions: Record<string, string> = {
+  Products: "Intelligence for every conversation.",
+  Explore: "Discover the DataOrb platform.",
+  "By team": "Built around your operating model.",
+};
+
+const navigationItemIcons: Record<string, LucideIcon> = {
+  "Service Intelligence": Headphones,
+  "Revenue Intelligence": TrendingUp,
+  "Collection Intelligence": HandCoins,
+  "Quality and Coaching": BadgeCheck,
+  "Training and Learning": GraduationCap,
+  Insights: BarChart3,
+  "Context Engine": Network,
+  "Browse features": LayoutGrid,
+  "DataOrb Ecosystem": Boxes,
+  "Responsible AI and AAPES": ShieldCheck,
+  "Chief Customer Office": UsersRound,
+  "AI and Transformation": Sparkles,
+  "Service Ops": Settings2,
+  "Retention Ops": HeartHandshake,
+  "Sales Teams": Handshake,
+  Enablement: BookOpenCheck,
+};
+
+function DropdownLink({
+  item,
+  showIcon = false,
+}: {
+  item: NavigationSubItem;
+  showIcon?: boolean;
+}) {
+  const ItemIcon = showIcon ? navigationItemIcons[item.label] : null;
+
   return (
-    <a href={item.href} role="menuitem">
-      <span className="top-navigation-dropdown-title">{item.label}</span>
-      {item.description ? (
-        <span className="top-navigation-dropdown-description">
-          {item.description}
-        </span>
+    <a
+      className={showIcon ? "top-navigation-dropdown-link--with-icon" : undefined}
+      href={item.href}
+      role="menuitem"
+    >
+      {ItemIcon ? (
+        <ItemIcon aria-hidden="true" className="top-navigation-dropdown-item-icon" />
       ) : null}
+      <span className="top-navigation-dropdown-copy">
+        <span className="top-navigation-dropdown-title">{item.label}</span>
+        {item.description ? (
+          <span className="top-navigation-dropdown-description">
+            {item.description}
+          </span>
+        ) : null}
+      </span>
       <ArrowUpRight
         aria-hidden="true"
         className="top-navigation-dropdown-arrow"
@@ -95,24 +164,38 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
                   className="top-navigation-dropdown top-navigation-dropdown--grouped"
                   role="menu"
                 >
-                  {item.groups.map((group) => (
-                    <section
-                      className="top-navigation-dropdown-group"
-                      key={group.label}
-                      role="none"
-                    >
-                      <h3 className="top-navigation-dropdown-group-title">
-                        {group.label}
-                      </h3>
-                      <ul className="top-navigation-dropdown-group-list" role="none">
-                        {group.items.map((subItem) => (
-                          <li key={subItem.label} role="none">
-                            <DropdownLink item={subItem} />
-                          </li>
-                        ))}
-                      </ul>
-                    </section>
-                  ))}
+                  {item.groups.map((group) => {
+                    const GroupIcon = navigationGroupIcons[group.label] ?? LayoutGrid;
+
+                    return (
+                      <section
+                        className="top-navigation-dropdown-group"
+                        key={group.label}
+                        role="none"
+                      >
+                        <div className="top-navigation-dropdown-group-header">
+                          <span className="top-navigation-dropdown-group-icon">
+                            <GroupIcon aria-hidden="true" />
+                          </span>
+                          <div>
+                            <h3 className="top-navigation-dropdown-group-title">
+                              {group.label}
+                            </h3>
+                            <p className="top-navigation-dropdown-group-description">
+                              {navigationGroupDescriptions[group.label]}
+                            </p>
+                          </div>
+                        </div>
+                        <ul className="top-navigation-dropdown-group-list" role="none">
+                          {group.items.map((subItem) => (
+                            <li key={subItem.label} role="none">
+                              <DropdownLink item={subItem} showIcon />
+                            </li>
+                          ))}
+                        </ul>
+                      </section>
+                    );
+                  })}
                 </div>
               ) : (
                 <ul

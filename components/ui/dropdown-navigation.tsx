@@ -22,7 +22,7 @@ import {
   UsersRound,
   type LucideIcon,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type NavigationSubItem = {
   description?: string;
@@ -114,6 +114,35 @@ function DropdownLink({
 
 export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const closeTimerRef = useRef<number | null>(null);
+
+  const cancelClose = () => {
+    if (closeTimerRef.current !== null) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+
+  const openNavigationMenu = (label: string) => {
+    cancelClose();
+    setOpenMenu(label);
+  };
+
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimerRef.current = window.setTimeout(() => {
+      setOpenMenu(null);
+      closeTimerRef.current = null;
+    }, 140);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current !== null) {
+        window.clearTimeout(closeTimerRef.current);
+      }
+    };
+  }, []);
 
   return (
     <ul
@@ -132,9 +161,9 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
             }
           }}
           onMouseEnter={() => {
-            if (!item.href) setOpenMenu(item.label);
+            if (!item.href) openNavigationMenu(item.label);
           }}
-          onMouseLeave={() => setOpenMenu(null)}
+          onMouseLeave={scheduleClose}
         >
           {item.href ? (
             <a className="top-navigation-link" href={item.href}>
@@ -145,8 +174,8 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
               aria-expanded={openMenu === item.label}
               aria-haspopup="menu"
               className="top-navigation-link"
-              onClick={() => setOpenMenu(item.label)}
-              onFocus={() => setOpenMenu(item.label)}
+              onClick={() => openNavigationMenu(item.label)}
+              onFocus={() => openNavigationMenu(item.label)}
               type="button"
             >
               {item.label}
@@ -157,6 +186,8 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
           {!item.href && openMenu === item.label ? (
             <div
               className={`top-navigation-dropdown-shell${item.groups ? " top-navigation-dropdown-shell--grouped" : ""}`}
+              onMouseEnter={cancelClose}
+              onMouseLeave={scheduleClose}
             >
               {item.groups ? (
                 <div

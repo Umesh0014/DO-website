@@ -207,9 +207,9 @@ const primaryNavigation = [
       {
         label: "Products",
         items: [
-          { label: "Service Intelligence", href: "/platform/service-intelligence" },
-          { label: "Revenue Intelligence", href: "/platform/revenue-intelligence" },
-          { label: "Collection Intelligence", href: "/platform/collection-intelligence" },
+          { label: "Service Intelligence", href: "/" },
+          { label: "Revenue Intelligence", href: "/revenue-intelligence" },
+          { label: "Collection Intelligence", href: "/collection-intelligence" },
           { label: "Quality and Coaching", href: "/platform/quality-and-coaching" },
           { label: "Training and Learning", href: "/platform/training-and-learning" },
           { label: "Insights", href: "/platform/insights" },

@@ -247,15 +247,14 @@ const primaryNavigation = [
     groups: [
       {
         label: "Markets",
-        items: [
-          { label: "Telecommunications", href: "/industries/telecommunications" },
-          { label: "Energy and utilities", href: "/industries/energy-utilities" },
-        ],
+        items: [],
       },
       {
         label: "Industry intelligence",
         description: "Segment-specific intelligence for regulated conversations.",
         items: [
+          { label: "Telecommunications", href: "/industries/telecommunications" },
+          { label: "Energy and utilities", href: "/industries/energy-utilities" },
           { label: "Insurance", href: "/industries/insurance" },
         ],
       },

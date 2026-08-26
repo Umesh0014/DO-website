@@ -418,6 +418,13 @@ a {
   padding-top: 28px;
 }
 
+.top-navigation-dropdown-shell--grouped.top-navigation-dropdown-shell--compact {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  padding-top: 10px;
+}
+
 .top-navigation-dropdown {
   display: grid;
   width: 520px;
@@ -443,6 +450,23 @@ a {
   gap: clamp(28px, 4vw, 64px);
   padding: 28px 32px 34px;
   border-radius: 20px;
+}
+
+.top-navigation-dropdown--grouped.top-navigation-dropdown--compact {
+  width: 430px;
+  min-height: 0;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 24px 28px 28px;
+}
+
+.top-navigation-dropdown--compact .top-navigation-dropdown-group-header {
+  min-height: 96px;
+  padding-bottom: 20px;
+}
+
+.top-navigation-dropdown--compact .top-navigation-dropdown-group-list {
+  padding-top: 18px;
 }
 
 .top-navigation-dropdown--single {
@@ -1820,6 +1844,16 @@ a {
     transform: none;
   }
 
+  .top-navigation-dropdown-shell--grouped.top-navigation-dropdown-shell--compact {
+    position: fixed;
+    top: 106px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    padding-top: 6px;
+    transform: none;
+  }
+
   .top-navigation-dropdown {
     width: 100%;
     grid-template-columns: 1fr;
@@ -1832,6 +1866,10 @@ a {
     grid-template-columns: 1fr;
     gap: 0;
     padding: 16px;
+  }
+
+  .top-navigation-dropdown.top-navigation-dropdown--compact {
+    width: 100%;
   }
 
   .top-navigation-dropdown-group-header {

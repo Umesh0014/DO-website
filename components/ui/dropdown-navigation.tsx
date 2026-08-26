@@ -47,7 +47,9 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   return (
-    <ul className="top-navigation-list">
+    <ul
+      className={`top-navigation-list${openMenu ? " top-navigation-list--open" : ""}`}
+    >
       {navItems.map((item) => (
         <li
           className="top-navigation-item"

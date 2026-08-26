@@ -5,21 +5,32 @@ import {
   BadgeCheck,
   BarChart3,
   BookOpenCheck,
+  BookOpen,
   Boxes,
+  BriefcaseBusiness,
+  Building2,
   ChevronDown,
   Compass,
+  FileText,
   GraduationCap,
   HandCoins,
   Handshake,
   Headphones,
   HeartHandshake,
   LayoutGrid,
+  Library,
+  LockKeyhole,
+  Mail,
   Network,
+  Newspaper,
+  RadioTower,
   Settings2,
   ShieldCheck,
   Sparkles,
   TrendingUp,
+  Umbrella,
   UsersRound,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -40,7 +51,7 @@ type NavigationItem = {
   href?: string;
   items?: NavigationSubItem[];
   label: string;
-  layout?: "single-column";
+  layout?: "compact-card" | "single-column";
 };
 
 type DropdownNavigationProps = {
@@ -51,12 +62,18 @@ const navigationGroupIcons: Record<string, LucideIcon> = {
   Products: LayoutGrid,
   Explore: Compass,
   "By team": UsersRound,
+  Industries: Building2,
+  Resources: Library,
+  Company: Building2,
 };
 
 const navigationGroupDescriptions: Record<string, string> = {
   Products: "Intelligence for every conversation.",
   Explore: "Discover the DataOrb platform.",
   "By team": "Built around your operating model.",
+  Industries: "Intelligence built for your market.",
+  Resources: "Ideas, guidance, and customer proof.",
+  Company: "Company, careers, contact, and trust.",
 };
 
 const navigationItemIcons: Record<string, LucideIcon> = {
@@ -76,6 +93,17 @@ const navigationItemIcons: Record<string, LucideIcon> = {
   "Retention Ops": HeartHandshake,
   "Sales Teams": Handshake,
   Enablement: BookOpenCheck,
+  Telecommunications: RadioTower,
+  "Energy and utilities": Zap,
+  Insurance: Umbrella,
+  "Resources index": Library,
+  Blog: Newspaper,
+  "Technical posts": FileText,
+  "Customer stories": BookOpen,
+  About: Building2,
+  Careers: BriefcaseBusiness,
+  Contact: Mail,
+  Security: LockKeyhole,
 };
 
 function DropdownLink({
@@ -185,14 +213,14 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
 
           {!item.href && openMenu === item.label ? (
             <div
-              className={`top-navigation-dropdown-shell${item.groups ? " top-navigation-dropdown-shell--grouped" : ""}`}
+              className={`top-navigation-dropdown-shell${item.groups ? " top-navigation-dropdown-shell--grouped" : ""}${item.layout === "compact-card" ? " top-navigation-dropdown-shell--compact" : ""}`}
               onMouseEnter={cancelClose}
               onMouseLeave={scheduleClose}
             >
               {item.groups ? (
                 <div
                   aria-label={`${item.label} links`}
-                  className="top-navigation-dropdown top-navigation-dropdown--grouped"
+                  className={`top-navigation-dropdown top-navigation-dropdown--grouped${item.layout === "compact-card" ? " top-navigation-dropdown--compact" : ""}`}
                   role="menu"
                 >
                   {item.groups.map((group) => {

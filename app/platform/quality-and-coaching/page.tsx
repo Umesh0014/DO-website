@@ -26,8 +26,8 @@ export default function QualityAndCoachingPage() {
     <IntelligenceLandingPage
       activePage="quality"
       heroEyebrow="Quality and Coaching"
-      heroHeading="Coach what actually happened."
-      heroBody="Sampled QA leaves most performance unseen. DataOrb evaluates 100% of customer conversations against your scorecard, cites every result to the evidence, and turns each advisor’s real gaps into focused coaching that you can verify on the next call."
+      heroHeading="Stop coaching from anecdotes."
+      heroBody="DataOrb evaluates every interaction, human or AI, voice or digital, against your own scorecards, and explains every rating with the exact dialogue behind it. When an advisor misses a metric, the coaching recommendation is already written. Every conversation, not a sample"
     />
   );
 }

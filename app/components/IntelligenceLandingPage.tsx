@@ -208,39 +208,39 @@ const qualitySections: IntelligenceSection[] = [
   },
   {
     eyebrow: "Coach",
-    heading: "Coach the gap that matters.",
-    body: "DataOrb turns each advisor’s complete interaction record into focused coaching: the behavior to change, the moment it appeared, and the outcome it affected.",
+    heading: "Coach with evidence, not opinion.",
+    body: "Quality data that ends in a score changes nothing. DataOrb turns each evaluation into the next coaching move, for every advisor, grounded in their own calls.",
     features: [
       {
-        title: "A coaching plan per advisor",
-        body: "Every advisor sees the patterns holding them back, from missed discovery and weak ownership to incomplete disclosures. Team leads get a prioritized recommendation instead of another dashboard to interpret.",
+        title: "A recommendation on every miss",
+        body: "Where an advisor meets the metric, DataOrb reinforces what worked. Where they miss it, DataOrb writes the coaching recommendation and cites the moment it applies to. The team lead arrives at the one-on-one with the session already prepped.",
       },
       {
-        title: "The moment, ready to review",
-        body: "Coaching starts at the cited exchange, with the surrounding context attached. One click takes the lead from the score to the behavior, without listening through the whole call.",
+        title: "The whole team, metric by metric",
+        body: "Team leads see where each advisor and the whole team stand on every metric, drawn from 100% of interactions instead of last week's sample of five. Who needs help, and on what, stops being a matter of impression.",
       },
       {
-        title: "Effort follows impact",
-        body: "Gaps are ranked by frequency, severity, and business outcome. Leaders spend coaching time where it can move resolution, compliance, conversion, and customer effort.",
+        title: "Behavior, next to outcome",
+        body: "Scorecard data sits beside first contact resolution, sales conversion, retention, and predicted satisfaction. You coach the behavior that moves the outcome, and you can see whether it did.",
       },
     ],
   },
   {
-    eyebrow: "Improve",
-    heading: "Make better performance repeatable.",
-    body: "The best interaction in your operation should not stay hidden in one advisor’s headset. DataOrb finds what works, turns it into practice, and measures whether the next conversation improves.",
+    eyebrow: "Rehearse",
+    heading: "Practice before the floor.",
+    body: "A coaching note and hope is not a training plan. DataOrb closes the loop: the miss becomes a drill, the drill becomes practice, and the next real call shows whether it took.",
     features: [
       {
-        title: "Best practice, found in the work",
-        body: "DataOrb identifies the questions, explanations, and recovery moves that consistently lead to better outcomes, then makes those examples available to the rest of the team.",
+        title: "Drills built from real misses",
+        body: "When an advisor keeps missing the same metric, DataOrb turns the underlying interactions into a prescribed practice drill. New hires complete it before their first shift, not after their first complaint.",
       },
       {
-        title: "Hard moments, rehearsed",
-        body: "Real scenarios become identity-stripped practice conversations. Advisors can rehearse objections, vulnerability, escalation, and difficult customer moments before handling them live.",
+        title: "Personas, not real customers",
+        body: "Practice personas are built from real interactions, with the identity stripped. Advisors rehearse the hard conversation in simulation, through AI roleplay, instead of learning it on a live customer.",
       },
       {
-        title: "A closed coaching loop",
-        body: "The next real conversations are evaluated against the same scorecard. Leaders see whether the coached behavior changed and whether the customer and business outcomes moved with it.",
+        title: "Readiness you can verify",
+        body: "After the drill, the advisor's next real conversations are evaluated against the same metric. You see whether the coaching took, in evidence, before you count on it. The loop runs until the outcome moves.",
       },
     ],
   },

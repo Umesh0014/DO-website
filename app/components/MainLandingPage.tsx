@@ -71,7 +71,7 @@ export default function MainLandingPage() {
         <div className="home-hero-copy">
           <p className="home-hero-eyebrow">Decision intelligence for customer operations</p>
           <h1 id="home-hero-heading">
-            Turn every customer conversation into your next best decision.
+            Turn conversations into better decisions.
           </h1>
           <div className="home-hero-actions" id="demo">
             <a className="home-hero-primary" href="mailto:hello@dataorb.ai?subject=Book%20a%20DataOrb%20demo">

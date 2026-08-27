@@ -4,6 +4,7 @@ import { ChevronDown, Menu, Play, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
+import LogoLoop, { type LogoItem } from "../../components/ui/LogoLoop";
 import { BrandMark, SiteFooter } from "./SiteChrome";
 
 const BG_VIDEO =
@@ -14,6 +15,47 @@ const navLinks = [
   { label: "Industries", href: "/industries/telecommunications", dropdown: true },
   { label: "Resources", href: "/resources" },
   { label: "Company", href: "/company/about", dropdown: true },
+];
+
+const placeholderLogos: LogoItem[] = [
+  {
+    node: <span className="placeholder-logo placeholder-logo-orbit">ORBIT</span>,
+    title: "Orbit",
+  },
+  {
+    node: (
+      <span className="placeholder-logo placeholder-logo-northstar">
+        Northstar
+      </span>
+    ),
+    title: "Northstar",
+  },
+  {
+    node: (
+      <span className="placeholder-logo placeholder-logo-meridian">
+        MERIDIAN
+      </span>
+    ),
+    title: "Meridian",
+  },
+  {
+    node: (
+      <span className="placeholder-logo placeholder-logo-aperture">
+        aperture
+      </span>
+    ),
+    title: "Aperture",
+  },
+  {
+    node: <span className="placeholder-logo placeholder-logo-vertex">VERTEX</span>,
+    title: "Vertex",
+  },
+  {
+    node: (
+      <span className="placeholder-logo placeholder-logo-kinetic">Kinetic</span>
+    ),
+    title: "Kinetic",
+  },
 ];
 
 export default function MainLandingPage() {
@@ -115,6 +157,24 @@ export default function MainLandingPage() {
             </a>
           </div>
         </div>
+      </section>
+
+      <section className="home-logo-strip" aria-labelledby="logo-strip-heading">
+        <p className="home-logo-strip-label" id="logo-strip-heading">
+          Built for modern customer operations
+        </p>
+        <LogoLoop
+          logos={placeholderLogos}
+          speed={72}
+          direction="left"
+          logoHeight={34}
+          gap={78}
+          hoverSpeed={18}
+          scaleOnHover
+          fadeOut
+          fadeOutColor="#f7f5ef"
+          ariaLabel="Placeholder customer logos"
+        />
       </section>
 
       <SiteFooter activePage="service" />

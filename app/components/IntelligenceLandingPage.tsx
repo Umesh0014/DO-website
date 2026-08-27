@@ -253,59 +253,59 @@ const qualitySections: IntelligenceSection[] = [
 
 const trainingSections: IntelligenceSection[] = [
   {
-    eyebrow: "Prepare",
-    heading: "Train on the conversations that matter.",
-    body: "DataOrb turns the moments that define performance into focused learning, built from the real work your teams handle every day.",
+    eyebrow: "Twin",
+    heading: "The curriculum writes itself.",
+    body: "Somewhere in last month's interactions is the exact conversation your team keeps losing. One click on that interaction record, and DataOrb builds a Digital Twin: a fully configured rehearsal scenario with the situation intact and the identity gone.",
     features: [
       {
-        title: "Real scenarios, ready to learn from",
-        body: "Difficult objections, complex procedures, and high-stakes customer moments become reusable learning scenarios instead of disappearing into the archive.",
+        title: "One click, no scripting",
+        body: "No decision trees, no authoring, no scripts to write. DataOrb reads the original transcript and reconstructs the situation: the reason for contact, the mood, the objections, the moment it went off track. The scenario is ready before a trainer could have opened a blank template.",
       },
       {
-        title: "Practice personas, identity stripped",
-        body: "The situation stays intact while customer identity is removed. Advisors learn from the conversation without practicing on the person behind it.",
+        title: "A firewall for identity",
+        body: "Names, ID numbers, account details, contact information: DataOrb replaces every identifying detail with synthetic values the moment the twin is created, and keeps the scenario dynamics intact. Advisors rehearse the situation, never the person.",
       },
       {
-        title: "Learning tied to the job",
-        body: "Every exercise maps to the scorecards, procedures, and outcomes your operation already uses, so practice reflects the work waiting on the floor.",
+        title: "Real struggles, not invented ones",
+        body: "Each twin carries the objective, the customer's hidden constraints, the acceptable solution paths, and the scoring criteria, drawn from a real interaction and its real outcome. Practice stays anchored to the conversations your operation faces this month, not the ones a workbook imagined.",
       },
     ],
   },
   {
-    eyebrow: "Practice",
-    heading: "Rehearse until the behavior changes.",
-    body: "Advisors practice through AI roleplay, targeted drills, and missions that respond to the gaps found in their own interactions.",
+    eyebrow: "Rehearse",
+    heading: "A customer who talks back.",
+    body: "Drill puts the advisor in a live voice conversation with the twin's customer persona, across service, sales, retention, and collection scenarios. The persona is native speech-to-speech, so it speaks with real timing, interrupts, hesitates, and reacts to how the advisor sounds, not just to what they say.",
     features: [
       {
-        title: "AI roleplay for the hard moment",
-        body: "Advisors can rehearse objections, vulnerability, escalation, and complex explanations in simulation before handling them with a live customer.",
+        title: "Personas with a mood",
+        body: "The customer arrives irritated and holding it back, grows impatient at repeating information, goes quiet after an unclear promise, and eases only when the advisor takes ownership. Agreeable practice partners teach habits that fail on the floor. These do not agree easily.",
       },
       {
-        title: "A drill for every recurring gap",
-        body: "When the same behavior keeps appearing, DataOrb turns it into prescribed practice with feedback grounded in the original evidence.",
+        title: "Scored like the floor",
+        body: "Every session is evaluated against your production scorecard, the same quality metrics and soft skills QA runs on live calls. Practice performance becomes a usable measure of floor readiness, not a separate number nobody trusts.",
       },
       {
-        title: "Missions that build confidence",
-        body: "Structured learning paths move advisors from explanation to repetition to applied practice, without separating training from operational priorities.",
+        title: "Feedback, cited to the moment",
+        body: "Where the advisor showed the skill, the session says so. Where they missed it, the coaching recommendation arrives cited to the transcript. \"Work on objection handling\" becomes \"you scored 60% on the exact call we lost. Let's get it above 80.\"",
       },
     ],
   },
   {
-    eyebrow: "Prove",
-    heading: "Know when every advisor is ready.",
-    body: "Readiness becomes something you can verify: in the drill, in the simulation, and in the next real interaction evaluated against the same standard.",
+    eyebrow: "Certify",
+    heading: "Readiness becomes a number.",
+    body: "Missions is the team lead's surface. Set the scenario coverage, the proficiency threshold, and the deadline, assign the cohort, and DataOrb tracks each advisor toward ready, not merely finished. Then the advisor's next real calls, scored on the same scorecard, show whether it took.",
     features: [
       {
-        title: "Progress, metric by metric",
-        body: "Leaders see which skills have improved, which still need practice, and where each advisor stands before assigning them to live work.",
+        title: "The preparation loop",
+        body: "New hires rehearse the call typologies they will actually face, on a schedule, before their first shift. The learning curve becomes visible inside the training window, while there is still time to act on it, and the go-live call gets made on evidence instead of impressions.",
       },
       {
-        title: "The next call closes the loop",
-        body: "After practice, DataOrb evaluates the advisor's next interactions against the same metric to show whether the learning held under real conditions.",
+        title: "The readiness loop",
+        body: "When quality evaluation flags a gap, satisfaction drops on a driver, or a policy changes, DataOrb writes the assignment to the specific advisors whose calls produced the signal. Training stops being a calendar event and becomes an intervention.",
       },
       {
-        title: "Ramp time you can measure",
-        body: "New hires reach verified proficiency sooner, while experienced advisors receive targeted practice instead of repeating generic courses.",
+        title: "Launch-day rehearsal",
+        body: "New tariff, new product, new compliance rule: build the twin and certify the floor in days. The change goes live to advisors who have already handled it in simulation, several times over.",
       },
     ],
   },

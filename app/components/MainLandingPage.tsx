@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import LogoLoop, { type LogoItem } from "../../components/ui/LogoLoop";
+import ScrollReveal from "../../components/ui/ScrollReveal";
 import { BrandMark, SiteFooter } from "./SiteChrome";
 
 const BG_VIDEO =
@@ -141,12 +142,6 @@ export default function MainLandingPage() {
           <h1 id="home-hero-heading">
             Turn every customer conversation into your next best decision.
           </h1>
-          <p className="home-hero-body">
-            DataOrb decodes interactions across voice, chat, email, and chatbot in
-            80+ languages, remembers what worked, and acts before the next one goes
-            wrong, with the evidence attached.
-          </p>
-
           <div className="home-hero-actions">
             <a className="home-hero-primary" href="mailto:hello@dataorb.ai?subject=Book%20a%20DataOrb%20demo">
               Book a demo
@@ -175,6 +170,23 @@ export default function MainLandingPage() {
           fadeOutColor="#f7f5ef"
           ariaLabel="Placeholder customer logos"
         />
+      </section>
+
+      <section className="home-reveal-section" aria-label="What DataOrb does">
+        <ScrollReveal
+          baseOpacity={0.12}
+          enableBlur
+          baseRotation={2}
+          blurStrength={8}
+          rotationEnd="center center"
+          wordAnimationEnd="center center"
+          containerClassName="home-scroll-reveal"
+          textClassName="home-scroll-reveal-text"
+        >
+          DataOrb decodes interactions across voice, chat, email, and chatbot in
+          80+ languages, remembers what worked, and acts before the next one goes
+          wrong, with the evidence attached.
+        </ScrollReveal>
       </section>
 
       <SiteFooter activePage="service" />

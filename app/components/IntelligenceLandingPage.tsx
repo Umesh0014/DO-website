@@ -52,7 +52,12 @@ const footerGroups = [
   },
 ];
 
-type IntelligencePage = "collection" | "quality" | "revenue" | "service";
+type IntelligencePage =
+  | "collection"
+  | "quality"
+  | "revenue"
+  | "service"
+  | "training";
 
 type IntelligenceSection = {
   body: string;
@@ -246,6 +251,66 @@ const qualitySections: IntelligenceSection[] = [
   },
 ];
 
+const trainingSections: IntelligenceSection[] = [
+  {
+    eyebrow: "Prepare",
+    heading: "Train on the conversations that matter.",
+    body: "DataOrb turns the moments that define performance into focused learning, built from the real work your teams handle every day.",
+    features: [
+      {
+        title: "Real scenarios, ready to learn from",
+        body: "Difficult objections, complex procedures, and high-stakes customer moments become reusable learning scenarios instead of disappearing into the archive.",
+      },
+      {
+        title: "Practice personas, identity stripped",
+        body: "The situation stays intact while customer identity is removed. Advisors learn from the conversation without practicing on the person behind it.",
+      },
+      {
+        title: "Learning tied to the job",
+        body: "Every exercise maps to the scorecards, procedures, and outcomes your operation already uses, so practice reflects the work waiting on the floor.",
+      },
+    ],
+  },
+  {
+    eyebrow: "Practice",
+    heading: "Rehearse until the behavior changes.",
+    body: "Advisors practice through AI roleplay, targeted drills, and missions that respond to the gaps found in their own interactions.",
+    features: [
+      {
+        title: "AI roleplay for the hard moment",
+        body: "Advisors can rehearse objections, vulnerability, escalation, and complex explanations in simulation before handling them with a live customer.",
+      },
+      {
+        title: "A drill for every recurring gap",
+        body: "When the same behavior keeps appearing, DataOrb turns it into prescribed practice with feedback grounded in the original evidence.",
+      },
+      {
+        title: "Missions that build confidence",
+        body: "Structured learning paths move advisors from explanation to repetition to applied practice, without separating training from operational priorities.",
+      },
+    ],
+  },
+  {
+    eyebrow: "Prove",
+    heading: "Know when every advisor is ready.",
+    body: "Readiness becomes something you can verify: in the drill, in the simulation, and in the next real interaction evaluated against the same standard.",
+    features: [
+      {
+        title: "Progress, metric by metric",
+        body: "Leaders see which skills have improved, which still need practice, and where each advisor stands before assigning them to live work.",
+      },
+      {
+        title: "The next call closes the loop",
+        body: "After practice, DataOrb evaluates the advisor's next interactions against the same metric to show whether the learning held under real conditions.",
+      },
+      {
+        title: "Ramp time you can measure",
+        body: "New hires reach verified proficiency sooner, while experienced advisors receive targeted practice instead of repeating generic courses.",
+      },
+    ],
+  },
+];
+
 type IntelligenceLandingPageProps = {
   activePage: IntelligencePage;
   heroBody: string;
@@ -258,6 +323,7 @@ function getFooterLinkHref(link: string) {
   if (link === "Revenue Intelligence") return "/revenue-intelligence";
   if (link === "Collection Intelligence") return "/collection-intelligence";
   if (link === "Quality and Coaching") return "/platform/quality-and-coaching";
+  if (link === "Training and Learning") return "/platform/training-and-learning";
   return "#top";
 }
 
@@ -482,17 +548,22 @@ export default function IntelligenceLandingPage({
         ? "Revenue Intelligence"
         : activePage === "quality"
           ? "Quality and Coaching"
-        : "Service Intelligence";
+          : activePage === "training"
+            ? "Training and Learning"
+            : "Service Intelligence";
   const isCommercialLayout =
     activePage === "collection" ||
     activePage === "quality" ||
-    activePage === "revenue";
+    activePage === "revenue" ||
+    activePage === "training";
   const commercialSections =
     activePage === "collection"
       ? collectionSections
       : activePage === "quality"
         ? qualitySections
-        : revenueSections;
+        : activePage === "training"
+          ? trainingSections
+          : revenueSections;
   const heroRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -585,6 +656,34 @@ export default function IntelligenceLandingPage({
                   "Yes, on the same standard. Chatbots and AI teammates are scored against the same scorecards as your advisors: was the procedure followed, was the customer verified, was the issue resolved. One standard is the only honest way to compare them.",
               },
             ]
+          : activePage === "training"
+            ? [
+                {
+                  question: "How are the practice scenarios created?",
+                  answer:
+                    "DataOrb builds them from real interaction patterns in your operation, keeping the situation, objection, and required behavior while removing customer identity.",
+                },
+                {
+                  question: "Is this only for new hires?",
+                  answer:
+                    "No. New hires use it to prepare for the floor, while experienced advisors receive targeted drills based on the gaps found in their own interactions.",
+                },
+                {
+                  question: "Can advisors practice through AI roleplay?",
+                  answer:
+                    "Yes. Practice personas respond in realistic conversation, so advisors can rehearse difficult situations safely and receive feedback before handling them live.",
+                },
+                {
+                  question: "Can we use our own procedures and scorecards?",
+                  answer:
+                    "Yes. Drills and evaluations can reflect your scorecards, SOPs, product guidance, channels, and lines of business, so practice matches the standard used in production.",
+                },
+                {
+                  question: "How do we know the training worked?",
+                  answer:
+                    "DataOrb evaluates the advisor's next real interactions against the same metric. Leaders can see whether the practiced behavior changed and whether the outcome moved with it.",
+                },
+              ]
         : [
           {
             question: "How is this different from speech analytics?",
@@ -947,8 +1046,8 @@ export default function IntelligenceLandingPage({
         {isCommercialLayout ? (
           <Feature135
             heading={
-              activePage === "quality"
-                ? "You hold the controls."
+              activePage === "training"
+                ? "Practice the situation, not the person."
                 : "You hold the controls."
             }
             description={
@@ -956,7 +1055,9 @@ export default function IntelligenceLandingPage({
                 ? "You choose which conversations DataOrb reads and who sees each advisor’s record. Every commitment and recommended action cites the exchange behind it, identities are stripped from practice personas, and a person confirms every treatment decision."
                 : activePage === "quality"
                   ? "You decide which interactions DataOrb evaluates and who sees each advisor's record. Every score opens to the dialogue that produced it, so an advisor can contest a rating with the evidence in front of them. And where a metric calls for human judgment, DataOrb waits: hybrid evaluation keeps your reviewers in the loop, on the metrics you choose."
-                : "You choose which conversations DataOrb reads and who sees each advisor’s record. Every opportunity cites the exchange behind it, identities are stripped from digital twins, and a person confirms every recovery move."
+                  : activePage === "training"
+                    ? "You choose which interactions become practice and who can access each learning record. Customer identity is removed from every simulation, while the situation, behavior, and evidence remain available to the people responsible for development."
+                    : "You choose which conversations DataOrb reads and who sees each advisor’s record. Every opportunity cites the exchange behind it, identities are stripped from digital twins, and a person confirms every recovery move."
             }
           />
         ) : null}
@@ -1022,7 +1123,9 @@ export default function IntelligenceLandingPage({
                     ? "See what last month's campaigns left on the table."
                     : activePage === "quality"
                       ? "See how your team scores when nothing is sampled."
-                    : "See what your last 1,000 conversations are telling you."}
+                      : activePage === "training"
+                        ? "See how quickly your team can reach readiness."
+                        : "See what your last 1,000 conversations are telling you."}
               </h2>
               <p>
                 {activePage === "revenue"
@@ -1031,7 +1134,9 @@ export default function IntelligenceLandingPage({
                     ? "Bring a batch of your own collection calls. We will decode them and show you your real promise-to-pay conversion, the objections costing you the most, and where your compliance coverage actually stands."
                     : activePage === "quality"
                       ? "Bring a batch of your own interactions and your scorecard. We will run the evaluation and show you where your team stands, metric by metric, with the coaching recommendations already attached."
-                    : "Bring your interactions. We'll reveal resolution rates, effort hotspots, and repeat-contact drivers."}
+                      : activePage === "training"
+                        ? "Bring the scenarios your teams find hardest. We will turn them into practice, show you where each advisor stands, and connect the learning to their next real interactions."
+                        : "Bring your interactions. We'll reveal resolution rates, effort hotspots, and repeat-contact drivers."}
               </p>
             </div>
 
@@ -1075,7 +1180,9 @@ export default function IntelligenceLandingPage({
                                   (activePage === "collection" &&
                                     link === "Collection Intelligence") ||
                                   (activePage === "quality" &&
-                                    link === "Quality and Coaching")
+                                    link === "Quality and Coaching") ||
+                                  (activePage === "training" &&
+                                    link === "Training and Learning")
                                     ? "page"
                                     : undefined
                                 }

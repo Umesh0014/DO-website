@@ -257,7 +257,7 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
               {item.groups ? (
                 <div
                   aria-label={`${item.label} links`}
-                  className={`top-navigation-dropdown top-navigation-dropdown--grouped${item.layout === "compact-card" ? " top-navigation-dropdown--compact" : ""}${item.layout === "split-card" ? " top-navigation-dropdown--split" : ""}${item.label === "Industries" ? " top-navigation-dropdown--industries" : ""}`}
+                  className={`top-navigation-dropdown top-navigation-dropdown--grouped${item.layout === "compact-card" ? " top-navigation-dropdown--compact" : ""}${item.layout === "split-card" ? " top-navigation-dropdown--split" : ""}${item.label === "Industries" ? " top-navigation-dropdown--industries" : ""}${item.label === "Company" ? " top-navigation-dropdown--company" : ""}`}
                   role="menu"
                 >
                   {item.layout === "split-card" && item.feature ? (

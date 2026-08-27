@@ -278,6 +278,7 @@ const primaryNavigation = [
       {
         label: "Trust and responsibility",
         description: "Security and responsible AI by design.",
+        hideHeader: true,
         items: [
           { label: "Careers", href: "/company/careers" },
           { label: "Contact", href: "/company/contact" },

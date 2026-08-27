@@ -479,16 +479,22 @@ a {
 }
 
 .top-navigation-dropdown--grouped.top-navigation-dropdown--split.top-navigation-dropdown--industries {
+  min-height: 0;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
 }
 
-.top-navigation-dropdown--industries .top-navigation-dropdown-split-overview,
-.top-navigation-dropdown--industries .top-navigation-feature {
+.top-navigation-dropdown--industries .top-navigation-dropdown-split-overview {
+  padding: 24px 28px;
+  background: #fff;
+}
+
+.top-navigation-dropdown--split.top-navigation-dropdown--industries .top-navigation-feature {
+  padding: 28px 32px;
   background: transparent;
 }
 
-.top-navigation-dropdown--industries .top-navigation-feature::before,
-.top-navigation-dropdown--industries .top-navigation-feature::after {
+.top-navigation-dropdown--split.top-navigation-dropdown--industries .top-navigation-feature::before,
+.top-navigation-dropdown--split.top-navigation-dropdown--industries .top-navigation-feature::after {
   display: none;
 }
 
@@ -629,11 +635,22 @@ a {
 }
 
 .top-navigation-dropdown--industries .top-navigation-dropdown-group--without-header {
-  padding-top: 32px;
+  padding: 28px 38px;
 }
 
 .top-navigation-dropdown--industries .top-navigation-dropdown-group--without-header .top-navigation-dropdown-group-list {
   padding-top: 0;
+}
+
+.top-navigation-dropdown--industries .top-navigation-dropdown-group--without-header a.top-navigation-dropdown-link--with-icon {
+  min-height: 64px;
+  grid-template-columns: 30px minmax(0, 1fr) 16px;
+  gap: 20px;
+}
+
+.top-navigation-dropdown--industries .top-navigation-dropdown-item-icon {
+  width: 28px;
+  height: 28px;
 }
 
 .top-navigation-dropdown--split a.top-navigation-dropdown-link--with-icon {

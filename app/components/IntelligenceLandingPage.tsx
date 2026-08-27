@@ -559,29 +559,30 @@ export default function IntelligenceLandingPage({
         : activePage === "quality"
           ? [
               {
-                question: "Does this replace our existing QA scorecard?",
+                question: "How do we know the scores match our own evaluators?",
                 answer:
-                  "No. Your scorecard defines the standard. DataOrb applies it to every conversation, cites the evidence behind each result, and makes the record available for calibration and coaching.",
+                  "Check them yourself. Every rating carries its rationale and the cited dialogue, so your quality team can open any score and verify it in seconds. DataOrb is calibrated against your own reviewers, on your own interactions, and hybrid evaluation keeps a human in the loop on any metric you designate.",
               },
               {
-                question: "Does this replace human quality reviewers?",
+                question: "Do we have to set up keywords or taxonomies?",
                 answer:
-                  "No. DataOrb removes the listening and searching burden so reviewers can focus on calibration, judgment, coaching, and the exceptions that need human attention.",
+                  "No. DataOrb is context-aware out of the box. It reads the situation, decides whether a metric applied, and evaluates only where it did. You bring the scorecard; nothing else needs building or maintaining.",
               },
               {
-                question: "Can different programs use different scorecards?",
+                question: "Can different campaigns run different scorecards?",
                 answer:
-                  "Yes. Scorecards can reflect the requirements of each product, market, channel, and partner while still rolling up into a consistent enterprise view.",
+                  "Yes. A sales scorecard is not a service scorecard. Configure as many as you need, by campaign, channel, and line of business, and DataOrb evaluates each interaction against the one that governs it.",
               },
               {
-                question: "How quickly is coaching available?",
+                question:
+                  "Does this cover our BPO partners as well as in-house teams?",
                 answer:
-                  "As soon as the interaction ends. The score, cited evidence, and recommended coaching gap can reach the team lead the same day, while the conversation is still fresh.",
+                  "Yes. Every team reads from one record: same scorecards, same dashboards, across every language and every site. Brand and partner see the same numbers, which is the only way the conversation about quality stays honest.",
               },
               {
-                question: "Can we use this with BPO partners?",
+                question: "Does it evaluate AI agents too?",
                 answer:
-                  "Yes. In-house teams and partners can be measured against the same standards in one record, with access controlled for each program and organization.",
+                  "Yes, on the same standard. Chatbots and AI teammates are scored against the same scorecards as your advisors: was the procedure followed, was the customer verified, was the issue resolved. One standard is the only honest way to compare them.",
               },
             ]
         : [

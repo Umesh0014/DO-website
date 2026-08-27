@@ -52,7 +52,7 @@ const footerGroups = [
   },
 ];
 
-type IntelligencePage = "collection" | "revenue" | "service";
+type IntelligencePage = "collection" | "quality" | "revenue" | "service";
 
 type IntelligenceSection = {
   body: string;
@@ -186,6 +186,66 @@ const collectionSections: IntelligenceSection[] = [
   },
 ];
 
+const qualitySections: IntelligenceSection[] = [
+  {
+    eyebrow: "Measure",
+    heading: "Quality you can see.",
+    body: "Sampled QA shows you a fraction of the operation. DataOrb evaluates every conversation against the scorecard you set, so quality becomes a complete, evidence-linked record instead of an estimate.",
+    features: [
+      {
+        title: "Every interaction, scored",
+        body: "DataOrb checks 100% of conversations for the behaviors, outcomes, and mandatory steps that matter to your program. Teams see the full distribution, not the luck of the sample.",
+      },
+      {
+        title: "One standard across every team",
+        body: "In-house advisors, BPO partners, voice, chat, and AI teammates are evaluated against the same standard. Performance comparisons become consistent, transparent, and fair.",
+      },
+      {
+        title: "Every score, cited",
+        body: "Each result links to the exact moment that produced it. Reviewers can verify the evidence, calibrate quickly, and spend less time searching through recordings.",
+      },
+    ],
+  },
+  {
+    eyebrow: "Coach",
+    heading: "Coach the gap that matters.",
+    body: "DataOrb turns each advisor’s complete interaction record into focused coaching: the behavior to change, the moment it appeared, and the outcome it affected.",
+    features: [
+      {
+        title: "A coaching plan per advisor",
+        body: "Every advisor sees the patterns holding them back, from missed discovery and weak ownership to incomplete disclosures. Team leads get a prioritized recommendation instead of another dashboard to interpret.",
+      },
+      {
+        title: "The moment, ready to review",
+        body: "Coaching starts at the cited exchange, with the surrounding context attached. One click takes the lead from the score to the behavior, without listening through the whole call.",
+      },
+      {
+        title: "Effort follows impact",
+        body: "Gaps are ranked by frequency, severity, and business outcome. Leaders spend coaching time where it can move resolution, compliance, conversion, and customer effort.",
+      },
+    ],
+  },
+  {
+    eyebrow: "Improve",
+    heading: "Make better performance repeatable.",
+    body: "The best interaction in your operation should not stay hidden in one advisor’s headset. DataOrb finds what works, turns it into practice, and measures whether the next conversation improves.",
+    features: [
+      {
+        title: "Best practice, found in the work",
+        body: "DataOrb identifies the questions, explanations, and recovery moves that consistently lead to better outcomes, then makes those examples available to the rest of the team.",
+      },
+      {
+        title: "Hard moments, rehearsed",
+        body: "Real scenarios become identity-stripped practice conversations. Advisors can rehearse objections, vulnerability, escalation, and difficult customer moments before handling them live.",
+      },
+      {
+        title: "A closed coaching loop",
+        body: "The next real conversations are evaluated against the same scorecard. Leaders see whether the coached behavior changed and whether the customer and business outcomes moved with it.",
+      },
+    ],
+  },
+];
+
 type IntelligenceLandingPageProps = {
   activePage: IntelligencePage;
   heroBody: string;
@@ -197,6 +257,7 @@ function getFooterLinkHref(link: string) {
   if (link === "Service Intelligence") return "/";
   if (link === "Revenue Intelligence") return "/revenue-intelligence";
   if (link === "Collection Intelligence") return "/collection-intelligence";
+  if (link === "Quality and Coaching") return "/platform/quality-and-coaching";
   return "#top";
 }
 
@@ -360,7 +421,7 @@ function IntelligenceSections({
   page,
   sections,
 }: {
-  page: "collection" | "revenue";
+  page: "collection" | "quality" | "revenue";
   sections: IntelligenceSection[];
 }) {
   return (
@@ -419,11 +480,19 @@ export default function IntelligenceLandingPage({
       ? "Collection Intelligence"
       : activePage === "revenue"
         ? "Revenue Intelligence"
+        : activePage === "quality"
+          ? "Quality and Coaching"
         : "Service Intelligence";
   const isCommercialLayout =
-    activePage === "collection" || activePage === "revenue";
+    activePage === "collection" ||
+    activePage === "quality" ||
+    activePage === "revenue";
   const commercialSections =
-    activePage === "collection" ? collectionSections : revenueSections;
+    activePage === "collection"
+      ? collectionSections
+      : activePage === "quality"
+        ? qualitySections
+        : revenueSections;
   const heroRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -487,6 +556,34 @@ export default function IntelligenceLandingPage({
                 "Yes. Every agency and every in-house team is measured against the same scorecards and the same funnel, in one record. Brand and partner see the same numbers, which is the only way the conversation about recovery stays honest.",
             },
           ]
+        : activePage === "quality"
+          ? [
+              {
+                question: "Does this replace our existing QA scorecard?",
+                answer:
+                  "No. Your scorecard defines the standard. DataOrb applies it to every conversation, cites the evidence behind each result, and makes the record available for calibration and coaching.",
+              },
+              {
+                question: "Does this replace human quality reviewers?",
+                answer:
+                  "No. DataOrb removes the listening and searching burden so reviewers can focus on calibration, judgment, coaching, and the exceptions that need human attention.",
+              },
+              {
+                question: "Can different programs use different scorecards?",
+                answer:
+                  "Yes. Scorecards can reflect the requirements of each product, market, channel, and partner while still rolling up into a consistent enterprise view.",
+              },
+              {
+                question: "How quickly is coaching available?",
+                answer:
+                  "As soon as the interaction ends. The score, cited evidence, and recommended coaching gap can reach the team lead the same day, while the conversation is still fresh.",
+              },
+              {
+                question: "Can we use this with BPO partners?",
+                answer:
+                  "Yes. In-house teams and partners can be measured against the same standards in one record, with access controlled for each program and organization.",
+              },
+            ]
         : [
           {
             question: "How is this different from speech analytics?",
@@ -848,10 +945,16 @@ export default function IntelligenceLandingPage({
         {activePage === "revenue" ? <Stats /> : null}
         {isCommercialLayout ? (
           <Feature135
-            heading="You hold the controls."
+            heading={
+              activePage === "quality"
+                ? "You keep the standard."
+                : "You hold the controls."
+            }
             description={
               activePage === "collection"
                 ? "You choose which conversations DataOrb reads and who sees each advisor’s record. Every commitment and recommended action cites the exchange behind it, identities are stripped from practice personas, and a person confirms every treatment decision."
+                : activePage === "quality"
+                  ? "You choose the scorecards, the calibration process, and who sees each advisor’s record. Every score and coaching recommendation cites the interaction behind it, and your quality leaders remain in control of the standard."
                 : "You choose which conversations DataOrb reads and who sees each advisor’s record. Every opportunity cites the exchange behind it, identities are stripped from digital twins, and a person confirms every recovery move."
             }
           />
@@ -916,6 +1019,8 @@ export default function IntelligenceLandingPage({
                   ? "See the revenue sitting in last month's calls."
                   : activePage === "collection"
                     ? "See what last month's campaigns left on the table."
+                    : activePage === "quality"
+                      ? "See what your QA sample is missing."
                     : "See what your last 1,000 conversations are telling you."}
               </h2>
               <p>
@@ -923,6 +1028,8 @@ export default function IntelligenceLandingPage({
                   ? "Bring a sample of your own sales conversations. We will decode them and show you how many carried a buying signal that was never pitched, which offers are converting, and where your next recovery campaign is hiding."
                   : activePage === "collection"
                     ? "Bring a batch of your own collection calls. We will decode them and show you your real promise-to-pay conversion, the objections costing you the most, and where your compliance coverage actually stands."
+                    : activePage === "quality"
+                      ? "Bring a batch of your own conversations and your scorecard. We will show you the gaps your sample missed, the coaching priorities for each team, and the evidence behind every result."
                     : "Bring your interactions. We'll reveal resolution rates, effort hotspots, and repeat-contact drivers."}
               </p>
             </div>
@@ -965,7 +1072,9 @@ export default function IntelligenceLandingPage({
                                   (activePage === "revenue" &&
                                     link === "Revenue Intelligence") ||
                                   (activePage === "collection" &&
-                                    link === "Collection Intelligence")
+                                    link === "Collection Intelligence") ||
+                                  (activePage === "quality" &&
+                                    link === "Quality and Coaching")
                                     ? "page"
                                     : undefined
                                 }

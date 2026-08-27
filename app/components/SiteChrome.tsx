@@ -45,7 +45,7 @@ const footerGroups = [
 export type IntelligencePage = "collection" | "revenue" | "service";
 
 function getFooterLinkHref(link: string) {
-  if (link === "Service Intelligence") return "/";
+  if (link === "Service Intelligence") return "/service-intelligence";
   if (link === "Revenue Intelligence") return "/revenue-intelligence";
   if (link === "Collection Intelligence") return "/collection-intelligence";
   return "#top";
@@ -87,7 +87,7 @@ export function ArrowIcon() {
   );
 }
 
-export function SiteFooter({ activePage }: { activePage: IntelligencePage }) {
+export function SiteFooter({ activePage }: { activePage?: IntelligencePage }) {
   return (
     <footer className="site-footer">
       <div className="footer-inner">

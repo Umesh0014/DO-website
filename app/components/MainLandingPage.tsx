@@ -121,7 +121,7 @@ export default function MainLandingPage() {
         </ScrollReveal>
       </section>
 
-      <SiteFooter activePage="service" />
+      <SiteFooter />
     </main>
   );
 }

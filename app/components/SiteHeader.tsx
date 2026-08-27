@@ -12,7 +12,7 @@ const primaryNavigation = [
       {
         label: "Products",
         items: [
-          { label: "Service Intelligence", href: "/" },
+          { label: "Service Intelligence", href: "/service-intelligence" },
           { label: "Revenue Intelligence", href: "/revenue-intelligence" },
           { label: "Collection Intelligence", href: "/collection-intelligence" },
           { label: "Quality and Coaching", href: "/platform/quality-and-coaching" },

@@ -490,12 +490,6 @@ a {
 
 .top-navigation-dropdown--split.top-navigation-dropdown--industries .top-navigation-feature {
   padding: 28px 32px;
-  background: transparent;
-}
-
-.top-navigation-dropdown--split.top-navigation-dropdown--industries .top-navigation-feature::before,
-.top-navigation-dropdown--split.top-navigation-dropdown--industries .top-navigation-feature::after {
-  display: none;
 }
 
 .top-navigation-dropdown--compact .top-navigation-dropdown-group-header {

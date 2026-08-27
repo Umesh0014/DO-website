@@ -211,6 +211,7 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
   return (
     <ul
       className={`top-navigation-list${openMenu ? " top-navigation-list--open" : ""}`}
+      role="menubar"
       onKeyDown={(event) => {
         if (event.key === "Escape") setOpenMenu(null);
       }}

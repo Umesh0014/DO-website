@@ -14,22 +14,22 @@ export async function generateMetadata(): Promise<Metadata> {
   const ogImage = `${protocol}://${host}/og.png`;
 
   return {
-    title: "dataOrb — Stop guessing what happened",
+    title: "dataOrb — Decision intelligence for customer operations",
     description:
-      "Every interaction, evidence-linked: what happened, customer impact, and what’s next.",
+      "Turn every customer conversation into your next best decision, with evidence-linked intelligence across voice, chat, email, and chatbot.",
     icons: {
       icon: "/favicon.svg",
       shortcut: "/favicon.svg",
     },
     openGraph: {
-      title: "dataOrb — Stop guessing what happened",
-      description: "Every interaction, evidence-linked.",
+      title: "dataOrb — Decision intelligence for customer operations",
+      description: "Turn every customer conversation into your next best decision.",
       images: [{ url: ogImage, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "dataOrb — Stop guessing what happened",
-      description: "Every interaction, evidence-linked.",
+      title: "dataOrb — Decision intelligence for customer operations",
+      description: "Turn every customer conversation into your next best decision.",
       images: [ogImage],
     },
   };

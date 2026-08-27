@@ -1021,7 +1021,7 @@ export default function IntelligenceLandingPage({
                   : activePage === "collection"
                     ? "See what last month's campaigns left on the table."
                     : activePage === "quality"
-                      ? "See what your QA sample is missing."
+                      ? "See how your team scores when nothing is sampled."
                     : "See what your last 1,000 conversations are telling you."}
               </h2>
               <p>
@@ -1030,7 +1030,7 @@ export default function IntelligenceLandingPage({
                   : activePage === "collection"
                     ? "Bring a batch of your own collection calls. We will decode them and show you your real promise-to-pay conversion, the objections costing you the most, and where your compliance coverage actually stands."
                     : activePage === "quality"
-                      ? "Bring a batch of your own conversations and your scorecard. We will show you the gaps your sample missed, the coaching priorities for each team, and the evidence behind every result."
+                      ? "Bring a batch of your own interactions and your scorecard. We will run the evaluation and show you where your team stands, metric by metric, with the coaching recommendations already attached."
                     : "Bring your interactions. We'll reveal resolution rates, effort hotspots, and repeat-contact drivers."}
               </p>
             </div>

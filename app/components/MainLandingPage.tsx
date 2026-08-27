@@ -64,7 +64,7 @@ export default function MainLandingPage() {
         />
         <div className="home-hero-overlay" aria-hidden="true" />
 
-        <SiteHeader />
+        <SiteHeader inverse />
 
         <div className="home-hero-copy">
           <p className="home-hero-eyebrow">Decision intelligence for customer operations</p>

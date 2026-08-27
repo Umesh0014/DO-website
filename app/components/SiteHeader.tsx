@@ -93,9 +93,13 @@ const primaryNavigation = [
   },
 ];
 
-export default function SiteHeader() {
+type SiteHeaderProps = {
+  inverse?: boolean;
+};
+
+export default function SiteHeader({ inverse = false }: SiteHeaderProps) {
   return (
-    <header className="site-header">
+    <header className={`site-header${inverse ? " site-header-inverse" : ""}`}>
       <nav className="header-inner" aria-label="Primary navigation">
         <Link className="logo-link" href="/" aria-label="dataOrb home">
           <BrandMark />

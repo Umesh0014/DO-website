@@ -273,6 +273,38 @@ a {
   margin-top: 28px;
 }
 
+.home-hero-actions .button-primary {
+  background: #fff;
+  color: #0b0d10;
+}
+
+.home-hero-actions .button-primary:hover {
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+}
+
+.home-hero-actions .button-secondary {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: #fff;
+  backdrop-filter: none;
+}
+
+.home-hero-actions .button-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: transparent;
+  color: #fff;
+  box-shadow: none;
+}
+
+.home-hero-actions .button-secondary .play-icon {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.home-hero-actions .button:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.72);
+}
+
 @media (max-width: 640px) {
   .home-logo-strip {
     min-height: 160px;
@@ -596,6 +628,41 @@ a {
 
 .site-header:has(.top-navigation-list--open)::after {
   opacity: 1;
+}
+
+.site-header-inverse {
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+  background: rgba(4, 9, 14, 0.3);
+}
+
+.site-header-inverse .logo-link {
+  color: #fff;
+}
+
+.site-header-inverse .top-navigation-link {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.site-header-inverse .top-navigation-link:hover,
+.site-header-inverse .top-navigation-link:focus-visible,
+.site-header-inverse .top-navigation-link[aria-expanded="true"] {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.site-header-inverse .header-cta {
+  background: #fff;
+  color: #0b0d10;
+}
+
+.site-header-inverse .header-cta:hover {
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+}
+
+.site-header-inverse .logo-link:focus-visible,
+.site-header-inverse .header-cta:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.72);
 }
 
 .header-inner {

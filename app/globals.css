@@ -235,77 +235,6 @@ a {
     linear-gradient(90deg, rgba(2, 7, 12, 0.58) 0%, rgba(2, 7, 12, 0.12) 58%, rgba(2, 7, 12, 0.05) 100%);
 }
 
-.home-header {
-  position: absolute;
-  inset: 0 0 auto;
-  z-index: 20;
-  padding: 20px clamp(20px, 3.2vw, 48px);
-}
-
-.home-navbar {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr auto 1fr;
-}
-
-.home-logo {
-  display: inline-flex;
-  width: fit-content;
-  align-items: center;
-  gap: 9px;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-}
-
-.home-logo .brand-mark {
-  width: 28px;
-  height: 20px;
-}
-
-.home-nav-pill {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  padding: 8px;
-  border-radius: 14px;
-  background-color: rgba(7, 13, 18, 0.18);
-}
-
-.home-nav-link {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  min-height: 34px;
-  align-items: center;
-  gap: 3px;
-  padding: 7px 12px;
-  border-radius: 8px;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 14px;
-  font-weight: 400;
-  transition:
-    color 180ms ease,
-    background-color 180ms ease;
-}
-
-.home-nav-link:first-child,
-.home-nav-link:hover,
-.home-nav-link:focus-visible {
-  background: rgba(255, 255, 255, 0.13);
-  color: #fff;
-}
-
-.home-header-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.home-header-secondary,
-.home-header-primary,
 .home-hero-primary,
 .home-hero-secondary {
   display: inline-flex;
@@ -319,47 +248,17 @@ a {
     transform 180ms ease;
 }
 
-.home-header-secondary,
-.home-header-primary {
-  min-height: 42px;
-  padding: 10px 17px;
-  font-size: 14px;
-}
-
-.home-header-secondary {
-  color: #fff;
-}
-
-.home-header-secondary:hover,
 .home-hero-secondary:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.home-header-primary,
 .home-hero-primary {
   background: #fff;
   color: #07090b;
 }
 
-.home-header-primary:hover,
 .home-hero-primary:hover {
   background: rgba(255, 255, 255, 0.88);
-}
-
-.home-menu-toggle {
-  display: none;
-  width: 42px;
-  height: 42px;
-  align-items: center;
-  justify-content: center;
-  justify-self: end;
-  border-radius: 11px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.home-mobile-menu {
-  display: none;
 }
 
 .home-hero-copy {
@@ -412,80 +311,10 @@ a {
   color: #fff;
 }
 
-.home-logo:focus-visible,
-.home-nav-link:focus-visible,
-.home-header-secondary:focus-visible,
-.home-header-primary:focus-visible,
-.home-menu-toggle:focus-visible,
-.home-mobile-link:focus-visible,
 .home-hero-primary:focus-visible,
 .home-hero-secondary:focus-visible {
   outline: 3px solid rgba(255, 255, 255, 0.68);
   outline-offset: 3px;
-}
-
-@media (max-width: 900px) {
-  .home-navbar {
-    grid-template-columns: 1fr auto;
-  }
-
-  .home-nav-pill,
-  .home-header-actions {
-    display: none;
-  }
-
-  .home-menu-toggle {
-    display: inline-flex;
-  }
-
-  .home-mobile-menu {
-    position: absolute;
-    top: 72px;
-    right: 16px;
-    left: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 14px;
-    border-radius: 20px;
-    background-color: rgba(7, 13, 18, 0.34);
-  }
-
-  .home-mobile-link {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    min-height: 46px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 11px 13px;
-    border-radius: 10px;
-    color: rgba(255, 255, 255, 0.78);
-    font-size: 14px;
-    transition:
-      color 180ms ease,
-      background-color 180ms ease;
-  }
-
-  .home-mobile-link:hover,
-  .home-mobile-link:focus-visible {
-    background: rgba(255, 255, 255, 0.09);
-    color: #fff;
-  }
-
-  .home-mobile-actions {
-    display: grid;
-    gap: 8px;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 8px;
-    padding-top: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  .home-mobile-actions a {
-    position: relative;
-    z-index: 1;
-  }
 }
 
 @media (max-width: 640px) {
@@ -501,10 +330,6 @@ a {
 
   .home-hero {
     min-height: 680px;
-  }
-
-  .home-header {
-    padding: 16px;
   }
 
   .home-hero-overlay {

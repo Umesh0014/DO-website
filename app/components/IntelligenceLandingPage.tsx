@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 
 import { Component as GradientBackground } from "../../components/ui/bg-gredient";
-import { DropdownNavigation } from "../../components/ui/dropdown-navigation";
 import { Feature135 } from "../../components/ui/feature135";
 import { Stats } from "../../components/ui/stats-section-with-text";
-import { ArrowIcon, BrandMark, SiteFooter } from "./SiteChrome";
+import { ArrowIcon, SiteFooter } from "./SiteChrome";
+import SiteHeader from "./SiteHeader";
 
 const heroBackground =
   "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260611_133301_d5f2a94a-b22e-4e4a-a6b6-eacdddf1f5b0.png&w=1280&q=85";
@@ -153,94 +152,6 @@ type IntelligenceLandingPageProps = {
   heroHeading: string;
 };
 
-const primaryNavigation = [
-  {
-    label: "Platform",
-    groups: [
-      {
-        label: "Products",
-        items: [
-          { label: "Service Intelligence", href: "/" },
-          { label: "Revenue Intelligence", href: "/revenue-intelligence" },
-          { label: "Collection Intelligence", href: "/collection-intelligence" },
-          { label: "Quality and Coaching", href: "/platform/quality-and-coaching" },
-          { label: "Training and Learning", href: "/platform/training-and-learning" },
-          { label: "Insights", href: "/platform/insights" },
-          { label: "Context Engine", href: "/platform/context-engine" },
-        ],
-      },
-      {
-        label: "Explore",
-        items: [
-          { label: "Browse features", href: "/platform/features" },
-          { label: "DataOrb Ecosystem", href: "/platform/ecosystem" },
-          { label: "Responsible AI and AAPES", href: "/trust/responsible-ai" },
-        ],
-      },
-      {
-        label: "By team",
-        items: [
-          { label: "Chief Customer Office", href: "/teams/chief-customer-office" },
-          { label: "AI and Transformation", href: "/teams/ai-and-transformation" },
-          { label: "Service Ops", href: "/teams/service-ops" },
-          { label: "Retention Ops", href: "/teams/retention-ops" },
-          { label: "Sales Teams", href: "/teams/sales" },
-          { label: "Enablement", href: "/teams/enablement" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Industries",
-    layout: "split-card" as const,
-    feature: {
-      label: "Industries overview",
-      description: "Intelligence built for your market.",
-    },
-    groups: [
-      {
-        label: "Markets",
-        items: [],
-      },
-      {
-        label: "Industry intelligence",
-        description: "Segment-specific intelligence for regulated conversations.",
-        items: [
-          { label: "Telecommunications", href: "/industries/telecommunications" },
-          { label: "Energy and utilities", href: "/industries/energy-utilities" },
-          { label: "Insurance", href: "/industries/insurance" },
-        ],
-      },
-    ],
-  },
-  { label: "Resources", href: "/resources" },
-  {
-    label: "Company",
-    layout: "split-card" as const,
-    feature: {
-      label: "About DataOrb",
-      description: "The team building intelligence for every conversation.",
-      href: "/company/about",
-    },
-    groups: [
-      {
-        label: "Company",
-        items: [],
-      },
-      {
-        label: "Trust and responsibility",
-        description: "Security and responsible AI by design.",
-        items: [
-          { label: "Careers", href: "/company/careers" },
-          { label: "Contact", href: "/company/contact" },
-          { label: "Security", href: "/trust/security" },
-          { label: "Responsible AI and AAPES", href: "/trust/responsible-ai" },
-        ],
-      },
-    ],
-  },
-];
-
 function TrendIcon() {
   return (
     <svg
@@ -253,24 +164,6 @@ function TrendIcon() {
       <path d="M3 17.5 9 11l4 4 7-8" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M15.5 7H20v4.5" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
-  );
-}
-
-function Header() {
-  return (
-    <header className="site-header">
-      <nav className="header-inner" aria-label="Primary navigation">
-        <Link className="logo-link" href="/" aria-label="dataOrb home">
-          <BrandMark />
-          <span className="brand-wordmark">dataOrb</span>
-        </Link>
-        <DropdownNavigation navItems={primaryNavigation} />
-        <a className="header-cta" href="#demo">
-          <span>Book a demo</span>
-          <ArrowIcon />
-        </a>
-      </nav>
-    </header>
   );
 }
 
@@ -524,7 +417,7 @@ export default function IntelligenceLandingPage({
         style={{ backgroundImage: `url("${heroBackground}")` }}
       >
         <div className="hero-wash" aria-hidden="true" />
-        <Header />
+        <SiteHeader />
 
         <div className="hero-copy">
           {heroEyebrow ? (

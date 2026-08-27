@@ -1,10 +1,8 @@
 "use client";
 
-import { Play } from "lucide-react";
-
 import LogoLoop, { type LogoItem } from "../../components/ui/LogoLoop";
 import ScrollReveal from "../../components/ui/ScrollReveal";
-import { SiteFooter } from "./SiteChrome";
+import { ArrowIcon, SiteFooter } from "./SiteChrome";
 import SiteHeader from "./SiteHeader";
 
 const BG_VIDEO =
@@ -74,11 +72,14 @@ export default function MainLandingPage() {
             Turn conversations into better decisions.
           </h1>
           <div className="home-hero-actions" id="demo">
-            <a className="home-hero-primary" href="mailto:hello@dataorb.ai?subject=Book%20a%20DataOrb%20demo">
-              Book a demo
+            <a className="button button-primary" href="mailto:hello@dataorb.ai?subject=Book%20a%20DataOrb%20demo">
+              <span>Book a demo</span>
+              <ArrowIcon />
             </a>
-            <a className="home-hero-secondary liquid-glass" href="/platform/features">
-              <Play aria-hidden="true" size={16} fill="currentColor" />
+            <a className="button button-secondary" href="/platform/features">
+              <span className="play-icon" aria-hidden="true">
+                <span className="play-triangle" />
+              </span>
               <span>See how it works</span>
             </a>
           </div>
@@ -98,7 +99,7 @@ export default function MainLandingPage() {
           hoverSpeed={18}
           scaleOnHover
           fadeOut
-          fadeOutColor="#f7f5ef"
+          fadeOutColor="#07090d"
           ariaLabel="Placeholder customer logos"
         />
       </section>

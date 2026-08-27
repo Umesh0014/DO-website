@@ -43,6 +43,7 @@ type NavigationSubItem = {
 
 type NavigationGroup = {
   description?: string;
+  hideHeader?: boolean;
   items: NavigationSubItem[];
   label: string;
 };
@@ -256,7 +257,7 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
               {item.groups ? (
                 <div
                   aria-label={`${item.label} links`}
-                  className={`top-navigation-dropdown top-navigation-dropdown--grouped${item.layout === "compact-card" ? " top-navigation-dropdown--compact" : ""}${item.layout === "split-card" ? " top-navigation-dropdown--split" : ""}`}
+                  className={`top-navigation-dropdown top-navigation-dropdown--grouped${item.layout === "compact-card" ? " top-navigation-dropdown--compact" : ""}${item.layout === "split-card" ? " top-navigation-dropdown--split" : ""}${item.label === "Industries" ? " top-navigation-dropdown--industries" : ""}`}
                   role="menu"
                 >
                   {item.layout === "split-card" && item.feature ? (
@@ -288,23 +289,25 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
 
                     return (
                       <section
-                        className={`top-navigation-dropdown-group${item.layout === "split-card" ? " top-navigation-dropdown-split-detail" : ""}`}
+                        className={`top-navigation-dropdown-group${item.layout === "split-card" ? " top-navigation-dropdown-split-detail" : ""}${group.hideHeader ? " top-navigation-dropdown-group--without-header" : ""}`}
                         key={group.label}
                         role="none"
                       >
-                        <div className="top-navigation-dropdown-group-header">
-                          <span className="top-navigation-dropdown-group-icon">
-                            <GroupIcon aria-hidden="true" />
-                          </span>
-                          <div>
-                            <h3 className="top-navigation-dropdown-group-title">
-                              {group.label}
-                            </h3>
-                            <p className="top-navigation-dropdown-group-description">
-                              {group.description ?? navigationGroupDescriptions[group.label]}
-                            </p>
+                        {!group.hideHeader ? (
+                          <div className="top-navigation-dropdown-group-header">
+                            <span className="top-navigation-dropdown-group-icon">
+                              <GroupIcon aria-hidden="true" />
+                            </span>
+                            <div>
+                              <h3 className="top-navigation-dropdown-group-title">
+                                {group.label}
+                              </h3>
+                              <p className="top-navigation-dropdown-group-description">
+                                {group.description ?? navigationGroupDescriptions[group.label]}
+                              </p>
+                            </div>
                           </div>
-                        </div>
+                        ) : null}
                         <ul className="top-navigation-dropdown-group-list" role="none">
                           {group.items.map((subItem) => (
                             <li key={subItem.label} role="none">

@@ -252,6 +252,7 @@ const primaryNavigation = [
       {
         label: "Industry intelligence",
         description: "Segment-specific intelligence for regulated conversations.",
+        hideHeader: true,
         items: [
           { label: "Telecommunications", href: "/industries/telecommunications" },
           { label: "Energy and utilities", href: "/industries/energy-utilities" },

@@ -188,21 +188,21 @@ const collectionSections: IntelligenceSection[] = [
 
 const qualitySections: IntelligenceSection[] = [
   {
-    eyebrow: "Measure",
-    heading: "Quality you can see.",
-    body: "Sampled QA shows you a fraction of the operation. DataOrb evaluates every conversation against the scorecard you set, so quality becomes a complete, evidence-linked record instead of an estimate.",
+    eyebrow: "Evaluate",
+    heading: "Evaluate everything. Explain everything.",
+    body: "Verification and compliance, greetings and closings, objection handling, empathy, ownership. DataOrb scores every metric you define, on every interaction across voice, chat, email, WhatsApp, and chatbot, in 80+ languages, whether an advisor or an AI teammate handled it. And each campaign runs its own scorecard: sales, service, retention, telesales, and collection, configured by channel and line of business.",
     features: [
       {
-        title: "Every interaction, scored",
-        body: "DataOrb checks 100% of conversations for the behaviors, outcomes, and mandatory steps that matter to your program. Teams see the full distribution, not the luck of the sample.",
+        title: "Glass box, not black box",
+        body: "Every rating carries its rationale and cites the exact turns of dialogue that produced it. A disputed score is settled by opening it, not by re-listening to the call.",
       },
       {
-        title: "One standard across every team",
-        body: "In-house advisors, BPO partners, voice, chat, and AI teammates are evaluated against the same standard. Performance comparisons become consistent, transparent, and fair.",
+        title: "No keywords, no rules",
+        body: "DataOrb reads context, not keyword lists. It knows when a metric did not apply, and it flags a miss only where the advisor had the opportunity to demonstrate the skill and did not. No taxonomies to build, no rules to maintain.",
       },
       {
-        title: "Every score, cited",
-        body: "Each result links to the exact moment that produced it. Reviewers can verify the evidence, calibrate quickly, and spend less time searching through recordings.",
+        title: "Adherence, beyond the scorecard",
+        body: "Ingest your SOPs, product manuals, and support procedures as the source of truth, and DataOrb evaluates each interaction against them. You learn not just whether the script was followed, but whether the procedure was.",
       },
     ],
   },

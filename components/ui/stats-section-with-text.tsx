@@ -155,4 +155,47 @@ function Stats() {
   )
 }
 
-export { Stats }
+function TrainingProof() {
+  return (
+    <div className="relative isolate my-[120px] overflow-hidden text-[#171717]">
+      <section
+        className="relative z-10 w-full py-24 lg:py-32"
+        aria-labelledby="masorange-training-heading"
+      >
+        <div className="mx-auto w-full max-w-[1250px] px-5 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
+            <div className="flex flex-col items-start gap-7">
+              <Badge
+                variant="outline"
+                className="border-black/15 bg-white/35 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-black/65 backdrop-blur-sm"
+              >
+                Proof in production
+              </Badge>
+
+              <h2
+                id="masorange-training-heading"
+                className="max-w-xl text-left text-4xl font-normal tracking-[-0.045em] text-[#171717] md:text-5xl lg:text-[56px] lg:leading-[1.03]"
+              >
+                MasOrange — a controlled trial on the hardest queue
+              </h2>
+            </div>
+
+            <div className="flex min-h-64 items-end rounded-[22px] border border-black/10 bg-white/42 p-7 shadow-[0_18px_60px_rgba(46,35,25,0.08)] backdrop-blur-[3px] md:p-9">
+              <p className="max-w-3xl text-left text-lg leading-relaxed text-black/62 md:text-xl">
+                MasOrange put Training and Learning on the cancellation queue
+                and ran it like a clinical study: two practiced cohorts, two
+                matched controls, baselines captured, six weeks, measured on
+                the production KPIs the operation already reports. Handle time
+                was deliberately excluded, because roleplay trains the
+                conversation, not the CRM.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+// Interim study figures and the open quote slot remain under publication hold.
+export { Stats, TrainingProof }

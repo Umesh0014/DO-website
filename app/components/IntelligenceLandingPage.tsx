@@ -947,14 +947,14 @@ export default function IntelligenceLandingPage({
           <Feature135
             heading={
               activePage === "quality"
-                ? "You keep the standard."
+                ? "You hold the controls."
                 : "You hold the controls."
             }
             description={
               activePage === "collection"
                 ? "You choose which conversations DataOrb reads and who sees each advisor’s record. Every commitment and recommended action cites the exchange behind it, identities are stripped from practice personas, and a person confirms every treatment decision."
                 : activePage === "quality"
-                  ? "You choose the scorecards, the calibration process, and who sees each advisor’s record. Every score and coaching recommendation cites the interaction behind it, and your quality leaders remain in control of the standard."
+                  ? "You decide which interactions DataOrb evaluates and who sees each advisor's record. Every score opens to the dialogue that produced it, so an advisor can contest a rating with the evidence in front of them. And where a metric calls for human judgment, DataOrb waits: hybrid evaluation keeps your reviewers in the loop, on the metrics you choose."
                 : "You choose which conversations DataOrb reads and who sees each advisor’s record. Every opportunity cites the exchange behind it, identities are stripped from digital twins, and a person confirms every recovery move."
             }
           />

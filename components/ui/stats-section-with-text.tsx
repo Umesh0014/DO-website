@@ -18,31 +18,29 @@ type CaseStudy = {
 const caseStudies: CaseStudy[] = [
   {
     id: "masorange",
-    title: "MasOrange — telco, seven brands",
+    title: "MasOrange — a controlled trial on the hardest queue",
     description:
-      "Revenue and retention outcomes recovered directly from customer interactions.",
+      "MasOrange put Training and Learning on the cancellation queue and ran it like a clinical study: two practiced cohorts, two matched controls, baselines captured, six weeks, measured on the production KPIs the operation already reports. Handle time was deliberately excluded, because roleplay trains the conversation, not the CRM.",
     metrics: [
       {
-        value: "+13.5%",
-        annotation: "Recovered",
-        description:
-          "Additional sales recovered from interactions that did not close",
+        value: "2",
+        annotation: "Practiced",
+        description: "Practiced cohorts assigned to roleplay rehearsal",
       },
       {
-        value: "+25%",
-        annotation: "Conversion",
-        description: "Sales conversion",
+        value: "2",
+        annotation: "Controls",
+        description: "Matched control cohorts used for comparison",
       },
       {
-        value: "~1,000",
-        annotation: "Monthly",
-        description:
-          "High-risk churners identified for outbound retention each month",
+        value: "6 weeks",
+        annotation: "Window",
+        description: "Baselines captured before the controlled study period",
       },
       {
-        value: "+15%",
-        annotation: "Uptake",
-        description: "Uptake of the marketing-recommended tariff",
+        value: "Production",
+        annotation: "KPIs",
+        description: "Measured on existing operational KPIs; handle time excluded",
       },
     ],
   },

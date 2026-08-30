@@ -27,7 +27,7 @@ export default function RevenueIntelligencePage() {
       activePage="revenue"
       heroEyebrow="Revenue Intelligence"
       heroHeading="Stop leaving revenue on the call."
-      heroBody="DataOrb finds missed revenue and who to call back."
+      heroBody="DataOrb uncovers missed sales and who to call back and why."
     />
   );
 }

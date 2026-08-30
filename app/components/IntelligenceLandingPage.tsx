@@ -201,11 +201,11 @@ const qualitySections: IntelligenceSection[] = [
       },
       {
         title: "No keywords, no rules",
-        body: "DataOrb reads context, not keyword lists. It knows when a metric did not apply, and it flags a miss only where the advisor had the opportunity to demonstrate the skill and did not. No taxonomies to build, no rules to maintain.",
+        body: "DataOrb understands context, scoring only relevant opportunities.",
       },
       {
         title: "Adherence, beyond the scorecard",
-        body: "Ingest your SOPs, product manuals, and support procedures as the source of truth, and DataOrb evaluates each interaction against them. You learn not just whether the script was followed, but whether the procedure was.",
+        body: "DataOrb evaluates every interaction against your procedures not just scripts.",
       },
     ],
   },

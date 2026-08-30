@@ -115,7 +115,7 @@ const revenueSections: IntelligenceSection[] = [
     features: [
       {
         title: "A digital twin of the hard customer",
-        body: "DataOrb turns a real lost conversation into a practice persona, with the identity stripped and the objection intact. Advisors rehearse the exact scenario the team keeps losing, through AI roleplay, before it comes around again.",
+        body: "DataOrb turns lost conversations into AI roleplays for advisor practice.",
       },
       {
         title: "Sales QA on every call",

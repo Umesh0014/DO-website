@@ -291,7 +291,7 @@ const trainingSections: IntelligenceSection[] = [
   {
     eyebrow: "Certify",
     heading: "Readiness becomes a number.",
-    body: "Missions is the team lead's surface. Set the scenario coverage, the proficiency threshold, and the deadline, assign the cohort, and DataOrb tracks each advisor toward ready, not merely finished. Then the advisor's next real calls, scored on the same scorecard, show whether it took.",
+    body: "DataOrb tracks every advisor from assigned practice to proven readiness.",
     features: [
       {
         title: "The preparation loop",

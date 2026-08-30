@@ -3,6 +3,10 @@ import { cn } from "@/lib/utils"
 interface Feature135Props {
   className?: string
   description: string
+  firstTileImage?: {
+    alt: string
+    src: string
+  }
   heading: string
   tileCount?: number
 }
@@ -10,6 +14,7 @@ interface Feature135Props {
 export function Feature135({
   className,
   description,
+  firstTileImage,
   heading,
   tileCount = 4,
 }: Feature135Props) {
@@ -27,13 +32,21 @@ export function Feature135({
 
         <div
           className="mt-14 flex flex-wrap items-center justify-center gap-4 md:mt-16 md:gap-6"
-          aria-hidden="true"
         >
           {Array.from({ length: tileCount }, (_, index) => (
             <div
-              className="h-20 w-36 rounded-[18px] border border-black/10 bg-white shadow-[0_18px_50px_rgba(46,64,48,0.10)] sm:h-24 sm:w-44"
+              aria-hidden={index === 0 && firstTileImage ? undefined : true}
+              className="flex h-20 w-36 items-center justify-center rounded-[18px] border border-black/10 bg-white shadow-[0_18px_50px_rgba(46,64,48,0.10)] sm:h-24 sm:w-44"
               key={`control-tile-${index + 1}`}
-            />
+            >
+              {index === 0 && firstTileImage ? (
+                <img
+                  alt={firstTileImage.alt}
+                  className="h-14 w-14 object-contain sm:h-[72px] sm:w-[72px]"
+                  src={firstTileImage.src}
+                />
+              ) : null}
+            </div>
           ))}
         </div>
       </div>

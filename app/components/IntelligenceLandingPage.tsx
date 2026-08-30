@@ -1042,6 +1042,14 @@ export default function IntelligenceLandingPage({
         ) : null}
         {isCommercialLayout ? (
           <Feature135
+            firstTileImage={
+              activePage === "training"
+                ? undefined
+                : {
+                    alt: "GDPR monitored on Scrut",
+                    src: "/gdpr-monitored-grayscale-transparent.png",
+                  }
+            }
             heading={
               activePage === "training"
                 ? "Practice the situation, not the person."

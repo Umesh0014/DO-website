@@ -299,7 +299,7 @@ const trainingSections: IntelligenceSection[] = [
       },
       {
         title: "The readiness loop",
-        body: "When quality evaluation flags a gap, satisfaction drops on a driver, or a policy changes, DataOrb writes the assignment to the specific advisors whose calls produced the signal. Training stops being a calendar event and becomes an intervention.",
+        body: "DataOrb turns quality gaps into targeted training interventions.",
       },
       {
         title: "Launch-day rehearsal",

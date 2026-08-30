@@ -43,28 +43,30 @@ export function Feature135({
           />
         ) : null}
 
-        <div
-          className={cn(
-            "flex flex-wrap items-center justify-center gap-4 md:gap-6",
-            logoWallImage ? "mt-10 md:mt-12" : "mt-14 md:mt-16",
-          )}
-        >
-          {Array.from({ length: tileCount }, (_, index) => (
-            <div
-              aria-hidden={index === 0 && firstTileImage ? undefined : true}
-              className="flex h-20 w-36 items-center justify-center rounded-[18px] border border-black/10 bg-white shadow-[0_18px_50px_rgba(46,64,48,0.10)] sm:h-24 sm:w-44"
-              key={`control-tile-${index + 1}`}
-            >
-              {index === 0 && firstTileImage ? (
-                <img
-                  alt={firstTileImage.alt}
-                  className="h-auto max-h-12 w-[100px] object-contain sm:max-h-14 sm:w-[120px]"
-                  src={firstTileImage.src}
-                />
-              ) : null}
-            </div>
-          ))}
-        </div>
+        {tileCount > 0 ? (
+          <div
+            className={cn(
+              "flex flex-wrap items-center justify-center gap-4 md:gap-6",
+              logoWallImage ? "mt-10 md:mt-12" : "mt-14 md:mt-16",
+            )}
+          >
+            {Array.from({ length: tileCount }, (_, index) => (
+              <div
+                aria-hidden={index === 0 && firstTileImage ? undefined : true}
+                className="flex h-20 w-36 items-center justify-center rounded-[18px] border border-black/10 bg-white shadow-[0_18px_50px_rgba(46,64,48,0.10)] sm:h-24 sm:w-44"
+                key={`control-tile-${index + 1}`}
+              >
+                {index === 0 && firstTileImage ? (
+                  <img
+                    alt={firstTileImage.alt}
+                    className="h-auto max-h-12 w-[100px] object-contain sm:max-h-14 sm:w-[120px]"
+                    src={firstTileImage.src}
+                  />
+                ) : null}
+              </div>
+            ))}
+          </div>
+        ) : null}
       </div>
     </section>
   )

@@ -1063,6 +1063,7 @@ export default function IntelligenceLandingPage({
                   }
                 : undefined
             }
+            tileCount={activePage === "revenue" ? 0 : 4}
             description={
               activePage === "collection"
                 ? "You choose which conversations DataOrb reads and who sees each advisor’s record. Every commitment and recommended action cites the exchange behind it, identities are stripped from practice personas, and a person confirms every treatment decision."

@@ -1449,6 +1449,7 @@ a {
 
 .revenue-features .standard-feature {
   min-height: 190px;
+  padding-inline: clamp(28px, 3vw, 48px);
 }
 
 .revenue-features .standard-feature p {

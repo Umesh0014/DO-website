@@ -85,7 +85,7 @@ const revenueSections: IntelligenceSection[] = [
       },
       {
         title: "The customer about to leave",
-        body: "Some conversations end with a sale missed. Others end with a customer halfway out the door. DataOrb flags high churn risk the moment the interaction closes, so your retention campaign reaches them before they act.",
+        body: "DataOrb flags churn risk early, enabling timely retention.",
       },
     ],
   },

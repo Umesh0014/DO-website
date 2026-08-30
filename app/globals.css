@@ -1448,8 +1448,23 @@ a {
 }
 
 .revenue-features .standard-feature {
+  position: relative;
   min-height: 190px;
   padding-inline: clamp(28px, 3vw, 48px);
+}
+
+.revenue-features .standard-feature + .standard-feature {
+  border-left: 0;
+}
+
+.revenue-features .standard-feature + .standard-feature::before {
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 0;
+  width: 1px;
+  background: #e0e0df;
+  content: "";
 }
 
 .revenue-features .standard-feature p {
@@ -1948,6 +1963,10 @@ a {
 
   .standard-feature + .standard-feature {
     border-top: 1px solid #e0e0df;
+  }
+
+  .revenue-features .standard-feature + .standard-feature::before {
+    display: none;
   }
 
   .faq-section {

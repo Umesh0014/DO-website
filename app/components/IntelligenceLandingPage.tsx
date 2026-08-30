@@ -1058,7 +1058,7 @@ export default function IntelligenceLandingPage({
             logoWallImage={
               activePage === "revenue"
                 ? {
-                    alt: "Customer logos: FX, Google, Alcon, Johnson & Johnson, and National Geographic",
+                    alt: "Compliance standards: GDPR, ISO 27001, ISO 27701, and SOC 2 Type II",
                     src: "/revenue-customer-logo-wall.png",
                   }
                 : undefined

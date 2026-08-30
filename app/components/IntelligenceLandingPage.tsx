@@ -1046,8 +1046,8 @@ export default function IntelligenceLandingPage({
               activePage === "training"
                 ? undefined
                 : {
-                    alt: "GDPR monitored on Scrut",
-                    src: "/gdpr-monitored-grayscale-transparent.png",
+                    alt: "GDPR",
+                    src: "/gdpr-wordmark-transparent.png",
                   }
             }
             heading={

@@ -1469,13 +1469,7 @@ a {
   border-left: 0;
 }
 
-.revenue-features .standard-feature p {
-  color: #4b4b4b;
-  line-height: 1.55;
-}
-
 .revenue-features .standard-feature h3 {
-  font-size: clamp(15px, 1.25vw, 18px);
   white-space: nowrap;
 }
 

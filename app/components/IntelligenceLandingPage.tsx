@@ -295,7 +295,7 @@ const trainingSections: IntelligenceSection[] = [
     features: [
       {
         title: "The preparation loop",
-        body: "New hires rehearse the call typologies they will actually face, on a schedule, before their first shift. The learning curve becomes visible inside the training window, while there is still time to act on it, and the go-live call gets made on evidence instead of impressions.",
+        body: "DataOrb prepares new hires for real calls and proves go-live readiness.",
       },
       {
         title: "The readiness loop",

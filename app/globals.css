@@ -1409,10 +1409,12 @@ a {
 
 .revenue-section {
   min-height: auto;
+  padding-inline: clamp(16px, 2vw, 32px);
   padding-block: clamp(96px, 8vw, 128px);
 }
 
 .revenue-section .standard-inner {
+  width: min(1440px, 100%);
   gap: clamp(64px, 6vw, 88px);
 }
 
@@ -1459,7 +1461,8 @@ a {
 }
 
 .revenue-features .standard-feature {
-  padding-inline: clamp(28px, 3vw, 48px);
+  gap: 12px;
+  padding-inline: clamp(12px, 1.5vw, 24px);
 }
 
 .revenue-features .standard-feature + .standard-feature {
@@ -1469,6 +1472,11 @@ a {
 .revenue-features .standard-feature p {
   color: #4b4b4b;
   line-height: 1.55;
+}
+
+.revenue-features .standard-feature h3 {
+  font-size: clamp(15px, 1.25vw, 18px);
+  white-space: nowrap;
 }
 
 .faq-section {
@@ -1968,6 +1976,10 @@ a {
     display: none;
   }
 
+  .revenue-features .standard-feature h3 {
+    white-space: normal;
+  }
+
   .faq-section {
     --faq-inset-y: 80px;
   }
@@ -2243,6 +2255,10 @@ a {
 
   .revenue-features .standard-feature {
     min-height: 0;
+  }
+
+  .revenue-features .standard-feature h3 {
+    white-space: normal;
   }
 
   .faq-section {

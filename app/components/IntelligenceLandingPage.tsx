@@ -253,7 +253,7 @@ const trainingSections: IntelligenceSection[] = [
   {
     eyebrow: "Twin",
     heading: "The curriculum writes itself.",
-    body: "Somewhere in last month's interactions is the exact conversation your team keeps losing. One click on that interaction record, and DataOrb builds a Digital Twin: a fully configured rehearsal scenario with the situation intact and the identity gone.",
+    body: "DataOrb turns real interactions into anonymized rehearsal scenarios.",
     features: [
       {
         title: "One click, no scripting",

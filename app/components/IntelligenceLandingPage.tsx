@@ -803,7 +803,7 @@ export default function IntelligenceLandingPage({
         <div className="hero-wash" aria-hidden="true" />
         <Header />
 
-        <div className="hero-copy">
+        <div className={`hero-copy hero-copy-${activePage}`}>
           {heroEyebrow ? (
             <p className="hero-eyebrow">{heroEyebrow}</p>
           ) : null}

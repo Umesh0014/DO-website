@@ -280,7 +280,7 @@ const trainingSections: IntelligenceSection[] = [
       },
       {
         title: "Scored like the floor",
-        body: "Every session is evaluated against your production scorecard, the same quality metrics and soft skills QA runs on live calls. Practice performance becomes a usable measure of floor readiness, not a separate number nobody trusts.",
+        body: "DataOrb measures practice with the same scorecard used on live calls.",
       },
       {
         title: "Feedback, cited to the moment",

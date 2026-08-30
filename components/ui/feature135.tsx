@@ -42,7 +42,7 @@ export function Feature135({
               {index === 0 && firstTileImage ? (
                 <img
                   alt={firstTileImage.alt}
-                  className="h-auto max-h-14 w-[104px] object-contain sm:max-h-[68px] sm:w-[132px]"
+                  className="h-auto max-h-14 w-[120px] object-contain sm:max-h-16 sm:w-36"
                   src={firstTileImage.src}
                 />
               ) : null}

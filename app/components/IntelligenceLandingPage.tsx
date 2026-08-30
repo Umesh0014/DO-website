@@ -133,7 +133,7 @@ const collectionSections: IntelligenceSection[] = [
   {
     eyebrow: "Recover",
     heading: "Find the lift in your funnel.",
-    body: "Recovery lives in margins. A point of right-party contact here, a point of promise-to-pay there, multiplied across millions of dials. DataOrb tracks every funnel KPI against the goal you set, from contactability and contact utility to dials per arrangement and recovery conversion, and shows you where the next point is hiding.",
+    body: "DataOrb reveals where to improve every recovery KPI.",
     features: [
       {
         title: "Every outcome, on the record",

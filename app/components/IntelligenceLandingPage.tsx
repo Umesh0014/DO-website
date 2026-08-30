@@ -100,7 +100,7 @@ const revenueSections: IntelligenceSection[] = [
       },
       {
         title: "Training problem or process problem",
-        body: "When conversion drops, DataOrb separates how advisors sell from what they were given to sell with. One points to coaching. The other points to the offer, the pricing, or the playbook itself.",
+        body: "DataOrb reveals whether coaching or the offer hurts conversion.",
       },
       {
         title: "Telesales, funnel to outcome",

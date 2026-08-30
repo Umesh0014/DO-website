@@ -1459,13 +1459,12 @@ a {
 
 .revenue-features .standard-feature + .standard-feature::before {
   position: absolute;
-  top: 50%;
+  top: 52px;
   left: 0;
   width: 1px;
   height: 120px;
   background: #e0e0df;
   content: "";
-  transform: translateY(-50%);
 }
 
 .revenue-features .standard-feature p {

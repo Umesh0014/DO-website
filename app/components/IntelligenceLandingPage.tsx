@@ -231,19 +231,19 @@ const qualitySections: IntelligenceSection[] = [
   {
     eyebrow: "Rehearse",
     heading: "Practice before the floor.",
-    body: "A coaching note and hope is not a training plan. DataOrb closes the loop: the miss becomes a drill, the drill becomes practice, and the next real call shows whether it took.",
+    body: "DataOrb turns coaching gaps into practice and measurable improvement.",
     features: [
       {
         title: "Drills built from real misses",
-        body: "When an advisor keeps missing the same metric, DataOrb turns the underlying interactions into a prescribed practice drill. New hires complete it before their first shift, not after their first complaint.",
+        body: "DataOrb turns repeated gaps into practice drills before they become complaints.",
       },
       {
         title: "Personas, not real customers",
-        body: "Practice personas are built from real interactions, with the identity stripped. Advisors rehearse the hard conversation in simulation, through AI roleplay, instead of learning it on a live customer.",
+        body: "DataOrb turns real interactions into safe AI roleplay practice.",
       },
       {
         title: "Readiness you can verify",
-        body: "After the drill, the advisor's next real conversations are evaluated against the same metric. You see whether the coaching took, in evidence, before you count on it. The loop runs until the outcome moves.",
+        body: "DataOrb verifies whether coaching improves real conversations.",
       },
     ],
   },

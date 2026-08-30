@@ -137,7 +137,7 @@ const collectionSections: IntelligenceSection[] = [
     features: [
       {
         title: "Every outcome, on the record",
-        body: "DataOrb tracks every contact to its outcome: payment taken, promise made, rescheduled, refused, disputed, or wrong party. Your funnel, from dial to cash, becomes a record you can read and trend, campaign by campaign.",
+        body: "DataOrb tracks every contact from dial to cash.",
       },
       {
         title: "Objections, named and graded",

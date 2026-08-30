@@ -1078,7 +1078,12 @@ export default function IntelligenceLandingPage({
                         src: "/iso-27001-emblem.png",
                       },
                     },
-                    { label: "ISO 27701" },
+                    {
+                      image: {
+                        alt: "ISO 27701 certified",
+                        src: "/iso-27701-emblem.png",
+                      },
+                    },
                     { label: "SOC 2 Type II" },
                   ]
                 : undefined

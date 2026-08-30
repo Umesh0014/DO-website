@@ -220,7 +220,7 @@ const qualitySections: IntelligenceSection[] = [
       },
       {
         title: "The whole team, metric by metric",
-        body: "Team leads see where each advisor and the whole team stand on every metric, drawn from 100% of interactions instead of last week's sample of five. Who needs help, and on what, stops being a matter of impression.",
+        body: "DataOrb shows exactly who needs coaching and where.",
       },
       {
         title: "Behavior, next to outcome",

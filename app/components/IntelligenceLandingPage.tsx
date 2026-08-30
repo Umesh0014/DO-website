@@ -303,7 +303,7 @@ const trainingSections: IntelligenceSection[] = [
       },
       {
         title: "Launch-day rehearsal",
-        body: "New tariff, new product, new compliance rule: build the twin and certify the floor in days. The change goes live to advisors who have already handled it in simulation, several times over.",
+        body: "DataOrb certifies advisors on critical changes before they go live.",
       },
     ],
   },

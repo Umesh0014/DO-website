@@ -27,7 +27,7 @@ export default function TrainingAndLearningPage() {
       activePage="training"
       heroEyebrow="Training and Learning"
       heroHeading="Stop practicing on customers."
-      heroBody="Every ramping advisor learns the job somewhere. Without a simulator, they learn it live, on your revenue, your satisfaction scores, and your compliance exposure. DataOrb turns real interactions into rehearsal scenarios, plays the other side in live voice roleplay, and grades every session against the same scorecard QA runs on the floor. By the time the situation walks in the door, it is not the first time. It is the fifth."
+      heroBody="DataOrb prepares advisors through realistic, scorecard-based AI roleplay."
     />
   );
 }

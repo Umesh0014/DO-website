@@ -12,7 +12,13 @@ interface Feature135Props {
     alt: string
     src: string
   }
-  logoWallWide?: boolean
+  logoWallItems?: Array<{
+    image?: {
+      alt: string
+      src: string
+    }
+    label?: string
+  }>
   tileCount?: number
 }
 
@@ -21,8 +27,8 @@ export function Feature135({
   description,
   firstTileImage,
   heading,
-  logoWallWide = false,
   logoWallImage,
+  logoWallItems,
   tileCount = 4,
 }: Feature135Props) {
   return (
@@ -37,13 +43,31 @@ export function Feature135({
           </p>
         </div>
 
-        {logoWallImage ? (
+        {logoWallItems?.length ? (
+          <div className="mx-auto mt-10 grid w-full max-w-[1120px] grid-cols-2 items-center gap-x-8 gap-y-8 py-4 sm:grid-cols-4">
+            {logoWallItems.map((item, index) => (
+              <div
+                className="flex min-h-24 items-center justify-center"
+                key={item.label ?? item.image?.alt ?? `logo-wall-item-${index + 1}`}
+              >
+                {item.image ? (
+                  <img
+                    alt={item.image.alt}
+                    className="h-20 w-20 object-contain"
+                    src={item.image.src}
+                  />
+                ) : (
+                  <span className="text-center text-xl font-semibold tracking-[-0.035em] text-black/55 md:text-2xl">
+                    {item.label}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+        ) : logoWallImage ? (
           <img
             alt={logoWallImage.alt}
-            className={cn(
-              "mx-auto mt-10 h-auto w-full object-contain",
-              logoWallWide ? "max-w-[1120px]" : "max-w-[1038px]",
-            )}
+            className="mx-auto mt-10 h-auto w-full max-w-[1038px] object-contain"
             src={logoWallImage.src}
           />
         ) : null}
@@ -52,7 +76,9 @@ export function Feature135({
           <div
             className={cn(
               "flex flex-wrap items-center justify-center gap-4 md:gap-6",
-              logoWallImage ? "mt-10 md:mt-12" : "mt-14 md:mt-16",
+              logoWallImage || logoWallItems?.length
+                ? "mt-10 md:mt-12"
+                : "mt-14 md:mt-16",
             )}
           >
             {Array.from({ length: tileCount }, (_, index) => (

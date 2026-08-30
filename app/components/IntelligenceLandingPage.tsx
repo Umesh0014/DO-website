@@ -1056,14 +1056,28 @@ export default function IntelligenceLandingPage({
                 : "You hold the controls."
             }
             logoWallImage={
-              activePage === "revenue" || activePage === "collection"
+              activePage === "revenue"
                 ? {
                     alt: "Compliance standards: GDPR, ISO 27001, ISO 27701, and SOC 2 Type II",
                     src: "/revenue-customer-logo-wall.png",
                   }
                 : undefined
             }
-            logoWallWide={activePage === "collection"}
+            logoWallItems={
+              activePage === "collection"
+                ? [
+                    {
+                      image: {
+                        alt: "GDPR",
+                        src: "/gdpr-emblem.png",
+                      },
+                    },
+                    { label: "ISO 27001" },
+                    { label: "ISO 27701" },
+                    { label: "SOC 2 Type II" },
+                  ]
+                : undefined
+            }
             tileCount={activePage === "revenue" || activePage === "collection" ? 0 : 4}
             description={
               activePage === "collection"

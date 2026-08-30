@@ -77,7 +77,7 @@ const revenueSections: IntelligenceSection[] = [
     features: [
       {
         title: "The lead nobody pitched",
-        body: "A customer calls about a bill and mentions a new phone, a second line, a competitor’s price. DataOrb flags every interaction where a buying signal appeared and no offer followed. The lead goes to recovery instead of the archive.",
+        body: "DataOrb turns missed buying signals into actionable recovery leads.",
       },
       {
         title: "The customer still deciding",

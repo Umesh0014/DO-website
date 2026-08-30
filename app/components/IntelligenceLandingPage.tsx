@@ -160,7 +160,7 @@ const collectionSections: IntelligenceSection[] = [
       },
       {
         title: "The lines never to cross",
-        body: "DataOrb flags prohibited language, harassment risk, and pressure where restraint is required. A violation surfaces the day it happens, while it is still a coaching matter.",
+        body: "DataOrb flags risky language before it becomes a violation.",
       },
       {
         title: "Vulnerability, detected",

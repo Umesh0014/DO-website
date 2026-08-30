@@ -27,7 +27,7 @@ export default function QualityAndCoachingPage() {
       activePage="quality"
       heroEyebrow="Quality and Coaching"
       heroHeading="Stop coaching from anecdotes."
-      heroBody="DataOrb evaluates every interaction, human or AI, voice or digital, against your own scorecards, and explains every rating with the exact dialogue behind it. When an advisor misses a metric, the coaching recommendation is already written. Every conversation, not a sample"
+      heroBody="DataOrb evaluates every interaction and turns missed metrics into targeted coaching."
     />
   );
 }

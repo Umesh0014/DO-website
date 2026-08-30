@@ -193,7 +193,7 @@ const qualitySections: IntelligenceSection[] = [
   {
     eyebrow: "Evaluate",
     heading: "Evaluate everything. Explain everything.",
-    body: "Verification and compliance, greetings and closings, objection handling, empathy, ownership. DataOrb scores every metric you define, on every interaction across voice, chat, email, WhatsApp, and chatbot, in 80+ languages, whether an advisor or an AI teammate handled it. And each campaign runs its own scorecard: sales, service, retention, telesales, and collection, configured by channel and line of business.",
+    body: "DataOrb scores every interaction across channels, languages, campaigns, and teams.",
     features: [
       {
         title: "Glass box, not black box",

@@ -44,7 +44,7 @@ export function Feature135({
         </div>
 
         {logoWallItems?.length ? (
-          <div className="mx-auto mt-10 grid w-full max-w-[1120px] grid-cols-2 items-center gap-x-8 gap-y-8 py-4 sm:grid-cols-4">
+          <div className="mx-auto mt-10 flex w-full max-w-[720px] flex-wrap items-center justify-center gap-8 py-4 md:gap-12">
             {logoWallItems.map((item, index) => (
               <div
                 className="flex min-h-24 items-center justify-center"

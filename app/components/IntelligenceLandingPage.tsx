@@ -141,7 +141,7 @@ const collectionSections: IntelligenceSection[] = [
       },
       {
         title: "Objections, named and graded",
-        body: "Non-recognition of the debt, financial hardship, disputed services, timing, already paid, hard refusal. DataOrb names the objection on every call and grades how it was handled. You learn which objections cost you the most, and which rebuttals actually move them.",
+        body: "DataOrb reveals costly objections and the rebuttals that work.",
       },
       {
         title: "Promises, tracked to the cash",

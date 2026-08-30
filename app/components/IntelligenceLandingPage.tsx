@@ -212,11 +212,11 @@ const qualitySections: IntelligenceSection[] = [
   {
     eyebrow: "Coach",
     heading: "Coach with evidence, not opinion.",
-    body: "Quality data that ends in a score changes nothing. DataOrb turns each evaluation into the next coaching move, for every advisor, grounded in their own calls.",
+    body: "DataOrb turns every evaluation into targeted coaching.",
     features: [
       {
         title: "A recommendation on every miss",
-        body: "Where an advisor meets the metric, DataOrb reinforces what worked. Where they miss it, DataOrb writes the coaching recommendation and cites the moment it applies to. The team lead arrives at the one-on-one with the session already prepped.",
+        body: "DataOrb turns performance gaps into ready-to-use coaching.",
       },
       {
         title: "The whole team, metric by metric",
@@ -224,7 +224,7 @@ const qualitySections: IntelligenceSection[] = [
       },
       {
         title: "Behavior, next to outcome",
-        body: "Scorecard data sits beside first contact resolution, sales conversion, retention, and predicted satisfaction. You coach the behavior that moves the outcome, and you can see whether it did.",
+        body: "DataOrb links coaching to the outcomes it improves.",
       },
     ],
   },

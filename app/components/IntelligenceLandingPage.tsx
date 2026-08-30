@@ -257,7 +257,7 @@ const trainingSections: IntelligenceSection[] = [
     features: [
       {
         title: "One click, no scripting",
-        body: "No decision trees, no authoring, no scripts to write. DataOrb reads the original transcript and reconstructs the situation: the reason for contact, the mood, the objections, the moment it went off track. The scenario is ready before a trainer could have opened a blank template.",
+        body: "DataOrb instantly turns transcripts into ready-to-practice scenarios.",
       },
       {
         title: "A firewall for identity",

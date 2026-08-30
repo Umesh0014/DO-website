@@ -197,7 +197,7 @@ const qualitySections: IntelligenceSection[] = [
     features: [
       {
         title: "Glass box, not black box",
-        body: "Every rating carries its rationale and cites the exact turns of dialogue that produced it. A disputed score is settled by opening it, not by re-listening to the call.",
+        body: "Every DataOrb score is explained and backed by exact dialogue.",
       },
       {
         title: "No keywords, no rules",

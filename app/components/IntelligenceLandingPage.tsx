@@ -261,7 +261,7 @@ const trainingSections: IntelligenceSection[] = [
       },
       {
         title: "A firewall for identity",
-        body: "Names, ID numbers, account details, contact information: DataOrb replaces every identifying detail with synthetic values the moment the twin is created, and keeps the scenario dynamics intact. Advisors rehearse the situation, never the person.",
+        body: "DataOrb anonymizes every scenario while preserving the real conversation dynamics.",
       },
       {
         title: "Real struggles, not invented ones",

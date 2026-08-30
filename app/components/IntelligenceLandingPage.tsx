@@ -123,7 +123,7 @@ const revenueSections: IntelligenceSection[] = [
       },
       {
         title: "Coaching from their own calls",
-        body: "Each advisor’s record shows where they pitch, where they miss, and where they convert. You see who leads, who needs coaching, and who needs reskilling, and the coaching starts from their own calls, not a generic script.",
+        body: "DataOrb reveals who excels and who needs coaching.",
       },
     ],
   },

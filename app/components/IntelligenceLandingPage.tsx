@@ -5,10 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { Component as GradientBackground } from "../../components/ui/bg-gredient";
 import { DropdownNavigation } from "../../components/ui/dropdown-navigation";
 import { Feature135 } from "../../components/ui/feature135";
-import {
-  Stats,
-  TrainingProof,
-} from "../../components/ui/stats-section-with-text";
 
 const heroBackground =
   "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260611_133301_d5f2a94a-b22e-4e4a-a6b6-eacdddf1f5b0.png&w=1280&q=85";
@@ -1045,8 +1041,6 @@ export default function IntelligenceLandingPage({
         {isCommercialLayout ? (
           <GradientBackground gradientTo="#c2d8cb" />
         ) : null}
-        {activePage === "revenue" ? <Stats /> : null}
-        {activePage === "training" ? <TrainingProof /> : null}
         {isCommercialLayout ? (
           <Feature135
             heading={

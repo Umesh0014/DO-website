@@ -1072,7 +1072,12 @@ export default function IntelligenceLandingPage({
                         src: "/gdpr-emblem.png",
                       },
                     },
-                    { label: "ISO 27001" },
+                    {
+                      image: {
+                        alt: "ISO 27001 certified",
+                        src: "/iso-27001-emblem.png",
+                      },
+                    },
                     { label: "ISO 27701" },
                     { label: "SOC 2 Type II" },
                   ]

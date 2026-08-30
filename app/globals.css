@@ -1460,10 +1460,9 @@ a {
 .revenue-features .standard-feature + .standard-feature::before {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   width: 1px;
-  height: auto;
+  height: 140px;
   background: #e0e0df;
   content: "";
 }

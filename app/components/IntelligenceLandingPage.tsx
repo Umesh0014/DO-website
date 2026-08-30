@@ -152,7 +152,7 @@ const collectionSections: IntelligenceSection[] = [
   {
     eyebrow: "Protect",
     heading: "Compliance you can prove.",
-    body: "Collection is one of the most regulated conversations in financial services, and a sampled QA program leaves most of it unwitnessed. DataOrb monitors every call against your compliance scorecard, across EU and US programs, and cites the exact moment anything goes wrong.",
+    body: "DataOrb monitors every collection call for compliance risks.",
     features: [
       {
         title: "The disclosures, verified",

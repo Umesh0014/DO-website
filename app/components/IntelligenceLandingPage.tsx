@@ -276,7 +276,7 @@ const trainingSections: IntelligenceSection[] = [
     features: [
       {
         title: "Personas with a mood",
-        body: "The customer arrives irritated and holding it back, grows impatient at repeating information, goes quiet after an unclear promise, and eases only when the advisor takes ownership. Agreeable practice partners teach habits that fail on the floor. These do not agree easily.",
+        body: "DataOrb simulates realistic customers who challenge advisors like real conversations.",
       },
       {
         title: "Scored like the floor",

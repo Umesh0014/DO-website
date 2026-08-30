@@ -171,7 +171,7 @@ const collectionSections: IntelligenceSection[] = [
   {
     eyebrow: "Prepare",
     heading: "Scale what your best closers do.",
-    body: "What works in collection lives inside the conversation: how the questions are sequenced, how the anchor is set, when to hold the silence. DataOrb finds it in your best calls and turns it into coaching and practice for everyone else.",
+    body: "DataOrb turns winning collection techniques into coaching and practice.",
     features: [
       {
         title: "Coaching, per agent, per gap",

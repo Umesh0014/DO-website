@@ -81,7 +81,7 @@ const revenueSections: IntelligenceSection[] = [
       },
       {
         title: "The customer still deciding",
-        body: "“Call me back next week.” “I need to talk it over at home.” Neither a yes nor a no. DataOrb reads the response, marks the opportunity as considering, and queues the follow-up with the context of the original call attached, while the interest is still warm.",
+        body: "DataOrb identifies undecided prospects and queues timely follow-ups.",
       },
       {
         title: "The customer about to leave",

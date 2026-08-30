@@ -107,7 +107,6 @@ const revenueSections: IntelligenceSection[] = [
         body: "For dedicated telesales programs, DataOrb tracks the funnel per campaign and per product: right-party contact, offers made, objections faced, win rate. You see where each program leaks before the month-end report does.",
       },
     ],
-    note: "All of this arrives as structured, trended data, queryable through Ask Mira on the Insights page. Ask why conversion dropped and get a cited answer.",
   },
   {
     eyebrow: "Prepare",

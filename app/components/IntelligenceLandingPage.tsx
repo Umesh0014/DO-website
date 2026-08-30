@@ -145,7 +145,7 @@ const collectionSections: IntelligenceSection[] = [
       },
       {
         title: "Promises, tracked to the cash",
-        body: "A promise to pay is not a payment. DataOrb follows each promise through to resolution or refusal, so you see which arrangements hold, which collapse, and where to intervene before the money slips.",
+        body: "DataOrb tracks which payment promises hold, fail, or need intervention.",
       },
     ],
   },

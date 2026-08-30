@@ -646,9 +646,9 @@ a {
   gap: 20px;
 }
 
-.top-navigation-dropdown--company .top-navigation-dropdown-group--without-header a.top-navigation-dropdown-link--with-icon {
-  min-height: 50px;
-  padding-block: 6px;
+.top-navigation-dropdown.top-navigation-dropdown--company .top-navigation-dropdown-group--without-header a.top-navigation-dropdown-link--with-icon {
+  min-height: 44px;
+  padding-block: 3px;
 }
 
 .top-navigation-dropdown:is(.top-navigation-dropdown--industries, .top-navigation-dropdown--company) .top-navigation-dropdown-item-icon {

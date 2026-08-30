@@ -119,7 +119,7 @@ const revenueSections: IntelligenceSection[] = [
       },
       {
         title: "Sales QA on every call",
-        body: "DataOrb evaluates every sales conversation against your compliance rules and your best practices, not a sample. Supervisors spend their hours coaching, not listening back.",
+        body: "DataOrb evaluates every sale, freeing supervisors to coach.",
       },
       {
         title: "Coaching from their own calls",

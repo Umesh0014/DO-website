@@ -12,7 +12,7 @@ interface Feature135Props {
     alt: string
     src: string
   }
-  logoWallBordered?: boolean
+  logoWallWide?: boolean
   tileCount?: number
 }
 
@@ -21,7 +21,7 @@ export function Feature135({
   description,
   firstTileImage,
   heading,
-  logoWallBordered = false,
+  logoWallWide = false,
   logoWallImage,
   tileCount = 4,
 }: Feature135Props) {
@@ -42,9 +42,7 @@ export function Feature135({
             alt={logoWallImage.alt}
             className={cn(
               "mx-auto mt-10 h-auto w-full object-contain",
-              logoWallBordered
-                ? "max-w-[1120px] border-y border-black/15"
-                : "max-w-[1038px]",
+              logoWallWide ? "max-w-[1120px]" : "max-w-[1038px]",
             )}
             src={logoWallImage.src}
           />

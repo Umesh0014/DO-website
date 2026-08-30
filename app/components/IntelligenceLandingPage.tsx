@@ -1063,7 +1063,7 @@ export default function IntelligenceLandingPage({
                   }
                 : undefined
             }
-            logoWallBordered={activePage === "collection"}
+            logoWallWide={activePage === "collection"}
             tileCount={activePage === "revenue" || activePage === "collection" ? 0 : 4}
             description={
               activePage === "collection"

@@ -96,7 +96,7 @@ const revenueSections: IntelligenceSection[] = [
     features: [
       {
         title: "Objections and competitors, named",
-        body: "DataOrb logs every objection raised, every competitor mentioned, and how the advisor handled each one. You learn which rival you actually lose to, and why, in the customer’s own words.",
+        body: "DataOrb reveals which competitors you lose to and why.",
       },
       {
         title: "Training problem or process problem",

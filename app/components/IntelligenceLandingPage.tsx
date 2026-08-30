@@ -284,7 +284,7 @@ const trainingSections: IntelligenceSection[] = [
       },
       {
         title: "Feedback, cited to the moment",
-        body: "Where the advisor showed the skill, the session says so. Where they missed it, the coaching recommendation arrives cited to the transcript. \"Work on objection handling\" becomes \"you scored 60% on the exact call we lost. Let's get it above 80.\"",
+        body: "DataOrb turns practice gaps into specific, evidence-based coaching.",
       },
     ],
   },

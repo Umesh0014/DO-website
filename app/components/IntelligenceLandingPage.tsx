@@ -156,7 +156,7 @@ const collectionSections: IntelligenceSection[] = [
     features: [
       {
         title: "The disclosures, verified",
-        body: "Identity confirmed, reason for the call stated, required notifications given, payment details and amounts checked, the outcome reformulated. DataOrb verifies the mandatory steps on every call and flags the one that was skipped, with the moment cited.",
+        body: "DataOrb verifies every mandatory step and flags what was missed.",
       },
       {
         title: "The lines never to cross",

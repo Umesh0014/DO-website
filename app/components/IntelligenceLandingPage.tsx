@@ -1056,14 +1056,15 @@ export default function IntelligenceLandingPage({
                 : "You hold the controls."
             }
             logoWallImage={
-              activePage === "revenue"
+              activePage === "revenue" || activePage === "collection"
                 ? {
                     alt: "Compliance standards: GDPR, ISO 27001, ISO 27701, and SOC 2 Type II",
                     src: "/revenue-customer-logo-wall.png",
                   }
                 : undefined
             }
-            tileCount={activePage === "revenue" ? 0 : 4}
+            logoWallBordered={activePage === "collection"}
+            tileCount={activePage === "revenue" || activePage === "collection" ? 0 : 4}
             description={
               activePage === "collection"
                 ? "You choose which conversations DataOrb reads and who sees each advisor’s record. Every commitment and recommended action cites the exchange behind it, identities are stripped from practice personas, and a person confirms every treatment decision."

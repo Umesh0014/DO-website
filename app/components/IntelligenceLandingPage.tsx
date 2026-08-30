@@ -272,7 +272,7 @@ const trainingSections: IntelligenceSection[] = [
   {
     eyebrow: "Rehearse",
     heading: "A customer who talks back.",
-    body: "Drill puts the advisor in a live voice conversation with the twin's customer persona, across service, sales, retention, and collection scenarios. The persona is native speech-to-speech, so it speaks with real timing, interrupts, hesitates, and reacts to how the advisor sounds, not just to what they say.",
+    body: "Drill delivers realistic voice roleplay across service, sales, retention, and collection.",
     features: [
       {
         title: "Personas with a mood",

@@ -164,7 +164,7 @@ const collectionSections: IntelligenceSection[] = [
       },
       {
         title: "Vulnerability, detected",
-        body: "When a customer signals hardship or vulnerability, DataOrb flags the account, so it gets the treatment your policy and the regulator require. Customer treatment stops depending on which calls QA happened to pull.",
+        body: "DataOrb flags vulnerable customers for fair, compliant treatment.",
       },
     ],
   },

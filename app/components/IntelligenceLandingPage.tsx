@@ -104,7 +104,7 @@ const revenueSections: IntelligenceSection[] = [
       },
       {
         title: "Telesales, funnel to outcome",
-        body: "For dedicated telesales programs, DataOrb tracks the funnel per campaign and per product: right-party contact, offers made, objections faced, win rate. You see where each program leaks before the month-end report does.",
+        body: "DataOrb reveals where each sales campaign loses conversions.",
       },
     ],
   },

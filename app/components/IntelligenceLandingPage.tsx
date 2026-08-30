@@ -175,15 +175,15 @@ const collectionSections: IntelligenceSection[] = [
     features: [
       {
         title: "Coaching, per agent, per gap",
-        body: "Every agent's record shows the objection they lose to, the disclosure they skip, the metric they miss. DataOrb writes the coaching recommendation against each one, drawn from 100% of their calls. Team leads intervene where it counts, not where the sample pointed.",
+        body: "DataOrb turns every agent’s call gaps into targeted coaching.",
       },
       {
         title: "The hard call, rehearsed",
-        body: "DataOrb turns real collection scenarios into practice personas, identity stripped, hardship and refusal intact. New hires meet the hard refusal in simulation, through AI roleplay, before they meet it live.",
+        body: "DataOrb turns real collection scenarios into safe AI roleplays.",
       },
       {
         title: "Ramp you can verify",
-        body: "Drills built from real calls take the fear out of the first shift. New advisors reach proficiency sooner, their next real calls are evaluated against the same scorecard, and better-prepared advisors stay longer. The loop runs until the outcome moves.",
+        body: "Real-call drills help advisors improve faster and stay longer.",
       },
     ],
   },

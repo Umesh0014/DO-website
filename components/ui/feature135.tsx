@@ -8,6 +8,10 @@ interface Feature135Props {
     src: string
   }
   heading: string
+  logoWallImage?: {
+    alt: string
+    src: string
+  }
   tileCount?: number
 }
 
@@ -16,6 +20,7 @@ export function Feature135({
   description,
   firstTileImage,
   heading,
+  logoWallImage,
   tileCount = 4,
 }: Feature135Props) {
   return (
@@ -30,8 +35,19 @@ export function Feature135({
           </p>
         </div>
 
+        {logoWallImage ? (
+          <img
+            alt={logoWallImage.alt}
+            className="mx-auto mt-10 h-auto w-full max-w-[1038px] object-contain"
+            src={logoWallImage.src}
+          />
+        ) : null}
+
         <div
-          className="mt-14 flex flex-wrap items-center justify-center gap-4 md:mt-16 md:gap-6"
+          className={cn(
+            "flex flex-wrap items-center justify-center gap-4 md:gap-6",
+            logoWallImage ? "mt-10 md:mt-12" : "mt-14 md:mt-16",
+          )}
         >
           {Array.from({ length: tileCount }, (_, index) => (
             <div

@@ -1055,6 +1055,14 @@ export default function IntelligenceLandingPage({
                 ? "Practice the situation, not the person."
                 : "You hold the controls."
             }
+            logoWallImage={
+              activePage === "revenue"
+                ? {
+                    alt: "Customer logos: FX, Google, Alcon, Johnson & Johnson, and National Geographic",
+                    src: "/revenue-customer-logo-wall.png",
+                  }
+                : undefined
+            }
             description={
               activePage === "collection"
                 ? "You choose which conversations DataOrb reads and who sees each advisor’s record. Every commitment and recommended action cites the exchange behind it, identities are stripped from practice personas, and a person confirms every treatment decision."

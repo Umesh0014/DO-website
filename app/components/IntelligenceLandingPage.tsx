@@ -265,7 +265,7 @@ const trainingSections: IntelligenceSection[] = [
       },
       {
         title: "Real struggles, not invented ones",
-        body: "Each twin carries the objective, the customer's hidden constraints, the acceptable solution paths, and the scoring criteria, drawn from a real interaction and its real outcome. Practice stays anchored to the conversations your operation faces this month, not the ones a workbook imagined.",
+        body: "Each Digital Twin turns real interactions into relevant, outcome-based practice.",
       },
     ],
   },

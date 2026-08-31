@@ -1455,6 +1455,22 @@ a {
   background: #242424;
 }
 
+.revenue-section-visual {
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.revenue-section-visual img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+}
+
 .revenue-copy {
   max-width: 500px;
 }

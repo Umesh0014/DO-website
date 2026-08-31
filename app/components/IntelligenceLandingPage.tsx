@@ -492,6 +492,13 @@ function IntelligenceSections({
     <>
       {sections.map((section, sectionIndex) => {
         const isReverse = sectionIndex === 1;
+        const sectionImage =
+          page === "revenue" && sectionIndex === 0
+            ? {
+                alt: "Recoverable revenue and unpitched demand analytics",
+                src: "/revenue-recover-graphic.png",
+              }
+            : null;
         const headingId = `${page}-${section.eyebrow.toLowerCase()}-heading`;
 
         return (
@@ -502,7 +509,14 @@ function IntelligenceSections({
           >
             <div className="standard-inner">
               <div className={`standard-top revenue-top${isReverse ? " revenue-top-reverse" : ""}`}>
-                <div className="standard-visual revenue-blank-visual" aria-hidden="true" />
+                <div
+                  aria-hidden={sectionImage ? undefined : true}
+                  className={`standard-visual revenue-blank-visual${sectionImage ? " revenue-section-visual" : ""}`}
+                >
+                  {sectionImage ? (
+                    <img alt={sectionImage.alt} src={sectionImage.src} />
+                  ) : null}
+                </div>
 
                 <div className="standard-copy revenue-copy">
                   <span className="standard-eyebrow">{section.eyebrow}</span>

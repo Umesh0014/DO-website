@@ -15,6 +15,7 @@ interface Feature135Props {
   logoWallItems?: Array<{
     image?: {
       alt: string
+      compact?: boolean
       src: string
     }
     label?: string
@@ -53,7 +54,12 @@ export function Feature135({
                 {item.image ? (
                   <img
                     alt={item.image.alt}
-                    className="h-20 w-20 object-contain"
+                    className={cn(
+                      "object-contain",
+                      item.image.compact
+                        ? "h-[68px] w-[68px]"
+                        : "h-20 w-20",
+                    )}
                     src={item.image.src}
                   />
                 ) : (

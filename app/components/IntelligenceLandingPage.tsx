@@ -1075,18 +1075,21 @@ export default function IntelligenceLandingPage({
                     {
                       image: {
                         alt: "ISO 27001 certified",
+                        compact: true,
                         src: "/iso-27001-emblem.png",
                       },
                     },
                     {
                       image: {
                         alt: "ISO 27701 certified",
+                        compact: true,
                         src: "/iso-27701-emblem.png",
                       },
                     },
                     {
                       image: {
                         alt: "SOC 2",
+                        compact: true,
                         src: "/soc-2-emblem.png",
                       },
                     },

@@ -1042,61 +1042,41 @@ export default function IntelligenceLandingPage({
         ) : null}
         {isCommercialLayout ? (
           <Feature135
-            firstTileImage={
-              activePage === "training"
-                ? undefined
-                : {
-                    alt: "GDPR",
-                    src: "/gdpr-wordmark-transparent.png",
-                  }
-            }
             heading={
               activePage === "training"
                 ? "Practice the situation, not the person."
                 : "You hold the controls."
             }
-            logoWallImage={
-              activePage === "revenue"
-                ? {
-                    alt: "Compliance standards: GDPR, ISO 27001, ISO 27701, and SOC 2 Type II",
-                    src: "/revenue-customer-logo-wall.png",
-                  }
-                : undefined
-            }
-            logoWallItems={
-              activePage === "collection"
-                ? [
-                    {
-                      image: {
-                        alt: "GDPR",
-                        src: "/gdpr-emblem.png",
-                      },
-                    },
-                    {
-                      image: {
-                        alt: "ISO 27001 certified",
-                        compact: true,
-                        src: "/iso-27001-emblem.png",
-                      },
-                    },
-                    {
-                      image: {
-                        alt: "ISO 27701 certified",
-                        compact: true,
-                        src: "/iso-27701-emblem.png",
-                      },
-                    },
-                    {
-                      image: {
-                        alt: "SOC 2",
-                        compact: true,
-                        src: "/soc-2-emblem.png",
-                      },
-                    },
-                  ]
-                : undefined
-            }
-            tileCount={activePage === "revenue" || activePage === "collection" ? 0 : 4}
+            logoWallItems={[
+              {
+                image: {
+                  alt: "GDPR",
+                  src: "/gdpr-emblem.png",
+                },
+              },
+              {
+                image: {
+                  alt: "ISO 27001 certified",
+                  compact: true,
+                  src: "/iso-27001-emblem.png",
+                },
+              },
+              {
+                image: {
+                  alt: "ISO 27701 certified",
+                  compact: true,
+                  src: "/iso-27701-emblem.png",
+                },
+              },
+              {
+                image: {
+                  alt: "SOC 2",
+                  compact: true,
+                  src: "/soc-2-emblem.png",
+                },
+              },
+            ]}
+            tileCount={0}
             description={
               activePage === "collection"
                 ? "You choose which conversations DataOrb reads and who sees each advisor’s record. Every commitment and recommended action cites the exchange behind it, identities are stripped from practice personas, and a person confirms every treatment decision."

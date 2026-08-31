@@ -1117,7 +1117,7 @@ export default function IntelligenceLandingPage({
         <div className="faq-panel">
           <div className="faq-content">
             <h2 id="faq-heading">
-              Questions we
+                  Questions we{" "}
               <br />
               get asked.
             </h2>

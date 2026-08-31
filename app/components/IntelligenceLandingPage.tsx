@@ -514,7 +514,24 @@ function IntelligenceSections({
                   className={`standard-visual revenue-blank-visual${sectionImage ? " revenue-section-visual" : ""}`}
                 >
                   {sectionImage ? (
-                    <img alt={sectionImage.alt} src={sectionImage.src} />
+                    <div
+                      aria-label={sectionImage.alt}
+                      className="revenue-recover-composite"
+                      role="img"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        className="revenue-recover-base"
+                        src={sectionImage.src}
+                      />
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        className="revenue-recover-card"
+                        src="/revenue-recover-card.png"
+                      />
+                    </div>
                   ) : null}
                 </div>
 

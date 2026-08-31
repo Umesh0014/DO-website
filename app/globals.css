@@ -1462,9 +1462,27 @@ a {
   background: transparent;
 }
 
-.revenue-section-visual img {
+.revenue-recover-composite {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1294 / 661;
+}
+
+.revenue-recover-base {
   display: block;
   width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+}
+
+.revenue-recover-card {
+  position: absolute;
+  top: 18.8%;
+  left: 40.2%;
+  display: block;
+  width: 59.7%;
   max-width: none;
   height: auto;
   margin: 0;

@@ -478,6 +478,21 @@ a {
   background: #fff;
 }
 
+.top-navigation-dropdown--grouped.top-navigation-dropdown--split:is(.top-navigation-dropdown--industries, .top-navigation-dropdown--company) {
+  width: min(820px, calc(100vw - 32px));
+  min-height: 0;
+  grid-template-columns: 346px minmax(0, 1fr);
+}
+
+.top-navigation-dropdown:is(.top-navigation-dropdown--industries, .top-navigation-dropdown--company) .top-navigation-dropdown-split-overview {
+  padding: 24px 28px;
+  background: #fff;
+}
+
+.top-navigation-dropdown--split:is(.top-navigation-dropdown--industries, .top-navigation-dropdown--company) .top-navigation-feature {
+  padding: 28px 32px;
+}
+
 .top-navigation-dropdown--compact .top-navigation-dropdown-group-header {
   min-height: 96px;
   padding-bottom: 20px;
@@ -612,6 +627,25 @@ a {
 .top-navigation-dropdown--split .top-navigation-dropdown-split-detail .top-navigation-dropdown-group-list {
   grid-template-columns: 1fr;
   padding: 24px 10px 0;
+}
+
+.top-navigation-dropdown:is(.top-navigation-dropdown--industries, .top-navigation-dropdown--company) .top-navigation-dropdown-group--without-header {
+  padding: 28px 38px;
+}
+
+.top-navigation-dropdown:is(.top-navigation-dropdown--industries, .top-navigation-dropdown--company) .top-navigation-dropdown-group--without-header .top-navigation-dropdown-group-list {
+  padding-top: 0;
+}
+
+.top-navigation-dropdown:is(.top-navigation-dropdown--industries, .top-navigation-dropdown--company) .top-navigation-dropdown-group--without-header a.top-navigation-dropdown-link--with-icon {
+  min-height: 64px;
+  grid-template-columns: 30px minmax(0, 1fr) 16px;
+  gap: 20px;
+}
+
+.top-navigation-dropdown:is(.top-navigation-dropdown--industries, .top-navigation-dropdown--company) .top-navigation-dropdown-item-icon {
+  width: 28px;
+  height: 28px;
 }
 
 .top-navigation-dropdown--split a.top-navigation-dropdown-link--with-icon {
@@ -965,6 +999,15 @@ a {
   animation: fade-up 900ms 120ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.hero-copy-collection {
+  width: min(1120px, calc(100% - 40px));
+}
+
+.hero-copy-collection > p:not(.hero-eyebrow) {
+  max-width: none;
+  white-space: nowrap;
+}
+
 .hero-copy .hero-eyebrow {
   margin: 0 0 16px;
   color: #0e57de;
@@ -1292,8 +1335,9 @@ a {
 }
 
 .standard-feature {
+  position: relative;
   display: grid;
-  min-height: 100px;
+  min-height: 0;
   grid-template-columns: 24px minmax(0, 1fr);
   gap: 16px;
   margin: 0;
@@ -1301,9 +1345,19 @@ a {
 }
 
 .standard-feature + .standard-feature {
-  border-left: 1px solid #e0e0df;
+  border-left: 0;
   padding-right: clamp(20px, 2.5vw, 44px);
   padding-left: clamp(28px, 4vw, 72px);
+}
+
+.standard-feature + .standard-feature::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: #e0e0df;
+  content: "";
 }
 
 .standard-feature:last-child {
@@ -1365,10 +1419,12 @@ a {
 
 .revenue-section {
   min-height: auto;
+  padding-inline: clamp(16px, 2vw, 32px);
   padding-block: clamp(96px, 8vw, 128px);
 }
 
 .revenue-section .standard-inner {
+  width: min(1440px, 100%);
   gap: clamp(64px, 6vw, 88px);
 }
 
@@ -1399,6 +1455,22 @@ a {
   background: #242424;
 }
 
+.revenue-section-visual {
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.revenue-section-visual > img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+}
+
 .revenue-copy {
   max-width: 500px;
 }
@@ -1415,12 +1487,16 @@ a {
 }
 
 .revenue-features .standard-feature {
-  min-height: 190px;
+  gap: 12px;
+  padding-inline: clamp(12px, 1.5vw, 24px);
 }
 
-.revenue-features .standard-feature p {
-  color: #4b4b4b;
-  line-height: 1.55;
+.revenue-features .standard-feature + .standard-feature {
+  border-left: 0;
+}
+
+.revenue-features .standard-feature h3 {
+  white-space: nowrap;
 }
 
 .faq-section {
@@ -1793,6 +1869,11 @@ a {
 }
 
 @media (max-width: 900px) {
+  .hero-copy-collection > p:not(.hero-eyebrow) {
+    max-width: 620px;
+    white-space: normal;
+  }
+
   .header-inner {
     padding-inline: 28px;
   }
@@ -1914,6 +1995,14 @@ a {
 
   .standard-feature + .standard-feature {
     border-top: 1px solid #e0e0df;
+  }
+
+  .standard-features .standard-feature + .standard-feature::before {
+    display: none;
+  }
+
+  .revenue-features .standard-feature h3 {
+    white-space: normal;
   }
 
   .faq-section {
@@ -2191,6 +2280,10 @@ a {
 
   .revenue-features .standard-feature {
     min-height: 0;
+  }
+
+  .revenue-features .standard-feature h3 {
+    white-space: normal;
   }
 
   .faq-section {

@@ -27,7 +27,7 @@ export default function RevenueIntelligencePage() {
       activePage="revenue"
       heroEyebrow="Revenue Intelligence"
       heroHeading="Stop leaving revenue on the call."
-      heroBody="Every conversation carries a buying signal, an objection, or a sale that never got pitched. DataOrb analyzes 100% of inbound and outbound interactions to uncover revenue still on the table—then tells you who to call back and why."
+      heroBody="DataOrb uncovers missed sales and who to call back and why."
     />
   );
 }

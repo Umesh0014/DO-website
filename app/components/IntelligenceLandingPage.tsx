@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { Component as GradientBackground } from "../../components/ui/bg-gredient";
 import { DropdownNavigation } from "../../components/ui/dropdown-navigation";
 import { Feature135 } from "../../components/ui/feature135";
-import { Stats } from "../../components/ui/stats-section-with-text";
 
 const heroBackground =
   "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260611_133301_d5f2a94a-b22e-4e4a-a6b6-eacdddf1f5b0.png&w=1280&q=85";
@@ -52,7 +51,12 @@ const footerGroups = [
   },
 ];
 
-type IntelligencePage = "collection" | "revenue" | "service";
+type IntelligencePage =
+  | "collection"
+  | "quality"
+  | "revenue"
+  | "service"
+  | "training";
 
 type IntelligenceSection = {
   body: string;
@@ -73,15 +77,15 @@ const revenueSections: IntelligenceSection[] = [
     features: [
       {
         title: "The lead nobody pitched",
-        body: "A customer calls about a bill and mentions a new phone, a second line, a competitor’s price. DataOrb flags every interaction where a buying signal appeared and no offer followed. The lead goes to recovery instead of the archive.",
+        body: "DataOrb turns missed buying signals into actionable recovery leads.",
       },
       {
         title: "The customer still deciding",
-        body: "“Call me back next week.” “I need to talk it over at home.” Neither a yes nor a no. DataOrb reads the response, marks the opportunity as considering, and queues the follow-up with the context of the original call attached, while the interest is still warm.",
+        body: "DataOrb identifies undecided prospects and queues timely follow-ups.",
       },
       {
         title: "The customer about to leave",
-        body: "Some conversations end with a sale missed. Others end with a customer halfway out the door. DataOrb flags high churn risk the moment the interaction closes, so your retention campaign reaches them before they act.",
+        body: "DataOrb flags churn risk early, enabling timely retention.",
       },
     ],
   },
@@ -92,18 +96,17 @@ const revenueSections: IntelligenceSection[] = [
     features: [
       {
         title: "Objections and competitors, named",
-        body: "DataOrb logs every objection raised, every competitor mentioned, and how the advisor handled each one. You learn which rival you actually lose to, and why, in the customer’s own words.",
+        body: "DataOrb reveals which competitors you lose to and why.",
       },
       {
         title: "Training problem or process problem",
-        body: "When conversion drops, DataOrb separates how advisors sell from what they were given to sell with. One points to coaching. The other points to the offer, the pricing, or the playbook itself.",
+        body: "DataOrb reveals whether coaching or the offer hurts conversion.",
       },
       {
         title: "Telesales, funnel to outcome",
-        body: "For dedicated telesales programs, DataOrb tracks the funnel per campaign and per product: right-party contact, offers made, objections faced, win rate. You see where each program leaks before the month-end report does.",
+        body: "DataOrb reveals where each sales campaign loses conversions.",
       },
     ],
-    note: "All of this arrives as structured, trended data, queryable through Ask Mira on the Insights page. Ask why conversion dropped and get a cited answer.",
   },
   {
     eyebrow: "Prepare",
@@ -112,15 +115,15 @@ const revenueSections: IntelligenceSection[] = [
     features: [
       {
         title: "A digital twin of the hard customer",
-        body: "DataOrb turns a real lost conversation into a practice persona, with the identity stripped and the objection intact. Advisors rehearse the exact scenario the team keeps losing, through AI roleplay, before it comes around again.",
+        body: "DataOrb turns lost conversations into AI roleplays for advisor practice.",
       },
       {
         title: "Sales QA on every call",
-        body: "DataOrb evaluates every sales conversation against your compliance rules and your best practices, not a sample. Supervisors spend their hours coaching, not listening back.",
+        body: "DataOrb evaluates every sale, freeing supervisors to coach.",
       },
       {
         title: "Coaching from their own calls",
-        body: "Each advisor’s record shows where they pitch, where they miss, and where they convert. You see who leads, who needs coaching, and who needs reskilling, and the coaching starts from their own calls, not a generic script.",
+        body: "DataOrb reveals who excels and who needs coaching.",
       },
     ],
   },
@@ -130,57 +133,177 @@ const collectionSections: IntelligenceSection[] = [
   {
     eyebrow: "Recover",
     heading: "Find the lift in your funnel.",
-    body: "Recovery lives in margins. A point of right-party contact here, a point of promise-to-pay there, multiplied across millions of dials. DataOrb tracks every funnel KPI against the goal you set, from contactability and contact utility to dials per arrangement and recovery conversion, and shows you where the next point is hiding.",
+    body: "DataOrb reveals where to improve every recovery KPI.",
     features: [
       {
         title: "Every outcome, on the record",
-        body: "DataOrb tracks every contact to its outcome: payment taken, promise made, rescheduled, refused, disputed, or wrong party. Your funnel, from dial to cash, becomes a record you can read and trend, campaign by campaign.",
+        body: "DataOrb tracks every contact from dial to cash.",
       },
       {
         title: "Objections, named and graded",
-        body: "Non-recognition of the debt, financial hardship, disputed services, timing, already paid, hard refusal. DataOrb names the objection on every call and grades how it was handled. You learn which objections cost you the most, and which rebuttals actually move them.",
+        body: "DataOrb reveals costly objections and the rebuttals that work.",
       },
       {
         title: "Promises, tracked to the cash",
-        body: "A promise to pay is not a payment. DataOrb follows each promise through to resolution or refusal, so you see which arrangements hold, which collapse, and where to intervene before the money slips.",
+        body: "DataOrb tracks which payment promises hold, fail, or need intervention.",
       },
     ],
   },
   {
     eyebrow: "Protect",
     heading: "Compliance you can prove.",
-    body: "Collection is one of the most regulated conversations in financial services, and a sampled QA program leaves most of it unwitnessed. DataOrb monitors every call against your compliance scorecard, across EU and US programs, and cites the exact moment anything goes wrong.",
+    body: "DataOrb monitors every collection call for compliance risks.",
     features: [
       {
         title: "The disclosures, verified",
-        body: "Identity confirmed, reason for the call stated, required notifications given, payment details and amounts checked, the outcome reformulated. DataOrb verifies the mandatory steps on every call and flags the one that was skipped, with the moment cited.",
+        body: "DataOrb verifies every mandatory step and flags what was missed.",
       },
       {
         title: "The lines never to cross",
-        body: "DataOrb flags prohibited language, harassment risk, and pressure where restraint is required. A violation surfaces the day it happens, while it is still a coaching matter.",
+        body: "DataOrb flags risky language before it becomes a violation.",
       },
       {
         title: "Vulnerability, detected",
-        body: "When a customer signals hardship or vulnerability, DataOrb flags the account, so it gets the treatment your policy and the regulator require. Customer treatment stops depending on which calls QA happened to pull.",
+        body: "DataOrb flags vulnerable customers for fair, compliant treatment.",
       },
     ],
   },
   {
     eyebrow: "Prepare",
     heading: "Scale what your best closers do.",
-    body: "What works in collection lives inside the conversation: how the questions are sequenced, how the anchor is set, when to hold the silence. DataOrb finds it in your best calls and turns it into coaching and practice for everyone else.",
+    body: "DataOrb turns winning collection techniques into coaching and practice.",
     features: [
       {
         title: "Coaching, per agent, per gap",
-        body: "Every agent's record shows the objection they lose to, the disclosure they skip, the metric they miss. DataOrb writes the coaching recommendation against each one, drawn from 100% of their calls. Team leads intervene where it counts, not where the sample pointed.",
+        body: "DataOrb turns every agent’s call gaps into targeted coaching.",
       },
       {
         title: "The hard call, rehearsed",
-        body: "DataOrb turns real collection scenarios into practice personas, identity stripped, hardship and refusal intact. New hires meet the hard refusal in simulation, through AI roleplay, before they meet it live.",
+        body: "DataOrb turns real collection scenarios into safe AI roleplays.",
       },
       {
         title: "Ramp you can verify",
-        body: "Drills built from real calls take the fear out of the first shift. New advisors reach proficiency sooner, their next real calls are evaluated against the same scorecard, and better-prepared advisors stay longer. The loop runs until the outcome moves.",
+        body: "Real-call drills help advisors improve faster and stay longer.",
+      },
+    ],
+  },
+];
+
+const qualitySections: IntelligenceSection[] = [
+  {
+    eyebrow: "Evaluate",
+    heading: "Evaluate everything. Explain everything.",
+    body: "DataOrb scores every interaction across channels, languages, campaigns, and teams.",
+    features: [
+      {
+        title: "Glass box, not black box",
+        body: "Every DataOrb score is explained and backed by exact dialogue.",
+      },
+      {
+        title: "No keywords, no rules",
+        body: "DataOrb understands context, scoring only relevant opportunities.",
+      },
+      {
+        title: "Adherence, beyond the scorecard",
+        body: "DataOrb evaluates every interaction against your procedures not just scripts.",
+      },
+    ],
+  },
+  {
+    eyebrow: "Coach",
+    heading: "Coach with evidence, not opinion.",
+    body: "DataOrb turns every evaluation into targeted coaching.",
+    features: [
+      {
+        title: "A recommendation on every miss",
+        body: "DataOrb turns performance gaps into ready-to-use coaching.",
+      },
+      {
+        title: "The whole team, metric by metric",
+        body: "DataOrb shows exactly who needs coaching and where.",
+      },
+      {
+        title: "Behavior, next to outcome",
+        body: "DataOrb links coaching to the outcomes it improves.",
+      },
+    ],
+  },
+  {
+    eyebrow: "Rehearse",
+    heading: "Practice before the floor.",
+    body: "DataOrb turns coaching gaps into practice and measurable improvement.",
+    features: [
+      {
+        title: "Drills built from real misses",
+        body: "DataOrb turns repeated gaps into practice drills before they become complaints.",
+      },
+      {
+        title: "Personas, not real customers",
+        body: "DataOrb turns real interactions into safe AI roleplay practice.",
+      },
+      {
+        title: "Readiness you can verify",
+        body: "DataOrb verifies whether coaching improves real conversations.",
+      },
+    ],
+  },
+];
+
+const trainingSections: IntelligenceSection[] = [
+  {
+    eyebrow: "Twin",
+    heading: "The curriculum writes itself.",
+    body: "DataOrb turns real interactions into anonymized rehearsal scenarios.",
+    features: [
+      {
+        title: "One click, no scripting",
+        body: "DataOrb instantly turns transcripts into ready-to-practice scenarios.",
+      },
+      {
+        title: "A firewall for identity",
+        body: "DataOrb anonymizes every scenario while preserving the real conversation dynamics.",
+      },
+      {
+        title: "Real struggles, not invented ones",
+        body: "Each Digital Twin turns real interactions into relevant, outcome-based practice.",
+      },
+    ],
+  },
+  {
+    eyebrow: "Rehearse",
+    heading: "A customer who talks back.",
+    body: "Drill delivers realistic voice roleplay across service, sales, retention, and collection.",
+    features: [
+      {
+        title: "Personas with a mood",
+        body: "DataOrb simulates realistic customers who challenge advisors like real conversations.",
+      },
+      {
+        title: "Scored like the floor",
+        body: "DataOrb measures practice with the same scorecard used on live calls.",
+      },
+      {
+        title: "Feedback, cited to the moment",
+        body: "DataOrb turns practice gaps into specific, evidence-based coaching.",
+      },
+    ],
+  },
+  {
+    eyebrow: "Certify",
+    heading: "Readiness becomes a number.",
+    body: "DataOrb tracks every advisor from assigned practice to proven readiness.",
+    features: [
+      {
+        title: "The preparation loop",
+        body: "DataOrb prepares new hires for real calls and proves go-live readiness.",
+      },
+      {
+        title: "The readiness loop",
+        body: "DataOrb turns quality gaps into targeted training interventions.",
+      },
+      {
+        title: "Launch-day rehearsal",
+        body: "DataOrb certifies advisors on critical changes before they go live.",
       },
     ],
   },
@@ -197,6 +320,8 @@ function getFooterLinkHref(link: string) {
   if (link === "Service Intelligence") return "/";
   if (link === "Revenue Intelligence") return "/revenue-intelligence";
   if (link === "Collection Intelligence") return "/collection-intelligence";
+  if (link === "Quality and Coaching") return "/platform/quality-and-coaching";
+  if (link === "Training and Learning") return "/platform/training-and-learning";
   return "#top";
 }
 
@@ -252,6 +377,7 @@ const primaryNavigation = [
       {
         label: "Industry intelligence",
         description: "Segment-specific intelligence for regulated conversations.",
+        hideHeader: true,
         items: [
           { label: "Telecommunications", href: "/industries/telecommunications" },
           { label: "Energy and utilities", href: "/industries/energy-utilities" },
@@ -277,6 +403,7 @@ const primaryNavigation = [
       {
         label: "Trust and responsibility",
         description: "Security and responsible AI by design.",
+        hideHeader: true,
         items: [
           { label: "Careers", href: "/company/careers" },
           { label: "Contact", href: "/company/contact" },
@@ -358,13 +485,20 @@ function IntelligenceSections({
   page,
   sections,
 }: {
-  page: "collection" | "revenue";
+  page: "collection" | "quality" | "revenue";
   sections: IntelligenceSection[];
 }) {
   return (
     <>
       {sections.map((section, sectionIndex) => {
         const isReverse = sectionIndex === 1;
+        const sectionImage =
+          page === "revenue" && sectionIndex === 0
+            ? {
+                alt: "Recoverable revenue and unpitched demand analytics",
+                src: "/revenue-recover-graphic.png",
+              }
+            : null;
         const headingId = `${page}-${section.eyebrow.toLowerCase()}-heading`;
 
         return (
@@ -375,7 +509,14 @@ function IntelligenceSections({
           >
             <div className="standard-inner">
               <div className={`standard-top revenue-top${isReverse ? " revenue-top-reverse" : ""}`}>
-                <div className="standard-visual revenue-blank-visual" aria-hidden="true" />
+                <div
+                  aria-hidden={sectionImage ? undefined : true}
+                  className={`standard-visual revenue-blank-visual${sectionImage ? " revenue-section-visual" : ""}`}
+                >
+                  {sectionImage ? (
+                    <img alt={sectionImage.alt} src={sectionImage.src} />
+                  ) : null}
+                </div>
 
                 <div className="standard-copy revenue-copy">
                   <span className="standard-eyebrow">{section.eyebrow}</span>
@@ -417,11 +558,24 @@ export default function IntelligenceLandingPage({
       ? "Collection Intelligence"
       : activePage === "revenue"
         ? "Revenue Intelligence"
-        : "Service Intelligence";
+        : activePage === "quality"
+          ? "Quality and Coaching"
+          : activePage === "training"
+            ? "Training and Learning"
+            : "Service Intelligence";
   const isCommercialLayout =
-    activePage === "collection" || activePage === "revenue";
+    activePage === "collection" ||
+    activePage === "quality" ||
+    activePage === "revenue" ||
+    activePage === "training";
   const commercialSections =
-    activePage === "collection" ? collectionSections : revenueSections;
+    activePage === "collection"
+      ? collectionSections
+      : activePage === "quality"
+        ? qualitySections
+        : activePage === "training"
+          ? trainingSections
+          : revenueSections;
   const heroRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -485,6 +639,63 @@ export default function IntelligenceLandingPage({
                 "Yes. Every agency and every in-house team is measured against the same scorecards and the same funnel, in one record. Brand and partner see the same numbers, which is the only way the conversation about recovery stays honest.",
             },
           ]
+        : activePage === "quality"
+          ? [
+              {
+                question: "How do we know the scores match our own evaluators?",
+                answer:
+                  "Check them yourself. Every rating carries its rationale and the cited dialogue, so your quality team can open any score and verify it in seconds. DataOrb is calibrated against your own reviewers, on your own interactions, and hybrid evaluation keeps a human in the loop on any metric you designate.",
+              },
+              {
+                question: "Do we have to set up keywords or taxonomies?",
+                answer:
+                  "No. DataOrb is context-aware out of the box. It reads the situation, decides whether a metric applied, and evaluates only where it did. You bring the scorecard; nothing else needs building or maintaining.",
+              },
+              {
+                question: "Can different campaigns run different scorecards?",
+                answer:
+                  "Yes. A sales scorecard is not a service scorecard. Configure as many as you need, by campaign, channel, and line of business, and DataOrb evaluates each interaction against the one that governs it.",
+              },
+              {
+                question:
+                  "Does this cover our BPO partners as well as in-house teams?",
+                answer:
+                  "Yes. Every team reads from one record: same scorecards, same dashboards, across every language and every site. Brand and partner see the same numbers, which is the only way the conversation about quality stays honest.",
+              },
+              {
+                question: "Does it evaluate AI agents too?",
+                answer:
+                  "Yes, on the same standard. Chatbots and AI teammates are scored against the same scorecards as your advisors: was the procedure followed, was the customer verified, was the issue resolved. One standard is the only honest way to compare them.",
+              },
+            ]
+          : activePage === "training"
+            ? [
+                {
+                  question: "How are the practice scenarios created?",
+                  answer:
+                    "DataOrb builds them from real interaction patterns in your operation, keeping the situation, objection, and required behavior while removing customer identity.",
+                },
+                {
+                  question: "Is this only for new hires?",
+                  answer:
+                    "No. New hires use it to prepare for the floor, while experienced advisors receive targeted drills based on the gaps found in their own interactions.",
+                },
+                {
+                  question: "Can advisors practice through AI roleplay?",
+                  answer:
+                    "Yes. Practice personas respond in realistic conversation, so advisors can rehearse difficult situations safely and receive feedback before handling them live.",
+                },
+                {
+                  question: "Can we use our own procedures and scorecards?",
+                  answer:
+                    "Yes. Drills and evaluations can reflect your scorecards, SOPs, product guidance, channels, and lines of business, so practice matches the standard used in production.",
+                },
+                {
+                  question: "How do we know the training worked?",
+                  answer:
+                    "DataOrb evaluates the advisor's next real interactions against the same metric. Leaders can see whether the practiced behavior changed and whether the outcome moved with it.",
+                },
+              ]
         : [
           {
             question: "How is this different from speech analytics?",
@@ -606,7 +817,7 @@ export default function IntelligenceLandingPage({
         <div className="hero-wash" aria-hidden="true" />
         <Header />
 
-        <div className="hero-copy">
+        <div className={`hero-copy hero-copy-${activePage}`}>
           {heroEyebrow ? (
             <p className="hero-eyebrow">{heroEyebrow}</p>
           ) : null}
@@ -843,14 +1054,51 @@ export default function IntelligenceLandingPage({
         {isCommercialLayout ? (
           <GradientBackground gradientTo="#c2d8cb" />
         ) : null}
-        {activePage === "revenue" ? <Stats /> : null}
         {isCommercialLayout ? (
           <Feature135
-            heading="You hold the controls."
+            heading={
+              activePage === "training"
+                ? "Practice the situation, not the person."
+                : "You hold the controls."
+            }
+            logoWallItems={[
+              {
+                image: {
+                  alt: "GDPR",
+                  src: "/gdpr-emblem.png",
+                },
+              },
+              {
+                image: {
+                  alt: "ISO 27001 certified",
+                  compact: true,
+                  src: "/iso-27001-emblem.png",
+                },
+              },
+              {
+                image: {
+                  alt: "ISO 27701 certified",
+                  compact: true,
+                  src: "/iso-27701-emblem.png",
+                },
+              },
+              {
+                image: {
+                  alt: "SOC 2",
+                  compact: true,
+                  src: "/soc-2-emblem.png",
+                },
+              },
+            ]}
+            tileCount={0}
             description={
               activePage === "collection"
                 ? "You choose which conversations DataOrb reads and who sees each advisor’s record. Every commitment and recommended action cites the exchange behind it, identities are stripped from practice personas, and a person confirms every treatment decision."
-                : "You choose which conversations DataOrb reads and who sees each advisor’s record. Every opportunity cites the exchange behind it, identities are stripped from digital twins, and a person confirms every recovery move."
+                : activePage === "quality"
+                  ? "You decide which interactions DataOrb evaluates and who sees each advisor's record. Every score opens to the dialogue that produced it, so an advisor can contest a rating with the evidence in front of them. And where a metric calls for human judgment, DataOrb waits: hybrid evaluation keeps your reviewers in the loop, on the metrics you choose."
+                  : activePage === "training"
+                    ? "You choose which interactions become practice and who can access each learning record. Customer identity is removed from every simulation, while the situation, behavior, and evidence remain available to the people responsible for development."
+                    : "You choose which conversations DataOrb reads and who sees each advisor’s record. Every opportunity cites the exchange behind it, identities are stripped from digital twins, and a person confirms every recovery move."
             }
           />
         ) : null}
@@ -863,7 +1111,7 @@ export default function IntelligenceLandingPage({
         <div className="faq-panel">
           <div className="faq-content">
             <h2 id="faq-heading">
-              Questions we
+                  Questions we{" "}
               <br />
               get asked.
             </h2>
@@ -914,14 +1162,22 @@ export default function IntelligenceLandingPage({
                   ? "See the revenue sitting in last month's calls."
                   : activePage === "collection"
                     ? "See what last month's campaigns left on the table."
-                    : "See what your last 1,000 conversations are telling you."}
+                    : activePage === "quality"
+                      ? "See how your team scores when nothing is sampled."
+                      : activePage === "training"
+                        ? "See how quickly your team can reach readiness."
+                        : "See what your last 1,000 conversations are telling you."}
               </h2>
               <p>
                 {activePage === "revenue"
                   ? "Bring a sample of your own sales conversations. We will decode them and show you how many carried a buying signal that was never pitched, which offers are converting, and where your next recovery campaign is hiding."
                   : activePage === "collection"
                     ? "Bring a batch of your own collection calls. We will decode them and show you your real promise-to-pay conversion, the objections costing you the most, and where your compliance coverage actually stands."
-                    : "Bring your interactions. We'll reveal resolution rates, effort hotspots, and repeat-contact drivers."}
+                    : activePage === "quality"
+                      ? "Bring a batch of your own interactions and your scorecard. We will run the evaluation and show you where your team stands, metric by metric, with the coaching recommendations already attached."
+                      : activePage === "training"
+                        ? "Bring the scenarios your teams find hardest. We will turn them into practice, show you where each advisor stands, and connect the learning to their next real interactions."
+                        : "Bring your interactions. We'll reveal resolution rates, effort hotspots, and repeat-contact drivers."}
               </p>
             </div>
 
@@ -963,7 +1219,11 @@ export default function IntelligenceLandingPage({
                                   (activePage === "revenue" &&
                                     link === "Revenue Intelligence") ||
                                   (activePage === "collection" &&
-                                    link === "Collection Intelligence")
+                                    link === "Collection Intelligence") ||
+                                  (activePage === "quality" &&
+                                    link === "Quality and Coaching") ||
+                                  (activePage === "training" &&
+                                    link === "Training and Learning")
                                     ? "page"
                                     : undefined
                                 }

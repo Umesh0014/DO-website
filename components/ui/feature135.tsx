@@ -55,7 +55,7 @@ export function Feature135({
                   <img
                     alt={item.image.alt}
                     className={cn(
-                      "object-contain",
+                      "object-contain grayscale",
                       item.image.compact
                         ? "h-[68px] w-[68px]"
                         : "h-20 w-20",

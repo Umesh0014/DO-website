@@ -485,7 +485,7 @@ function IntelligenceSections({
   page,
   sections,
 }: {
-  page: "collection" | "quality" | "revenue";
+  page: "collection" | "quality" | "revenue" | "training";
   sections: IntelligenceSection[];
 }) {
   return (

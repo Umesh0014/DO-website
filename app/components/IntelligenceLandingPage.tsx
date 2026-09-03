@@ -464,18 +464,17 @@ function TrendIcon() {
   );
 }
 
-function Header() {
+export function Header() {
   return (
     <header className="site-header">
       <nav className="header-inner" aria-label="Primary navigation">
-        <a className="logo-link" href="#top" aria-label="dataOrb home">
+        <a className="logo-link" href="/" aria-label="dataOrb home">
           <BrandMark />
           <span className="brand-wordmark">dataOrb</span>
         </a>
         <DropdownNavigation navItems={primaryNavigation} />
-        <a className="header-cta" href="#demo">
-          <span>Book a demo</span>
-          <ArrowIcon />
+        <a className="header-cta header-cta-image" href="#demo" aria-label="Book a demo">
+          <img src="/home-book-demo-button.png" alt="" />
         </a>
       </nav>
     </header>

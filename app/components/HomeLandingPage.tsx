@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { Header as SharedHeader } from "./IntelligenceLandingPage";
 import {
   ArrowLeft,
   ArrowRight,
@@ -37,6 +38,9 @@ const teamCards = [
 
 const marqueeItems = Array.from({ length: 15 }, (_, index) => index);
 
+const manifestoText = "DataOrb is the Decision Intelligence Platform for Customer Operations. Decode every interaction, remember what worked, and act before the next one goes wrong.";
+const manifestoWords = manifestoText.split(" ");
+
 const footerGroups = [
   { title: "Platform", links: [["Service Intelligence", "/service-intelligence"], ["Revenue Intelligence", "/revenue-intelligence"], ["Collection Intelligence", "/collection-intelligence"], ["Quality and Coaching", "/platform/quality-and-coaching"], ["Training and Learning", "/platform/training-and-learning"], ["Agentic BI", "/platform/agentic-bi"], ["Context Engine", "#platform-foundation"]] },
   { title: "Trust", links: [["Security", "#go-deeper"], ["Responsible AI", "#go-deeper"], ["AAPES", "#go-deeper"], ["Privacy", "#footer"], ["Sub-processors", "#footer"]] },
@@ -52,6 +56,7 @@ function ArrowLink({ children }: { children: React.ReactNode }) {
 
 export default function HomeLandingPage() {
   const parallaxStageRef = useRef<HTMLDivElement>(null);
+  const manifestoRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const stage = parallaxStageRef.current;
@@ -90,24 +95,67 @@ export default function HomeLandingPage() {
     };
   }, []);
 
+  useEffect(() => {
+    const section = manifestoRef.current;
+    if (!section) return;
+
+    const words = Array.from(section.querySelectorAll<HTMLElement>(".home-manifesto-word"));
+    let animationFrame = 0;
+
+    const updateReveal = () => {
+      animationFrame = 0;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const sectionTop = section.getBoundingClientRect().top;
+      const revealStart = window.innerHeight * 0.78;
+      const revealEnd = window.innerHeight * 0.22;
+      const progress = reduceMotion
+        ? 1
+        : Math.min(1, Math.max(0, (revealStart - sectionTop) / (revealStart - revealEnd)));
+      const easedProgress = progress * progress * (3 - 2 * progress);
+
+      words.forEach((word, index) => {
+        const wordProgress = Math.min(1, Math.max(0, (easedProgress * (words.length + 2) - index) / 3));
+        const red = Math.round(50 + (255 - 50) * wordProgress);
+        const green = Math.round(61 + (255 - 61) * wordProgress);
+        const blue = Math.round(75 + (255 - 75) * wordProgress);
+        word.style.color = `rgb(${red} ${green} ${blue})`;
+      });
+    };
+
+    const requestUpdate = () => {
+      if (!animationFrame) animationFrame = window.requestAnimationFrame(updateReveal);
+    };
+
+    updateReveal();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    return () => {
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+      if (animationFrame) window.cancelAnimationFrame(animationFrame);
+    };
+  }, []);
+
   return (
     <main className="home-page" id="top">
       <div className="home-parallax-stage" ref={parallaxStageRef}>
       <div className="home-parallax-header-wrap">
-        <header className="home-header home-shell">
-          <Link className="home-brand" href="/" aria-label="DataOrb home"><img src="/home-dataorb-logo.svg" alt="DataOrb" /></Link>
-          <nav className="home-nav" aria-label="Primary navigation"><a href="#platform">Platform</a><a href="#teams">Solutions</a><a href="#stories">Resources</a><a href="#footer">Company</a></nav>
-          <a className="home-demo-button home-demo-button--small" href="#demo">Book a demo</a>
-        </header>
+        <SharedHeader />
       </div>
       <section className="home-hero">
         <div className="home-hero-background home-hero-background--far" aria-hidden="true" />
         <div className="home-hero-background home-hero-background--mid" aria-hidden="true" />
         <div className="home-hero-background home-hero-background--near" aria-hidden="true" />
         <div className="home-hero-copy home-shell">
-          <p className="home-pill"><i /> Decision Intelligence Platform</p>
-          <h1>Customer was <span>always</span><br />trying to tell you something.</h1>
-          <div className="home-hero-actions"><a className="home-demo-button" href="#demo">Book a demo <ArrowRight size={20} /></a><a className="home-watch-button" href="#platform">See how it works</a></div>
+          <p className="home-pill-image"><i />Decision Intelligence Platform</p>
+          <h1 className="home-hero-heading">
+            <img
+              className="home-hero-heading-image"
+              src="/home-hero-heading.png"
+              alt="Customer was always trying to tell you something."
+            />
+          </h1>
+          <div className="home-hero-actions"><a className="home-demo-image-link" href="#demo" aria-label="Book a demo"><img src="/home-book-demo-button.png" alt="" /></a><a className="home-watch-image-link" href="#platform" aria-label="See how it works"><img src="/home-see-how-button.png" alt="" /></a></div>
         </div>
         <div className="home-parallax-layer">
           <img className="home-hero-foreground" src="/home-hero-foreground.png" alt="" />
@@ -124,7 +172,15 @@ export default function HomeLandingPage() {
           </div>
         </div>
       </section>
-      <section className="home-manifesto"><p><span>DataOrb is the Decision Intelligence Platform for Customer Operations.</span> Decode every interaction, remember what worked, and act before the next one goes wrong.</p></section>
+      <section className="home-manifesto" ref={manifestoRef}>
+        <p aria-label={manifestoText}>
+          {manifestoWords.map((word, index) => (
+            <span className="home-manifesto-word" aria-hidden="true" key={`${word}-${index}`}>
+              {word}{index < manifestoWords.length - 1 ? " " : ""}
+            </span>
+          ))}
+        </p>
+      </section>
       </div>
 
       <section className="home-agentic-section">

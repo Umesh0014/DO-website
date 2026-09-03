@@ -97,6 +97,7 @@ const navigationItemIcons: Record<string, LucideIcon> = {
   "Collection Intelligence": HandCoins,
   "Quality and Coaching": BadgeCheck,
   "Training and Learning": GraduationCap,
+  "Agentic BI": BarChart3,
   Insights: BarChart3,
   "Context Engine": Network,
   "Browse features": LayoutGrid,

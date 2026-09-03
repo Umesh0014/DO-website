@@ -317,11 +317,12 @@ type IntelligenceLandingPageProps = {
 };
 
 function getFooterLinkHref(link: string) {
-  if (link === "Service Intelligence") return "/";
+  if (link === "Service Intelligence") return "/service-intelligence";
   if (link === "Revenue Intelligence") return "/revenue-intelligence";
   if (link === "Collection Intelligence") return "/collection-intelligence";
   if (link === "Quality and Coaching") return "/platform/quality-and-coaching";
   if (link === "Training and Learning") return "/platform/training-and-learning";
+  if (link === "Agentic BI") return "/platform/agentic-bi";
   return "#top";
 }
 
@@ -332,12 +333,12 @@ const primaryNavigation = [
       {
         label: "Products",
         items: [
-          { label: "Service Intelligence", href: "/" },
+          { label: "Service Intelligence", href: "/service-intelligence" },
           { label: "Revenue Intelligence", href: "/revenue-intelligence" },
           { label: "Collection Intelligence", href: "/collection-intelligence" },
           { label: "Quality and Coaching", href: "/platform/quality-and-coaching" },
           { label: "Training and Learning", href: "/platform/training-and-learning" },
-          { label: "Insights", href: "/platform/insights" },
+          { label: "Agentic BI", href: "/platform/agentic-bi" },
           { label: "Context Engine", href: "/platform/context-engine" },
         ],
       },
@@ -496,9 +497,24 @@ function IntelligenceSections({
           page === "revenue" && sectionIndex === 0
             ? {
                 alt: "Recoverable revenue and unpitched demand analytics",
-                src: "/revenue-recover-graphic.png",
+                src: "/revenue-recover-graphic-v4.png",
               }
-            : null;
+            : page === "revenue" && sectionIndex === 1
+              ? {
+                  alt: "Offer coverage and objection handling analytics",
+                  src: "/revenue-see-graphic-v3.png",
+                }
+              : page === "revenue" && sectionIndex === 2
+                ? {
+                    alt: "Sales quality assurance coverage and roleplay proficiency analytics",
+                    src: "/revenue-prepare-graphic.png",
+                  }
+                : page === "collection" && sectionIndex === 0
+                  ? {
+                      alt: "Promise realization and right-party contact analytics",
+                      src: "/collection-recover-graphic-v2.png",
+                    }
+                  : null;
         const headingId = `${page}-${section.eyebrow.toLowerCase()}-heading`;
 
         return (

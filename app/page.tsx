@@ -1,12 +1,5 @@
-import IntelligenceLandingPage from "./components/IntelligenceLandingPage";
+import HomeLandingPage from "./components/HomeLandingPage";
 
 export default function Home() {
-  return (
-    <IntelligenceLandingPage
-      activePage="service"
-      heroEyebrow="Service Intelligence"
-      heroHeading="Stop guessing what happened"
-      heroBody="Every interaction, evidence-linked: what happened, customer impact, and what's next."
-    />
-  );
+  return <HomeLandingPage />;
 }
